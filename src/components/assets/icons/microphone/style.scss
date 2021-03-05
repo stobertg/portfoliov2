@@ -1,0 +1,102 @@
+
+@import "./src/global-css/variables/variables";
+
+// For the styling fo the microphone icon
+
+.icon__mic{
+	min-width: 24px;
+	width: 24px;
+	min-height: 39px;
+	height: 39px;
+
+	&-top{
+		@extend %display-flex;
+		@extend %flex-center-horizontal;
+		width: 100%;
+		position: relative;
+		height: 31px;
+
+		// For the speaker in the middle of the div
+
+		&:before{
+			content: ' ';
+			position: absolute;
+			top: 0px;
+			width: 14px;
+			height: 26px;
+			background: $black;
+			border-radius: 25px;
+		}
+
+		// For the border lines around the bottom half of the speaker
+
+		span{
+			position: absolute;
+			bottom: 0px;
+			height: 14px;
+			width: 100%;
+			overflow: hidden;
+
+			&:before{
+				content: ' ';
+				position: absolute;
+				bottom: 0px;
+				width: 100%;
+				height: calc(100% + 2px);
+				border-radius: 0px 0px 50% 50%;
+				border: 2px solid $black;
+			}
+		}
+	}
+
+	&-bottom{
+		@extend %display-flex;
+		@extend %flex-center-horizontal;
+		position: relative;
+		width: 100%;
+		height: 8px;
+
+		// For the line that connects the speaker to the stand
+
+		&:before{
+			content: ' ';
+			position: absolute;
+			width: 2px;
+			height: 100%;
+			background: $black;
+		}
+
+		// For the stand on the bottom of the icon
+
+		&:after{
+			content: ' ';
+			position: absolute;
+			bottom: 0px;
+			width: 10px;
+			height: 2px;
+			border-radius: 2px;
+			background: $black;
+		}
+	}
+
+	&.icon__white{
+
+		.icon__mic-top{
+
+			&:before{
+				background: $white;
+			}
+
+			span:before{
+				border-color: $white;
+			}
+		}
+
+		.icon__mic-bottom{
+
+			&:before, &:after{
+				background: $white;
+			}
+		}
+	}
+}

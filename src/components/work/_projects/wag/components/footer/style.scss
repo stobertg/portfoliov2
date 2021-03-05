@@ -1,0 +1,24 @@
+
+@import "../../scss/variables/variables";
+
+// For the styling of the footer
+// This is always present within any page on dotcom - at the bottom of the page
+
+footer{
+
+	.footer__email{
+		position: relative;
+		width: 100%;
+		padding: 20px 0;
+		background: $dark-blue;
+	}
+
+	form{
+		max-width: 400px;
+		margin: 0 auto;
+	}
+
+	.input__contain{
+		border: none;
+	}
+}

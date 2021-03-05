@@ -1,0 +1,55 @@
+
+@import "./src/global-css/variables/variables";
+
+// For the styling of the contact lists
+// This is with the image and the text on the left and a button on the right of the container
+
+.list__contacts {
+	position: relative;
+	width: 100%;
+
+	// For the container of each list item
+
+	li{
+		@extend %display-flex-space-between;
+		position: relative;
+		width: 100%;
+		padding: 10px 0;
+		cursor: pointer;
+
+		// Remove the padding from the top of the first li
+
+		&:first-child{
+			padding-top: 0;
+		}
+
+		// Remove the padding from the bottom of the last li
+
+		&:last-child{
+			padding-bottom: 0;
+		}
+
+		> div{
+			@extend %display-flex-space-between;
+			@extend %flex-center-vertical;
+			width: 100%;
+		}
+	}
+
+	figure{
+		@extend %display-flex;
+		@extend %flex-center-vertical;
+	}
+
+	figcaption{
+		margin-left: 10px;
+	}
+
+	strong{
+		font-size: $fourteen;
+	}
+
+	em{
+		font-size: $twelve;
+	}
+}

@@ -1,0 +1,98 @@
+
+@import "./assets/scss/variables/variables";
+
+// Animations for the loading dots
+// Animation varible - shared by all three dots
+
+@keyframes scaleUp {
+	0% { transform: translateY(100%); }
+	50% { transform: translateY(-100%); }
+	100% { transform: translateY(100%); }
+}
+
+// For the master container of the loading dots
+// This should be used for all loading components
+
+.loading{
+	@extend %display-flex;
+	@extend %flex-center-all;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: $white;
+	z-index: 9999;
+
+	// For the loading dots
+	// This the preloader for pages or content within pages
+
+	&__dots--contain{
+		@extend %display-inline-flex;
+		@extend %flex-center-all;
+		position: relative;
+		flex-direction: column;
+	}
+
+	// For the animated dots
+	// And if there is text below the dots
+
+	&__dots{
+		@extend %display-flex;
+		@extend %flex-center-vertical;
+		position: relative;
+		height: 70px;
+
+		// For the styling of the dots
+
+		span{
+			display: block;
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			background: $black;
+			animation: scaleUp 1200ms infinite forwards;
+
+			// Remove the spacing on the last dot
+
+			&:not(:last-child){
+				margin-right: 8px;
+			}
+		}
+
+		// For the colors of the dots
+		// For the different shades of blue
+
+		.dot__blue{
+
+			// For the light blue on the left of the container
+
+			&--light{ 
+				animation-delay: 100ms;
+				background-color: $light-blue; 
+			}
+
+			// For the mid blue in the middle of the container
+
+			&--mid{ 
+				animation-delay: 200ms;
+				background-color: $blue;
+			}
+
+			// For the dark blue on the right side of the container
+
+			&--dark{ 
+				animation-delay: 300ms;
+				background-color: $dark-blue;
+			}
+		}
+
+		// For the text below the loading dots
+		// This is variabled, but we just need to set the type size and adjust the spacing
+
+		&--text{
+			margin-top: 12px;
+			font-size: $eighteen;
+		}
+	}
+}

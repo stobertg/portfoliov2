@@ -1,0 +1,37 @@
+
+// For the styling of the victim on the map
+// This contains the heart icon containing the beating animation
+
+@keyframes heart-beat {
+
+	0%, 30%, 60%, 100%  { transform: scale( 1 );   }
+	15%, 45%, 80%       { transform: scale( 1.1 ); }
+}
+
+%heart-beat{ animation: heart-beat 3s forwards infinite; }
+
+// For the styling of the container with the heart icon
+
+.icon__victim{
+	@extend %display-flex;
+	@extend %flex-center-all;
+	@extend %heart-beat;
+	position: absolute;
+	top: 15px;
+	left: 12px;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border: 2px solid $red;
+	background: $white;
+	box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+
+	// For the heart icon in the middle of the container
+
+	svg{
+		width: 24px;
+		height: 22px;
+		fill: $red;
+		margin-top: 1px;
+	}
+}

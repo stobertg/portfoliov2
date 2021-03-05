@@ -1,0 +1,59 @@
+
+@import "./src/global-css/variables/variables";
+
+// For the styling of the current heart rate and range 
+// This is on the bottom of the container of the first card
+// Has the title on top, current heart rate on the left and the range on the right - this is the master container
+
+.cardiact__hr--bpm{
+	position: relative;
+	width: 100%;
+	font-size: $fourteen;
+}
+
+// For the container of the bpm info below the title
+
+.cardiact__hr--rate{
+	@extend %display-flex-space-between;
+	padding-top: 5px;
+
+	// For the main containers of content on the left and right side of the div
+	
+	> div{
+		@extend %display-flex;
+		@extend %flex-center-vertical;
+	}
+}
+
+// For the BPM container on the left side of the container
+
+.cardiact__hr{
+
+	// For the number of your current heart rate
+
+	&--number{
+		margin-right: 8px;
+		font-size: 35px;
+	}
+
+	// Container with the bpm and the heart icon below the bpm
+
+	&--numbpm{
+		margin-top: 5px;
+		color: $red;
+		font-size: $twelve;
+
+		// For the heart icon below the " bpm " text
+
+		.icon{
+			min-width: 18px;
+			width: 18px;
+		}
+	}
+}
+
+// For the font size of the range text on the right of the container
+
+.cardiact__hr--range{
+	font-size: $twelve;
+}

@@ -1,0 +1,55 @@
+
+// For the styling of the typing animation 
+// This is the animating dots on the last message in the list
+
+@keyframes message-type {
+
+	0%   { opacity: 0.3; }
+	50%  { opacity: 1;   }
+	100% { opacity: 0.3; }
+}
+
+%animate-type{ animation: message-type 1s infinite forwards; }
+
+// For the container of the animated dots
+
+.message__typing{
+	@extend %display-flex;
+	@extend %flex-center-all;
+	position: relative;
+	width: 30px;
+
+	// For the 3 dots in the middle
+
+	&:before, &:after, span{
+		@extend %animate-type;
+		width: 8px;
+		height: 8px;
+		background: #808080;
+		border-radius: 50%;
+		opacity: 0.3;
+	}	
+
+	// For the dot on the left
+
+	&:before{
+		content: ' ';
+		position: absolute;
+		left: 0px;
+	}
+
+	// For the middle dot
+
+	span{
+		animation-delay: 100ms;
+	}
+
+	// For the dot on the right
+
+	&:after{
+		content: ' ';
+		position: absolute;
+		animation-delay: 200ms;
+		right: 0px;
+	}
+}

@@ -1,0 +1,20 @@
+
+// For the global styling of forms
+
+form{
+
+	legend{
+		@extend %display-flex;
+		width: 100%;
+		padding-bottom: 16px;
+	}
+}
+
+// Remove the default styling for the input fields
+
+input{
+	outline: none;
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}

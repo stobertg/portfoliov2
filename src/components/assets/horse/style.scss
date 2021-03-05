@@ -1,0 +1,182 @@
+
+@import "./src/global-css/variables/variables";
+
+.horse{
+	position: relative;
+    width: 477px;
+    height: 400px;
+    padding-top: 79px;
+    transform: scale(0.35);
+
+	// For the container of the legs on the bottom of the container
+
+	&__bottom{
+		position: relative;
+		width: 350px;
+		height: 170px;
+		transform: translateY(-32px);
+
+		// For the legs to sit on the right side of the container
+
+		&--legs{
+			position: absolute;
+			width: 250px;
+			top: 0;
+			right: 0;
+		}
+	}
+
+	svg{
+		fill: #fff;
+	}
+}
+
+
+
+
+
+
+// .animation__horse{
+// 	@extend %display-flex;
+// 	@extend %flex-center-all;
+// 	position: relative;
+// 	width: 100vw;
+// 	height: 100vh;
+// }
+
+
+// For the animation of the horse
+
+.animation__horse{
+	@extend %display-flex;
+	@extend %flex-center-all;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	// background: $white;
+	z-index: 9999;
+}
+
+
+
+
+
+
+
+
+
+.horse__contain{
+	@extend %display-flex;
+	@extend %flex-center-all;
+	position: relative;
+	height: 200px;
+}
+
+// For the horse lines, animating in the background
+
+.horse__lines{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 55%;
+	z-index: 0;
+
+	@keyframes horse__line {
+		0%   { transform: translateX(-100%); }
+		100%   { transform: translateX(100%); }
+	}
+
+	// For the lines animating in the background
+
+	span{
+		position: absolute;
+		width: 40px;
+		height: 4px;
+		border-radius: 5px;
+		overflow: hidden;
+		animation: horse__line 700ms infinite cubic-bezier(.73,.25,.28,.73) forwards; 
+
+		// For the line to animate within the container
+
+		&:before{
+			content: ' ';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: #232323;
+			animation: horse__line 700ms infinite cubic-bezier(.73,.25,.28,.73) forwards; 
+			transform-origin: center left;
+			transform: translateX(-100%);
+		}
+
+		&:first-child{
+			top: -20px;
+			left: 150px;
+		}
+
+		&:nth-child(2){
+			top: 40px;
+    		right: 100px;
+    		animation-delay: 200ms;
+
+			&:before{
+				animation-delay: 200ms;
+			}
+		}
+
+		&:nth-child(3){
+			top: 110px;
+    		left: 50px;
+    		animation-delay: 400ms;
+
+			&:before{
+				animation-delay: 400ms;
+			}
+		}
+
+		&:nth-child(4){
+			right: 50px;
+			bottom: 0;
+			animation-delay: 600ms;
+
+			&:before{
+				animation-delay: 600ms;
+			}
+		}
+
+		&:nth-child(5){
+			right: 50px;
+			top: 0;
+			animation-delay: 800ms;
+
+			&:before{
+				animation-delay: 800ms;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,68 @@
+
+@import "./src/global-css/variables/variables";
+
+// For the info of the project
+// This is typically below the first part of the project page - the hero of the project
+// This contains a description of the project, project details, and roles and skills
+
+.page__info{
+	@extend %body-font;
+	@extend %display-flex-space-between;
+	@extend %flex-center-vertical;
+	position: relative;
+	width: 100%;
+	padding: 100px 0;
+	color: $white;
+
+	// For the container of all of the content within the master container
+
+	&--content{
+		position: relative;
+		max-width: 900px;
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	// For the title of the info section
+	// This is the bolded text on the top of the container
+
+	&--title{
+		position: relative;
+		margin-bottom: 32px;
+		font-size: $thirty;
+		line-height: 1.5;
+	}
+
+	// For the styling of the paragraph within the page info
+	// We need to change the default font size and to a serif font
+
+	p{
+		font-size: $twenty-two;
+		line-height: 1.75;
+	}
+
+	// For the lists below the main text of the project info
+	// This contains the Project details and the Roles and Skills
+
+	&--details{
+		@extend %display-flex;
+		position: relative;
+		margin-top: 50px;
+	}
+
+	&--list{
+		position: relative;
+
+		// For the spacing between each container, excluding the last container
+
+		&:not(:last-child){ margin-right: 100px; }
+
+		// For the list title, on the top of the container
+
+		> div{ margin-bottom: 12px; }
+
+		// For the spacing between the list items
+
+		li{ padding: 8px 0; }
+	}
+}

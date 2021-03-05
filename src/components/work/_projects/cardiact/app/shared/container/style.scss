@@ -1,0 +1,61 @@
+
+@import "./src/global-css/variables/variables";
+
+// For the master container of the content within the Static screen flow
+// This flow is not shown by default, this is shown when the user clicks the toggle button, on the bottom of the app
+
+.cardiact{
+	@extend %header-font;
+
+	// For the styling of the master container, that holds all the content below the header
+	// This is the wrapper of all the content below the header, on the top of the app
+
+	&__wrap{
+		position: relative;
+		width: 100%;
+		height: calc(100% - 121px);
+		background: #f7f4f4;
+		overflow: scroll;
+		-webkit-overflow-scrolling: touch;
+  		scrollbar-width: none;
+	}
+
+	// For the container of all the content of the screen
+
+	&__content{
+		position: relative;
+		padding: 10px 2.5% 25px;
+		overflow: hidden;
+		
+		// For the spacing of the " I need Help " button on the bottom of the container
+
+		.btn{ margin-top: 10px; }
+
+		// If there is an intro in that specific screen
+		// This sits on the top of the container, before the main content of the the screen
+
+		&--intro{
+			width: 92%;
+			margin: 0 auto;
+			padding: 15px 0 10px;
+
+			// For the spacing between the header and the text below
+
+			h2{
+				margin-bottom: 7px;
+				font-size: $twenty-two;
+			}
+
+			// Change the font size of the default paragraph for the app
+
+			p{ 
+				font-size: $twelve; 
+				line-height: 1.5;
+			}
+		}
+
+		// Remove the visiablity of the scroll bar for presentation purposes
+
+		&::-webkit-scrollbar { width: 0 !important }
+	}
+}

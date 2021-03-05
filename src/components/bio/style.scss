@@ -1,0 +1,86 @@
+
+@import "./assets/scss/variables/variables";
+
+// For the styling of the bio
+// Currently, this is only used on the About page
+
+.about{
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	color: $white;
+	background: $dark-blue;
+
+	// For the main container that hols all of the content
+
+	&__content{
+		display: flex;
+		align-items: center;
+		position: relative;
+		width: 100%;
+		min-height: 100vh;
+		pointer-events: none;
+
+		.content__title{
+			font-size: 40px;
+			margin-bottom: 0px;
+		}
+	}
+
+	// For the bio text container within the left container
+
+	.about__bio{
+		position: relative;
+		max-width: 1125px;
+		width: 90%;
+		margin: 0px auto;
+		padding: 150px 0px;
+		z-index: 10;
+	}
+
+	// Raise the font size of the p for the about page
+
+	p{
+		font-size: 30px;
+		line-height: 1.75;
+		font-family: 'Noto Sans TC', sans-serif;
+		font-weight: 300;
+	}
+}
+
+// For the background of the about page - sits behind the bio text
+
+.about__bg{
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100vh;
+	z-index: 0;
+
+	&--animation{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 900px;
+		height: 500px;
+		background: #364050;
+		z-index: 0;
+	}
+
+	// For the diamond on the top of the square
+
+	&:after{
+		content: ' ';
+		position: absolute;
+		width: 450px;
+		height: 450px;
+		transform: rotate(45deg);
+		border: 1px solid rgba($white, 0.1);
+	}
+}

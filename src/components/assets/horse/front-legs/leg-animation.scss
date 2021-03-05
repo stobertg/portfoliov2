@@ -1,0 +1,91 @@
+
+// For the animations of the front lengs of the horse
+// This is for the leg on the left side of the horse
+
+@keyframes rotate__leg {
+	0%   { transform: rotate( -40deg ); }
+	60%  { transform: rotate( 70deg ); }
+	100% { transform: rotate( -40deg ); }
+}
+
+// Master container of the leg
+
+.horse__leg--front{
+	animation: rotate__leg 800ms infinite cubic-bezier(.73,.25,.28,.73); 
+	transform-origin: top center;
+
+	// For the animation of the middle part of the leg
+
+	@keyframes rotate__leg--mid {
+		0%, 35%  { transform: rotate( -80deg ); }
+		70%, 80% { transform: rotate( 0deg ) }
+		100% { transform: rotate( -80deg ) }
+	}
+
+	// Apply the keyframes above to this container
+
+	.horse__leg--bottom{
+		animation: rotate__leg--mid 800ms ease infinite; 
+		transform-origin: top center;
+	}
+
+	// For the animation of the foot
+
+	@keyframes rotate__leg--foot {
+		0%  { transform: rotate( 0deg );  }
+		20% { transform: rotate(-100deg); }
+		100% { transform: rotate( 0deg);   }
+	}
+
+	// Applt the keyframes above to this container
+
+	.horse__leg--foot{
+		animation: rotate__leg--foot 800ms ease infinite; 
+		transform-origin: top center;
+	}
+}
+
+// This is for the leg on the right side of the horse
+
+@keyframes rotate__leg--back {
+	0%   { transform: rotate( -25deg ); }
+	35%  { transform: rotate( 80deg ); }
+	100% { transform: rotate( -25deg ); }
+}
+
+// Master container of the leg
+
+.horse__leg--back{
+	animation: rotate__leg--back 800ms infinite cubic-bezier(.73,.25,.28,.73); 
+	transform-origin: top center;
+
+	// For the animation of the middle part of the leg
+
+	@keyframes rotate__leg--mid-back {
+		0%, 20%  { transform: rotate( -100deg ); }
+		50%, 70% { transform: rotate( 0deg ) }
+		100% { transform: rotate( -100deg ) }
+	}
+
+	// Apply the keyframes above to this container
+
+	.horse__leg--bottom{
+		animation: rotate__leg--mid-back 800ms ease infinite; 
+		transform-origin: top center;
+	}
+
+	// For the animation of the foot of the horse
+
+	@keyframes rotate__leg--foot-back {
+		0%  { transform: rotate( 0deg );  }
+		10% { transform: rotate(-100deg); }
+		100% { transform: rotate( 0deg);   }
+	}
+
+	// Apply the keyframes to the this container
+
+	.horse__leg--foot{
+		animation: rotate__leg--foot-back 800ms ease infinite; 
+		transform-origin: top center;
+	}
+}

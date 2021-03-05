@@ -1,0 +1,171 @@
+
+@import "../../../scss/variables/variables";
+
+// For the shared styling of the headers
+
+.wag__comp .heading{
+	@extend %display-flex-space-between;
+	@extend %flex-center-vertical;
+	position: relative;
+
+	// Conditional styling, based on what's underneath the title
+
+	&+ p{
+		margin-top: 8px;
+	}
+
+	.btn{
+		font-size: initial;
+	}
+
+	&__text > div{
+		@extend %display-flex;
+		@extend %flex-center-vertical;
+
+		// If there an an icon, we need to make the spacing rules to seperate form the text
+
+		.icon{
+			margin-right: 12px;
+		}
+	}
+
+	// Marketing Heading sizes
+	// This is the heading only allowed for hero sections, at the top of the page
+	// This is contained within the hero image section
+
+	&__marketing{
+
+		// For the largest type size within the marketing headings
+		// This automatically scale down on tablet breakpoints
+
+		&--large{
+			font-size: $eighty;
+			line-height: 1.1;
+
+			// For the subtitle below the title - This is smaller to convey hierarchy
+
+			.heading__sub--title{
+				font-size: $fifty;
+			}
+
+			// Decrease the size of this text on mobile
+
+			@media(max-width: $tablet){
+				font-size: $thirty-six;
+
+				// Decrease the size of the subtitle text for devices
+
+				.heading__sub--title{
+					font-size: $thirty-six;
+				}
+			}
+
+			& + .heading__marketing--large{
+				line-height: 0.8;
+			}
+		}
+
+		// For the second largest type size within the marketing headings
+		// This automatically scale down on tablet breakpoints
+
+		&--medium{
+			font-size: $sixty-four;
+			line-height: 1.1;
+
+			// For the subtitle below the title - This is smaller to convey hierarchy
+
+			.heading__sub--title{
+				font-size: $fifty;
+			}
+
+			// Decrease the size of this text on mobile
+
+			@media(max-width: $tablet){
+				font-size: $thirty-six;
+			}
+		}
+
+		// Small headings
+		// This automatically scale down on tablet breakpoints
+
+		&--small{
+			font-size: $fifty;
+			line-height: 1.1;
+
+			// For the subtitle below the title - This is smaller to convey hierarchy
+
+			.heading__sub--title{
+				font-size: $thirty-six;
+			}
+
+			// Decrease the size of this text on tablet breakpoints
+
+			@media(max-width: $tablet){
+				font-size: $fifty;
+			}
+		}
+
+		// The smallest type allowed for marketing headings 
+		// This automatically scale down on tablet breakpoints
+
+		&--x-small{
+			font-size: $thirty-six;
+			line-height: 1.2;
+
+			// For the subtitle below the title - This is smaller to convey hierarchy
+
+			.heading__sub--title{
+				font-size: $twenty-eight;
+			}
+
+			// Decrease the size of this text on mobile
+
+			// @media(max-width: $tablet){
+			// 	font-size: $twenty-eight;
+			// }
+		}
+	}
+
+	// Normal heading sizes 
+	// For the largest general heading
+	// This automatically scale down on tablet breakpoints
+
+	&__large{
+		font-size: $twenty-eight;
+		line-height: 1.3;
+
+		// For the subtitle below the title - This is smaller to convey hierarchy
+
+		.heading__sub--title{
+			font-size: $twenty-two;
+		}
+
+		// Decrease the size of this text on mobile
+
+		@media(max-width: $tablet){
+			font-size: $twenty-two;
+		}
+	}
+
+	// Medium headings 
+	// This does not scale down on tablet breakpoints
+
+	&__medium{
+		font-size: $twenty-two;
+		line-height: 1.3;
+
+		// Decrease the size of this text on mobile
+
+		@media(max-width: $tablet){
+			font-size: $twenty-two;
+		}
+	}
+
+	// Small headings 
+	// This does not scale down on tablet breakpoints
+
+	&__small{
+		font-size: $eighteen; 
+		line-height: 1.33;
+	}
+}

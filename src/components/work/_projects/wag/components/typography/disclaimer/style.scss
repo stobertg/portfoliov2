@@ -1,0 +1,12 @@
+
+@import "./assets/scss/variables/variables";
+
+// For the styling of Disclaimer text
+// This is the smallest type size we can used on our site - at 14px
+
+.text__disclaimer{
+	position: relative;
+	max-width: 800px;
+	font-size: $fourteen !important;
+	line-height: 1.5;
+}

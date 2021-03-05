@@ -1,0 +1,86 @@
+
+@import "./src/global-css/variables/variables";
+
+// For the styling of the header in the CardiAct app
+// This is the content in red on the top of the iphone
+
+.cardiact__header{
+	position: relative;
+	background: $red;
+	width: 100%;
+	padding-top: 19px;
+	z-index: 10;
+
+	// For the global styling of the tabs
+	// This was originally created for the tabs on the CardiAct project
+
+	.tabs{
+		font-size: $fourteen;
+
+		// Display the items evenly within the container
+
+		.list__inline{
+			@extend %display-flex-space-between;
+		}
+
+		// For the master container of the tabs
+		// This container is to display the content in the center of the container
+
+		li{
+			@extend %display-flex;
+			@extend %flex-center-horizontal;
+			position: relative;
+			width: calc(33% - 10px);
+			margin: 0px 3px;
+			padding: 11px 0px;
+			cursor: pointer;
+			overflow: hidden;
+
+			// Line on the bottom that shows when a tab is selected or hovered
+
+			&:after{
+				@extend %speed-3ms;
+				content: ' ';
+				position: absolute;
+				transform: translateY(100%);
+				width: 100%;
+				height: 4px;
+				background: #f6f6f6;
+				bottom: 0px;
+				left: 0px;
+				border-radius: 4px 4px 0px 0px;
+			}
+
+			// Show the underline on hover
+
+			&:hover, &.selected{
+
+				&:after{
+					transform: translateY(0px);
+				}
+			}
+		}
+
+		// For the styling of the individual tabs
+
+		&__btn{
+			@extend %display-flex;
+			@extend %flex-center-vertical;
+			line-height: 1;
+
+			// For the main content holder of the icon and text within the tabs
+
+			div{
+				@extend %display-flex;
+				@extend %flex-center-vertical;
+			}
+
+			// For the icons on the left, within the tabs
+
+			.icon{
+				margin-right: 4px;
+				color: $white;
+			}
+		}
+	}
+}

@@ -1,0 +1,53 @@
+
+@import "./assets/scss/variables/variables";
+
+// For the styling of the quantity buttons
+
+.pagination{
+	@extend %display-flex;
+	@extend %flex-center-vertical;
+	position: relative;
+	white-space: nowrap;
+	margin: 0 12px;
+
+	// For the master container of the all the content within the pagination
+
+	&__wrap{
+		@extend %display-inline-flex;
+		@extend %flex-center-vertical;
+
+		// Remove the default speed for the icon so we don't get the awkward tansition
+		// for the disabled buttons
+
+		.btn__circle .icon{
+			@extend %speed-0ms;
+		}
+	}
+
+	// Spacing changes for the input container - remove the bottom margin
+	// And add spacing to the right, considering the text
+
+	.input__wrap{
+		margin: 0 8px 0 0;
+	}
+
+	// Change the default styling of the input container
+
+	.input__contain{
+		min-height: 44px;
+
+		// Make the label invisible but needs to be kept for accessibility
+
+		label{
+			visibility: hidden;
+		}
+
+		// Changes from the default styling of input
+		// For spacing and center the text
+
+		input{
+			padding: 10px 4px;
+			text-align: center;
+		}
+	}
+}

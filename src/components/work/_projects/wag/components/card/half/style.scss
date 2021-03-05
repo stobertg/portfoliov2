@@ -1,0 +1,44 @@
+
+@import "../../../scss/variables/variables";
+
+.content__walgreens .card__half{
+	@extend %display-flex-wrap;
+	position: relative;
+	width: calc(50% - 12px);
+
+	&--center{
+		@extend %flex-center-all;
+	}
+
+	&--center-top{
+		@extend %flex-center-all;
+		align-self: flex-start;
+	}
+
+	&--center-right{
+		justify-content: flex-end;
+	}
+
+	&--center-bottom{
+		@extend %flex-center-all;
+		align-self: flex-end;
+	}
+
+	&--top{
+		align-self: flex-start;
+	}
+
+	&--top-right{
+		align-self: flex-start;
+		justify-content: flex-end;
+	}
+
+	&--bottom{
+		align-self: flex-end;
+	}
+
+	&--bottom-right{
+		align-self: flex-end;
+		justify-content: flex-end;
+	}
+}

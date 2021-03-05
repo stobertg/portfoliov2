@@ -1,0 +1,46 @@
+
+@import "./assets/scss/variables/variables";
+
+// For the styling of the quantity buttons
+// This has the plus and minus button on the left and the right and the input in the center
+// For the master container of the quanitity buttons
+
+.quantity__wrap{
+	@extend %display-inline-flex;
+	@extend %flex-center-vertical;
+
+	// We have to remove the default speed becasue they are conflicting
+
+	.btn__circle .icon{
+		@extend %speed-0ms;
+	}
+
+	// Change the default spacing of the input wrap - spacing on the side of the input
+	// Remove the default margin on the bottom
+
+	.input__wrap{
+		margin: 0 8px 0;
+	}
+
+	// For the styling of the input in the center of the container
+
+	.input__contain{
+		min-height: auto;
+
+		// Remove the label for this input, so that it's screen reader only
+		// Still need it for accessibility
+
+		label{
+			visibility: hidden;
+		}
+
+		// For the styling changes of the input
+		// This is a special cases needed for the quanitiy input
+
+		input{
+			padding: 10px 4px;
+			min-height: 44px;
+			text-align: center;
+		}
+	}
+}

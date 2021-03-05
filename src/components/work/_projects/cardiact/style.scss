@@ -1,0 +1,170 @@
+
+@import "../../../global-css/variables/variables";
+
+// This is special styling for the cardiact page
+// These have simple changes such as color changes to make the branding of the project
+
+.page__cardiact{
+
+	// For the hero background color to be red, within the CardiAct project
+
+	.project__hero{
+		background: #a22a2b !important;
+
+		// For the circular background in the hero seciton
+		// This is the curve that sits in the background of the hero
+
+		&:before{
+			transform: translate3d(0, -597px, 0);
+			content: ' ';
+			position: absolute;
+			top: 0;
+			width: 2460px;
+			height: 1440px;
+			background: $white;
+			border-radius: 0 0 0 100%;
+		}
+
+		// Remove the default slant in the background
+		// This is because it is replaced by the curved background
+
+		&:after{
+			display: none;
+		}
+	}
+
+	// For the color of the intro section to be red
+
+	.project__hero:after, .project__info{
+		background: #a22a2b;
+	}
+
+	// For the color of the slant on top of a white <section> tag
+
+	.project__stage--white:before{
+		background: #a22a2b;
+	}
+
+	// For the color of the slant on top of a gray <section> tag
+
+	.project__stage--gray:before{
+		background: $white;
+	}
+}
+
+// For the process part of the project - below the style guide
+// This consist of the process used troughout the project to the final deliverable
+
+.process{
+	@extend %display-flex-wrap;
+	position: relative;
+
+	// For the container of the content within the process master container
+
+	&__item{
+		@extend %display-flex-wrap;
+		width: 100%;
+
+		// For the spacing between the sections
+
+		&:not(:last-child){
+			margin-bottom: 100px;
+		}
+	}
+
+	// For the title of the process section
+	// This contains the circle on the left and the text title on the right
+
+	&__title{
+		@extend %display-flex;
+		@extend %flex-center-vertical;
+		font-size: $thirty;
+		padding: 6px 0;
+		margin-bottom: 20px;
+	}
+
+	// For the circular icon within the title section - to the left of the title
+	// This contains 3 circles that show the focus of each step to get to the final deliverable
+	// This is the master container that dictates the background to be wider than the circle container
+
+	&__progress{
+		@extend %display-flex;
+		@extend %flex-center-all;
+		position: relative;
+		width: 56px;
+		height: 56px;
+		margin-right: 15px;
+		background: $white;
+		border-radius: 50%;
+		box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+
+		// For the container of the 3 circles wihtin the progress container
+
+		span{
+			@extend %display-flex;
+			@extend %flex-center-all;
+			position: relative;
+			width: 40px;
+			height: 40px;
+
+			// Shared styling for the three circles
+
+			&, &:before, &:after{
+				border-radius: 50%;
+				border: 2px solid $red;
+			}
+
+			// For the circles in the middle of the container
+
+			&:before, &:after{
+				content: ' ';
+				position: absolute;
+			}
+
+			// For the size of the middle circle
+
+			&:after{
+				width: 28px;
+				height: 28px;
+			}
+
+			// For the size of the inner circle
+
+			&:before{
+				width: 16px;
+				height: 16px;
+			}
+		}
+	}
+
+	// For the images container
+
+	&__images{
+		position: relative;
+
+		&--three{
+
+			img{
+
+				&:nth-child(n+2){
+					position: absolute;
+				}
+
+				&:nth-child(2){
+					top: 200px;
+					left: 100px;
+					width: 200px;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+

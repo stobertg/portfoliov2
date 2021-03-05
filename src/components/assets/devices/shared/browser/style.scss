@@ -1,0 +1,223 @@
+
+@import "./src/global-css/variables/variables";
+
+// For the browser on the top of the screen
+// This holds the URL and time stamps
+
+.device__browser{
+	@extend %header-font;
+	@extend %display-flex-wrap;
+	@extend %flex-center-horizontal;
+	position: relative;
+	width: 100%;
+	padding: 14px 0 10px;
+	background: $dark-blue;
+	color: $white;
+
+	&--info{
+		width: 100%;
+
+		.device__info{
+			width: 98%;
+			margin: 0 auto 6px;
+
+			strong{
+				font-weight: 400;
+			}
+		}
+
+		.device__dt{
+			transform: scale(0.7);
+			transform-origin: center left;
+
+			&--time{
+				margin-left: 0;
+			}
+		}
+
+		.device__signal{
+			transform: scale(0.8);
+			transform-origin: center right;
+		}
+	}
+
+	&--contain{
+		@extend %display-flex-space-between;
+		position: relative;
+		width: 95%;
+		margin: 0 auto;
+	}
+
+	// For the minimize, close and expand buttons on the right side of the container
+
+	&--size{
+		@extend %display-flex;
+		@extend %flex-center-vertical;
+		position: relative;
+
+		span{
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+
+			&:not(:last-child){
+				margin-right: 8px;
+			}
+
+			&:first-child{ background: $red; }
+			&:nth-child(2){ background: $yellow; }
+			&:last-child{ background: $green; }
+		}
+	}
+
+	// For the master containers of the section containing the url
+
+	&--actions{
+		@extend %display-flex-space-between;
+		@extend %flex-center-vertical;
+		position: relative;
+		width: 100%;
+	}
+
+	// For the actions on the left and right side of the container
+
+	&--nav{
+		@extend %display-flex;
+		@extend %flex-center-vertical;
+		position: relative;
+
+		> div:not(:last-child){
+			margin-right: 24px;
+		}
+
+		.browser__icon{
+			@extend %display-flex;
+			@extend %flex-center-all;
+			
+			svg{
+				fill: #6592ef;
+				width: 16px;
+			}
+
+			&--arrow{
+				width: 6px;
+
+				&:nth-child(2) svg{
+					fill: #707170;
+				}
+			}
+
+			// For the share and add icon on thee left side othe container
+			// For proportion, e need to make these a tad smaller than the default
+
+			&--share, &--add{
+				width: 14px;
+			}
+		}
+	}
+
+	// For the url, in the center of the container
+	// this contains the url address in the middle, reload on the right, and text size on the left
+
+	&--url{
+		@extend %display-flex-space-between;
+		@extend %flex-center-vertical;
+		position: relative;
+		width: 55%;
+		padding: 10px 12px;
+		background: #444e61;
+		border-radius: 8px;
+		line-height: 1.3;
+		font-size: 12px;
+
+		// For the text on the left side of the container
+		// Make the first " A " smaller
+
+		&-text{
+
+			span:first-child{
+				margin-right: 1px;
+				font-size: 12px;
+			}
+		}
+
+		// For the reload icon on the right of the container
+
+		&-reload{
+			@extend %display-flex;
+			@extend %flex-center-all;
+			position: relative;
+			width: 12px;
+			height: 12px;
+
+			// For the circle in the center of the container
+
+			&:before{
+				content: ' ';
+				position: absolute;
+				bottom: 0;
+				width: 83.4%;
+				height: 83.4%;
+				border-radius: 50%;
+				border: solid 1px #000;
+				border-color: $white transparent $white $white ;
+				transform: rotate(-18deg);
+			}
+
+			// For the arrows on the top of the container
+
+			span{
+				position: absolute;
+				top: 0;
+				width: 6px;
+				height: 6px;
+				border-radius: 2px;
+				border: solid 1px #000;
+				border-color: $white $white transparent transparent;
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

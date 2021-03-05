@@ -1,0 +1,64 @@
+
+@import "./src/global-css/variables/variables";
+
+// For the styling of the victim container within the header of the app
+// This has the victim image on the left, name to the right and, in the Emergency Mode, the arrow icon on the right
+
+.cardiact__victim{
+	font-size: $fourteen;
+	color: $white;
+	width: 95%;
+	padding: 10px 0px 0px;
+	margin: 0px auto;
+
+	// For the container of the content within the header
+	// This contains the image, name and icon on the right
+
+	&--name{
+		@extend %display-flex-space-between;
+		@extend %flex-center-vertical;
+		padding: 5px;
+		border-radius: 44px;
+		background: #ee000b;
+		cursor: pointer;
+
+		// Arrow icon on the right of the container
+
+		.icon{
+			min-width: 13px;
+			width: 13px;
+			height: 10px;
+			margin-right: 10px;
+		}
+	}
+
+	// For the container of the victim image and name
+
+	figure{
+		@extend %display-flex;
+		@extend %flex-center-vertical;
+	}
+
+	// For the headshot if the victim on the left of the container
+
+	.img__victim{
+		width: 40px;
+		height: 40px;
+		margin-right: 10px;
+		border-radius: 50%;
+		overflow: hidden;
+	}
+
+	// For the name to the right of the victim image
+
+	figcaption{
+		padding-top: 1px;
+
+		// For the text below the name
+
+		div:nth-child(2){
+			font-size: $fourteen;
+			padding-top: 3px;
+		}
+	}
+}

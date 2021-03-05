@@ -1,0 +1,135 @@
+
+@import "../../scss/variables/variables";
+
+// For the global styling of the alerts
+// This is the styling for the Standard Alerts, containing the colored background container
+// Contains the dismiss icon on the right of the container, with the execption of the Red alert
+
+.wag__comps .alert{
+	@extend %display-flex;
+	@extend %display-flex-space-between;
+	position: relative;
+	width: 100%;
+	border-radius: $border-radius;
+	color: $white;
+
+	// inherit the text color of the links
+	// We need to change this because by default, the links are blue
+
+	a{ color: inherit; }
+
+	// Main container of the alert
+	
+	&__text{
+		@extend %display-flex;
+		@extend %flex-center-vertical;
+		width: 100%;
+		max-width: 95%;
+		padding: 20px;
+
+		// For the icon within the text container
+
+		> .icon{
+			margin-right: 20px;
+			min-width: 30px;
+			width: 30px;
+		}
+
+		// Change the default line height within the p tag of alerts
+		// Makes the height shorter
+
+		p{ font-size: 16px; line-height: 1.5em; }
+
+		// For alert text changes on mobile breakpoints
+		// This will have the icon to the left, text to the right and the close icon on the top right of the container
+
+		@media(max-width: $mobile){
+			width: 100%;
+
+			// Change the font size
+
+			p{ font-size: $sixteen; }
+		}
+	}
+
+	// For the close button on the top right of the container
+
+	.btn__dismiss{
+		position: absolute;
+		top: 0;
+		right: 0;
+		color: $white;
+	}
+
+	// For the different colors of the alerts
+	// Error Alert
+
+	&__red{ 
+		background: $red;      
+	}
+
+	// Information alert
+
+	&__blue{ 
+		background: $blue;  
+	}
+
+	// Information alert
+
+	&__green{ 
+		background: $green; 
+	}
+
+	// Information alert
+
+	&__yellow{
+		background: $yellow;
+
+		// Change the color of the text and the icons to black
+
+		&, .btn__dismiss{
+			color: $black;
+		}
+
+		.btn__dismiss:before{
+			background: rgba($white, 0.3);
+		}
+	}
+
+	// If there are alerts below each other
+
+	+ .alert{
+		margin-top: 20px;
+	}
+
+	// For the animation if an alert is closed
+	// This only works with the alerts that have the close button on the top right of the alert
+
+	&__close{
+		display: none;
+	}
+
+	// This is for the minimal alerts
+	// Here we need to remove the color background and apply those colors to the text
+
+	&__minimal{
+		background: none;
+
+		// Remove the padding on the alert text so that the text is left justified
+
+		.alert__text{
+			padding: 0;
+
+			// For the icon within the text container
+
+			> .icon{
+				margin-right: 12px;
+			}
+		}
+
+		&.alert__blue   { color: $blue;      }
+		&.alert__green  { color: $green;     }
+		&.alert__red    { color: $red;   }
+		&.alert__yellow { color: $skin-tone; }
+	}
+}

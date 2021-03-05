@@ -1,0 +1,37 @@
+
+@import "./assets/scss/variables/variables";
+
+// For the styling of the Terms and Conditions components
+// This is a numbered list that sits side by side until mobile, where it become full width
+
+.terms{
+
+	// For the spacing between the title and the main content
+
+	.heading{ margin-bottom: 20px; }
+
+	// If the "Download PDF" text is present
+
+	&__download{ margin-bottom: 20px; }
+
+	// For the changes to the default styling of the list within the terms and conditions
+
+	.list__contain{
+
+		// Show that the numbers of the list items are spaced evenly, left to right
+
+		ul{ @extend %display-flex-space-between; }
+
+		// For the size of the container that hold the text
+
+		li{
+			width: calc(50% - 50px);
+
+			// On mobile we will go full width
+
+			@media(max-width: $mobile){
+				width: 100%;
+			}
+		}
+	}
+}

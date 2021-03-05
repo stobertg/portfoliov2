@@ -1,0 +1,57 @@
+
+// Import all variables into this file so that we can keep everything in one file
+// This will allow us to share this file, in one line, in the react components
+
+@import 'align';
+@import 'animations';
+@import 'type';
+
+// For the breakpoints
+
+$mobile: 767px;
+
+// For the color of the devices
+
+$iphone-black: #1e1e1e;
+
+// For the colors used within the site
+
+$white: #FFF;
+$dark-gray: #404040;
+$light-gray: #efefef;
+$black: #404040;
+$line: #C4C4C4;
+
+// For my brand colors
+
+$dark-yellow: #d1c33a;
+$yellow: #f3ea19;
+$blue: #1669f3;
+$dark-blue: #2b3340;
+$light-dark-blue: #364050;
+$green: green;
+$orange: #f37123;
+
+// CardiAct
+
+$red: #b30109;
+$cardi-red: #de212a;
+$cardi-dark-red: #cc161f;
+$cardi-gray: #f6f6f6;
+$cardi-light-gray: #808080;
+$cardi-border-radius: 15px;
+
+// Font sizes
+
+$twelve: 0.750em;
+$fourteen: 0.875em;
+$sixteen: 1rem;
+$eighteen: 1.125rem;
+$twenty-two: 1.375rem;
+$thirty: 1.875rem;
+$fifty: 3.125rem;
+
+// Border Radius
+
+$border-radius: 20px;
+$border-radius-alt: 30px;

@@ -1,0 +1,53 @@
+
+// For the shared styling of the icons within the site
+
+.icon{
+	@extend %display-flex-wrap;
+	@extend %flex-center-all;
+	position: relative;
+	min-width: 44px;
+	width: 44px;
+	height: 44px;
+	background: inherit;
+	color: inherit;
+	overflow: hidden;
+
+	// For the svgs within the icon
+
+	svg{
+		position: absolute;
+		width: 119%;
+		fill: currentColor;
+	}
+
+	// For the smaller icons
+
+	&__sm{
+		min-width: 20px;
+		width: 20px;
+		height: 20px;
+
+		// For the thin icons
+		// These are the same height but the icons need a tighter width for porportion
+
+		&--thin{
+			min-width: 17px;
+			width: 17px;
+
+			svg{
+				width: 148%;
+			}
+
+			&.icon__avatar{
+				
+				svg{
+					width: 119%;
+				}
+			}
+		}
+
+		&--wide{
+			min-width: 26px;
+		}
+	}
+}

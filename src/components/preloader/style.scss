@@ -1,0 +1,51 @@
+
+@import "./src/global-css/variables/variables";
+
+@keyframes animateBg {
+	0%   { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+@keyframes horse__bg {
+	0%   { transform: scale(0); opacity: 0; }
+	100% { transform: scale(1); opacity: 1; }
+}
+
+// For the styling of the preloader
+// This is a global component that shows up on every page, before the page is loaded
+
+.preloader{
+	@extend %display-flex;
+	@extend %flex-center-all;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 9999;
+
+	// For the background that animates in before the css animation, in the center of the container
+	// This animates into the screen first
+
+	&:before{
+		content: ' ';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: #151515;
+		animation: animateBg 300ms cubic-bezier(.21,.71,.52,.99) forwards; 
+	}
+
+	.horse__contain{
+		transform: scale(0.7);
+	}
+	
+	.animation__horse{
+		transform: scale(0);
+		opacity: 0;
+		animation: horse__bg 1s cubic-bezier(0.770, 0.000, 0.175, 1.000) forwards; 
+		animation-delay: 300ms;
+	}
+}
+
+

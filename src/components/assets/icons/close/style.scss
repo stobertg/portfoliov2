@@ -1,0 +1,29 @@
+
+@import "./assets/scss/variables/variables";
+
+// For the styling of the icon close
+// This is the x, in the center on the container
+
+.icon__close{
+
+	// Shared styling betwen the lines
+
+	&:before, &:after{
+		content: ' ';
+		position: absolute;
+		width: 18px;
+		height: 2px;
+		border-radius: 2px;
+		background: $black;
+	}
+
+	// Creating the " X "
+
+	&:before{
+		transform: rotate(45deg);
+	}
+
+	&:after{
+		transform: rotate(-45deg);
+	}
+}

@@ -1,0 +1,16 @@
+
+// For the styling of the header within the static flow
+
+.cardiact__static{
+
+	// Remove the background and icon from the top of the header 
+	// This is the victim's headshot and name, shared from the Emergency flow
+
+	.cardiact__victim--name{
+		background: none;
+
+		.icon{
+			display: none;
+		}
+	}
+}

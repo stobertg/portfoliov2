@@ -1,0 +1,149 @@
+
+@import "../../scss/variables/variables";
+
+// For the styling of the tabs
+// These could be a infinite amount of tabs that are in a horizontal direction
+
+.wag__comps .tabs{
+
+	// For the master container of the tabs
+	// This contains the tabs on the top of the container and the associated panel on the bottom of the container
+
+	&__contain{
+		@extend %display-flex-space-between;
+		@extend %flex-center-vertical;
+		flex-wrap: nowrap;
+		position: relative;
+		padding: 0 1px;
+
+		// For the wrapper of the tabs
+		// This is needed for the full-width tabs that span the entire screen
+		// While maintaining the border on the bottom
+
+		&--wrap{
+			border-bottom: $gray-border;
+		}
+
+		// For the master container of the tabs
+		// This is for the tabs on the top of the container, going from left-to-right
+
+		ul{
+			@extend %display-flex;
+			flex-wrap: nowrap;
+			padding: 1px 1px 0;
+			margin-right: 12px;
+			overflow: scroll;
+			-webkit-overflow-scrolling: touch;
+
+			// For the styling of the individual tab buttons 
+
+			button{
+				@extend %speed-3ms;
+				padding: 18px 0;
+
+				// For the line on the bottom of the container
+				// This shows up on hover and once the individual tab is selected
+
+				&:after{
+					@extend %speed-3ms;
+					content: ' ';
+					position: absolute;
+					bottom: 0;
+					width: 100%;
+					height: 4px;
+					background: $light-blue;
+					border-radius: 3px 3px 0 0;
+					transform: scale(0,1);
+				}
+
+				// When the tab is selected, we need to change the color of the line to black
+				// We also need to show the text and black and remove the ability to click
+				// To show that it is selected
+
+				&[aria-selected="true"]{
+					color: $black !important;
+					pointer-events: none;
+
+					// Change the color of the line on the bottom
+
+					&:after{
+						background: $black;
+						transform: scale(1,1);
+					}
+				}
+
+				// Specific to hover events
+				// Hovering is different from being selected, because we are showing that it's clickable
+
+				&:hover, &:focus{
+					color: $light-blue;
+
+					// Show the line at the bottom of the container on hover
+
+					&:after{
+						transform: scale(1,1);
+					}
+				}
+
+				// This is an important styling for the tabs system
+				// Seems like we have conflicting click event and this styling removes that bug
+
+				span{
+					pointer-events: none;
+				}
+			}
+		}
+
+		// For the container of the text within the tab items
+
+		li{
+			white-space: nowrap;
+
+			// Add spacing for all the list items except for the last item on the list
+
+			&:not(:last-child){
+				margin-right: 25px;
+			}
+
+			// If there is additional content within the li,
+			// Such as (100) to the right of the text
+
+			span + span{
+				margin-left: 5px;
+			}
+		}
+
+		// This is for the option to add the neutral background to the content below the tab header
+		// This is also add some additional spacing
+
+		.tab__content{
+			position: relative;
+			width: 100%;
+			padding: 50px 0;
+			background: $neutral;
+		}
+	}
+
+	// For the content on the bottom of the container
+	// This is the content container attached to the tabs
+
+	&__content{
+		padding: 24px 0;
+
+		// Conditional statement that allows for the changing of the background color
+		// This depends on design needs and is an option feature - but can be the only other background
+		// Besides a white background
+
+		&--neutral{
+			background: $neutral;
+		}
+	}
+
+	// Special styling for tabs that are needed to go the full width of the site
+	// While maintaing the background color going full 10vw
+	// This is typically in the Rx flow or contianed within modals
+
+	&__full .tabs__item{
+		@extend %site-width;
+	}
+}

@@ -1,0 +1,255 @@
+
+@import "./src/global-css/variables/variables";
+
+// For the master container of the graph part of the heart rate card
+// This contains the graph, time on the bottom, and heart rate on the right
+
+.cardiact__hr--history{
+	position: relative;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+// For the timeline on the bottom of the container
+// This contains the time from 12am to 6pm
+
+.cardiact__hr--timeline{
+
+	// For the master container of the list on the bottom
+
+	ul{
+		@extend %display-flex-space-between;
+		width: 88%;
+		padding: 6px 0;
+		margin-left: 5px;
+		color: #888;
+		font-size: 9px;
+		text-transform: uppercase;
+	}
+
+	// For the individual times throughout the day
+
+	li{
+		width: 25%;
+		padding: 0 5px;
+	}
+}
+
+// For the flux in the heart rate on the right of the cotainer
+// This shows the number 100 on the top and 60 on the bottom
+
+.cardiact__hr--flux{
+	@extend %display-flex;
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	padding-bottom: 25px;
+	color: #888;
+	font-size: 9px;
+	text-align: right;
+	z-index: 2;
+
+	// For the container of the numbers
+	// This needs to be in a ul for scalablity in the future 
+
+	ul{
+		@extend %display-flex-space-between;
+		flex-direction: column;
+	}
+}
+
+// This is the styling for the heart rate chart within the Status Screen
+// This has the red lines within the center of the graph
+
+.cardiact__hr--check{
+	@extend %display-flex;
+	position: relative;
+	width: 52%;
+	height: 75px;
+	margin: 0 auto;
+	z-index: 10;
+
+	// For the initial styling of the red bars within the graphs
+	// This is the base setting so all we have to do is declare the heights of the individual columns
+
+	span{
+		display: block;
+		width: 4px;
+		min-height: 4px;
+		margin: 2px 0;
+		border-radius: 4px;
+		background: $red;
+	}
+
+	// For the master container of the bars to make up the graph
+
+	ul{
+		@extend %display-flex;
+		@extend %flex-center-vertical;
+		height: 100%;
+		margin-left: 2px;
+	}
+
+	// For the container of the individual bars
+
+	li{
+		padding: 0 1px;
+
+		// For the first column
+
+		&:first-child span:nth-child(2){ 
+			height: 20px; 
+		}
+
+		// For the second column
+
+		&:nth-child(2) span{ 
+			height: 50px; 
+		}
+
+		// For the third column
+
+		&:nth-child(3) span:first-child{ 
+			height: 30px; 
+		}
+
+		// For the fourth column
+
+		&:nth-child(4) span{
+			margin-top: 20px;
+			height: 25px;
+		}
+
+		// For the fifth column
+
+		&:nth-child(5) span{ 
+			height: 20px; 
+		}
+
+		// For the sixth column
+
+		&:nth-child(6) span{
+			margin-top: 15px;
+			height: 20px;
+		}
+
+		// For the seventh column
+
+		&:nth-child(7) span:nth-child(2){ 
+			height: 15px; 
+		}
+
+		// For the eighth column
+
+		&:nth-child(8) span{
+			margin-bottom: 10px;
+			height: 25px;
+		}
+
+		// For the 9th column
+		// This falls inbetween the hour lines so we need to add subtle spacing to the left for alignment
+
+		&:nth-child(9){
+			margin-left: 1px;
+
+			span{
+				height: 25px;
+			}
+		}
+
+		// For the tenth column
+
+		&:nth-child(10) span{ 
+			height: 40px; 
+		}
+
+		// For the eleventh column
+
+		&:nth-child(11) span:first-child{ 
+			height: 20px; 
+		}
+
+		// For the twelfth column
+
+		&:nth-child(12) span:first-child{
+			margin-top: 10px;
+			height: 10px;
+		}
+
+		// For the thirteenth column
+
+		&:nth-child(13) span{
+			margin-top: 15px;
+			height: 10px;
+		}
+
+		// For the fourteenth column
+
+		&:nth-child(14) span:first-child{
+			margin-top: 15px;
+			height: 15px;
+		}
+
+		// For the fifteenth column
+
+		&:nth-child(15) span{
+			height: 20px;
+		}
+
+		// For the sixteenth column
+
+		&:nth-child(16) span:last-child{
+			height: 15px;
+			margin-bottom: 10px;
+		}
+
+		// For the seventeeth column
+
+		&:nth-child(17) span:last-child{
+			margin-top: 10px;
+			height: 15px;
+		}
+
+		// For the eighteenth column
+
+		&:nth-child(18) span:last-child{
+			height: 30px;
+		}
+	}
+}
+
+// For the styling of the grids within the background
+// This is the divider lines between the time sections, that are on the bottom of the container
+// These are the 4 dotted lines
+
+.cardiact__hr--grid{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	// For the master container of the dotted lines
+
+	ul{
+		@extend %display-flex;
+		width: 88%;
+		height: 100%;
+		margin-left: 5px;
+	}
+
+	// For the styling of the dotted lines
+
+	li{
+		width: 25%;
+		height: 100%;
+		border-right: 1px dotted $light-gray;
+
+		// Add a border on the left only on the first child, to align with the 12am time
+
+		&:first-child{
+			border-left: 1px dotted $light-gray;
+		}
+	}
+}

@@ -1,0 +1,31 @@
+
+// Text styles for font semantics
+// For the styling of emphasis text - by default it will be the serif font
+
+em{
+	font-family: 'Crimson Text', serif;
+	font-weight: 400;
+
+	// For the em that need to be italic
+	
+	&.em__italic{
+		font-style: italic;
+	}
+}
+
+// For the default styling of bolded text
+
+strong{ 
+	@extend %header-font; 
+	font-weight: 900;
+}
+
+::selection {
+  background: $yellow;
+  color: $black;
+}
+
+::-moz-selection {
+  background: $yellow;
+  color: $black;
+}

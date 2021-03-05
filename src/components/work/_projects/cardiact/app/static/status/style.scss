@@ -1,0 +1,36 @@
+
+@import "./src/global-css/variables/variables";
+
+// This is the styling for the Heart Rate Cards  
+// This is on the bottom of the Status Screen, right above the " I Need Help " button
+
+.cardiact__hr--var{
+
+	// For the number and the ms on the bottom of the card
+
+	span{
+
+		// For the text on the left text - this is the HRV number
+
+		&:first-child{
+			font-size: $twenty-two;
+			margin-right: 3px;
+		}
+
+		// For the MS text that aligns to the bottom of the container
+
+		&:last-child{
+			align-self: flex-end;
+			font-size: $fourteen;
+		}
+	}
+
+	// This is specical to the ECG part of the Status Flow
+
+	div:nth-child(2){
+		margin-top: 7px;
+		font-size: $twelve;
+		color: #a0a0a0;
+	}
+}
+

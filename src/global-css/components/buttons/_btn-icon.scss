@@ -1,0 +1,45 @@
+
+// For the styling of buttons that contain icons only
+// These are rounded buttons with the icons in the center of the button
+
+.btn__icon{
+	@extend %display-flex;
+	@extend %flex-center-all;
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	overflow: hidden;
+
+	// For smaller buttons
+
+	&--sm{
+		width: 31px;
+		height: 31px;
+
+		// For the icon within the container
+
+		.icon{
+			width: 20px;
+		}
+	}
+
+	// For the icon within the button
+
+	.icon svg{
+		width: 58%;
+		fill: $white;
+	}
+
+	// For the info icon
+	// This is a different icon without a background color, with the " i " text in the center
+
+	&--info{
+		border: 1px solid $light-gray;
+
+		// Change the font family for the " i "
+
+		span{
+			@extend %body-font;
+		}
+	}
+}

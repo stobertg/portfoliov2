@@ -1,0 +1,100 @@
+
+@import "./src/global-css/variables/variables";
+
+// Variable
+
+%show-confirm{
+	@extend %show-vertical-animation;
+	pointer-events: auto;
+	opacity: 1;
+}
+
+// Styling for the button container on the bottom confirming you're with the victim
+// This shows up when the user clicks on the Confirm You're With the Victim button
+
+.cardiact__confirm{
+	@extend %speed-3ms;
+	@extend %set-vertical-animation-subtle;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding-bottom: 10px;
+	color: $white;
+	pointer-events: none;
+	opacity: 0;
+	z-index: 15;
+	
+	// For the container of the content within the master container
+	// This contains the confirm buttons asking if you are there with or without an AED
+
+	.btn__contain{
+		padding: 40px 15px 20px;
+		border-radius: $cardi-border-radius;
+		background: $cardi-dark-red;
+
+		// If there is a title for the container
+		// The title for this button container is "Are you with the victim?"
+
+		&-title{
+			margin-bottom: 15px;
+			text-align: center;
+		}
+	}
+
+	// Show this section when the user clicks the "Confirm You're with Victim button"
+	// This is the button on the bottom of the map page
+
+	&.show__confirm{
+		@extend %show-confirm;
+	}
+
+	// For the AED icons within the buttons
+	// This icon is on the left, in the button
+
+	.icon__aed{
+		position: relative;
+		width: 30px;
+		height: 30px;
+		margin-right: 8px;
+		border-radius: 50%;
+		border: 1px solid $white;
+		font-size: 10px;	
+		overflow: hidden;	
+
+		// For the icon that shows no aed
+		// Line runs through the center of the icon
+
+		&--no:after{
+			content: ' ';
+			position: absolute;
+			transform: rotate(40deg);
+			width: 1px;
+			height: 102%;
+			background: $white;
+		}
+	}
+
+	// For the close icon on the top right of the container
+
+	.btn__close{
+		position: absolute;
+		top: 5px;
+		right: 11px;
+		width: 30px;
+		height: 30px;
+
+		// Change the color of the background that shows on hover
+
+		&:before{
+			background: $cardi-red;
+		}
+	}
+}
+
+// Show this section when the user clicks the "Confirm You're with Victim button"
+// This is the button on the bottom of the map page
+
+.show__confirm .cardiact__confirm{
+	@extend %show-confirm;
+}

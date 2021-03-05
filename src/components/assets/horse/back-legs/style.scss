@@ -1,0 +1,34 @@
+
+// Import the animations 
+
+@import 'leg-animation';
+
+// For the styling of the hind legs
+// These are the legs that are on the back of the horse
+
+.horse__leg--hind{
+	position: absolute;
+    top: -31px;
+    right: 13px;
+    width: 65px;
+    height: 167px;
+
+	// For the middle of the leg
+
+	&-bottom{
+		position: absolute;
+	    top: 97px;
+	    left: 38px;
+	    width: 18px;
+	    height: 95px;
+	}
+
+	// For the foot of the hind leg
+
+	&-foot{
+		position: absolute;
+	    width: 27px;
+	    bottom: 0;
+	    right: -1px;
+	}
+}

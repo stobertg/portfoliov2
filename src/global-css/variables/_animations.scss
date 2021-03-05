@@ -1,0 +1,40 @@
+	
+%speed-0ms	{ transition:0ms;    }
+%speed-3ms	{ transition:300ms;  }
+%speed-6ms	{ transition:600ms;  }
+%speed-1s	{ transition:1000ms; }
+
+// Delays
+
+	%delay-150ms { transition-delay:150ms; }
+
+// For Easing Animation
+
+	%cubic{ transition-timing-function:cubic-bezier(0.770, 0.000, 0.175, 1.000); }
+
+// For shared animations
+	
+	// Basic vertical animations
+
+	%set-vertical-animation{ transform:translateY(101%); }
+	%set-vertical-animation-mid{ transform:translateY(50%); }
+	%set-vertical-animation-subtle{ transform:translateY(25%); }
+	%show-vertical-animation{ transform:translateY(0px); }
+
+	// Detailed animations
+
+	@keyframes animate__in {
+
+		0%   { transform: translateY( 30px ); opacity: 0; }
+		100% { transform: translateY( 0px  ); opacity: 1; }
+	}
+
+	%animate__in { animation: animate__in 600ms ease forwards; }
+
+	@keyframes animate__in--deep {
+
+		0%   { transform: translateY( 100% ); opacity: 0; }
+		100% { transform: translateY( 0px  ); opacity: 1; }
+	}
+
+	%animate__in--deep { animation: animate__in--deep 600ms ease forwards; }

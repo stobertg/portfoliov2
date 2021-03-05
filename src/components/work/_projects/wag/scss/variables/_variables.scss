@@ -1,0 +1,82 @@
+
+@import 'align';
+@import 'type';
+@import 'animations';
+
+// -- Breakpoints -- //
+
+	$site-width: 1140px;
+	$mobile: 767px;
+	$tablet: 1023px;
+	$desktop: 1024px;
+
+// -- Variables -- //
+
+	$fourteen: .875rem;
+	$sixteen: 1rem;
+	$eighteen: 1.125rem;
+	$twenty-two: 1.375rem;
+	$twenty-five: 1.563rem;
+	$twenty-eight: 1.75rem;
+	$thirty: 1.875rem;
+	$thirty-six: 2.250rem;
+	$fifty: 3.125rem;
+	$sixty-four: 4rem;
+	$eighty: 5rem;
+	$hundred: 6.250rem;
+
+// -- Brand colors -- //
+
+	$white: #fff;
+	$black: #24272a;
+
+	// Primary
+			
+	$red: #e63214;	
+	$tint-blue: #a0ebff;
+	$dark-blue: #323264;
+	$neutral: #f5f5f0;
+
+	// Secondary
+	
+	$dark-red: #aa0a0a;	
+	$blue: #284b9b;
+	$light-blue: #0082aa;
+	$skin-tone: #bc5724;
+
+	// Seasonal
+
+	$green: #00853e;
+	$orange: #dc7643;
+	$pink: #f5466e;
+	$yellow: #ffcd00;
+	$holiday-red: #d91734;
+
+	// Grays
+
+	$disabled-gray: #d9dada;
+	$stroke: #a5aaaa;
+	$gray: #737878;
+	$dark-gray: #414646;
+	$type-gray: #0A1414;
+
+// -- Birchbox -- //
+
+	$bbx-coral: #FFA983;
+	$bbx-neutral: #FFF6F2;
+
+// -- Borders, Border Radius, and Drop Shadow -- //
+
+	$gray-border: 1px solid $stroke;
+	$drop-shadow: 0 1px 6px 1px rgba(64, 64, 64, 0.15);
+	$border-radius: 8px;
+	$border-radius-alt: 16px;
+
+// This is a global variable that dictates the width of all content within the site
+// For the default site width for reponsiveness
+
+	%site-width{
+		max-width: $site-width;
+		width: 90%;
+		margin: 0 auto;
+	}

@@ -1,0 +1,116 @@
+
+// For the bottom of the Map page
+// For the master container of the direction and confirm interaction
+
+.cardiact__map-bottom{
+	@extend %speed-3ms;
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 162px;
+	padding-bottom: 23px;
+	pointer-events: none;
+	z-index: 12;
+
+	// For the container of the buttons within the turn-by-turn flow, below the directions
+	// This shows up when the user clicks the "I'm with Victim" button on the main map screen
+	// This container has the "I'm with Vitim" and the "Back to Map" buttons
+
+	.btn__contain-bottom{
+		@extend %speed-3ms;
+		@extend %set-vertical-animation-subtle;
+		position: absolute;
+		bottom: 20px;
+		width: 100%;
+		pointer-events: none;
+		opacity: 0;
+		z-index: 0;
+	}
+
+	// For the button that shows up when the user get close to the victim
+	// This is for the "Confirm You're with Victim" button
+
+	@keyframes show-btn {
+
+		// Set the animation
+		// Button is set to be animated up and not be clickable until it shows up
+
+		0%, 45% { 
+			transform: translateY(15px);
+			pointer-events: none;
+			opacity: 0;
+		}
+
+		// End state of the animation
+		// The button shows up and becomes clickable
+
+		46%, 99% { 
+			transform: translateY(0px);
+			pointer-events: auto;
+			visibility: visible;
+			opacity: 1;
+		}
+
+		// the outro animation
+		// This adds a subtle animation up and fades
+
+		100%{
+			transform: translateY(-10px);
+			visibility: hidden;
+			opacity: 0;
+		}
+	}
+
+	// Animation - Show the button confirm once the responder is close
+
+	.btn__confirm{ 
+		animation: show-btn 30s forwards infinite; 
+		visibility: hidden; 
+	}
+
+	// !-- Animation for the expanded directions
+	// This shows when the user clicks the address on the bottom of the map page
+	// This shows the turn by turn directions and the button container on the bottom
+
+	&.show__dir-expanded{
+		height: 100%;
+
+		// Remove the default "I'm with Victim" button on top of the address
+		// This button doesn't show until the user is close to the victim
+
+		.btn__confirm{
+			@extend %speed-0ms;
+			height: 0px;
+			overflow: hidden;
+			opacity: 0;
+		}
+
+		// Animate the height of the directions and place it in the center of the container
+
+		.cardiact__dir{
+			position: absolute;
+			top: 25%;
+			left: 0; 
+			right: 0;
+			margin: auto;
+			height: 280px;
+		}
+
+		// Show the turn-by-turn directions below the address
+
+		.dir__contain{
+			@extend %delay-150ms;
+			opacity: 1;
+		}
+
+		// Show the button container of the bottom
+		// This contains the buttons "I'm with Victim" and "Back to Map"
+
+		.btn__contain-bottom{
+			@extend %show-vertical-animation;
+			@extend %delay-150ms;
+			pointer-events: auto;
+			opacity: 1;
+		}
+	}
+}

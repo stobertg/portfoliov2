@@ -1,0 +1,52 @@
+
+@keyframes animate__knight {
+	0%  { transform: rotate(-3deg); }
+	50% { transform: rotate(0deg); }
+	100% { transform: rotate(-3deg); }
+}
+
+// For the styling of the knight
+
+.knight{
+	animation: animate__knight 800ms ease infinite;
+
+	&__saddle{fill:#e4e4e4;}
+	&__saddle--light{fill:#404040;}
+	&__person{fill:#e4e4e4;}
+}
+
+
+.horse__knight{
+	position: absolute;
+    top: 0;
+    left: 114px;
+    width: 150px;
+    z-index: 10;
+}
+
+@keyframes animate__lance {
+	0%  { transform: rotate(0deg); }
+	50% { transform: rotate(-2deg); }
+	100% { transform: rotate(0deg); }
+}
+
+// For the styling of the sholder with the lance
+
+.knight__lance{
+	position: absolute;
+    right: 26px;
+    top: 0px;
+    width: 540px;
+    animation: animate__lance 800ms ease infinite;
+
+    &--shoulder{
+    	position: absolute;
+	    top: 46px;
+	    right: 0;
+	    width: 55px;
+    }
+
+    svg{
+    	fill: #e4e4e4;
+    }
+}

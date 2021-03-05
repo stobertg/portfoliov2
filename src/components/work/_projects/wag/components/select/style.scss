@@ -1,0 +1,23 @@
+
+@import "./assets/scss/variables/variables";
+
+// For the styling of the select input within form fields
+
+select{
+	position: relative;
+	background: none;
+	-webkit-appearance: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.input__select{
+
+	&--descp{
+		margin-bottom: 8px;
+	}
+
+	.icon{
+		pointer-events: none;
+	}
+}

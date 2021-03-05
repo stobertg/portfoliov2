@@ -1,0 +1,48 @@
+
+// For the default styling of paragraphs
+
+p{ 
+	font-size: $twenty-two;
+	line-height: 1.3; 
+
+	// Always attach spacing to the bottom of the container, except for the last p
+
+	&:not(:last-child){
+		margin-bottom: 20px;
+	}
+
+	// For the styling of links within a p container
+
+	a{
+		padding: 0;
+		overflow: hidden;
+
+		// For the underline on the bottom of the link
+		// This turns into a bar that covers the text on hover
+
+		&:after{
+			@extend %speed-3ms;
+			content: ' ';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: $black;
+			transform: translateY(95%);
+			transform-origin: bottom left;
+			z-index: -1;
+		}
+
+		// Animate the bar on hover
+
+		&:hover{
+			color: $white;
+
+			&:after{
+				transform: translateY(0px);
+				background: $black;
+			}
+		}
+	}
+}

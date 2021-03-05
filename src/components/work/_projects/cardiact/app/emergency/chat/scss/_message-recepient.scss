@@ -1,0 +1,32 @@
+
+// For the messages from the recipients
+// Messages in the gray background with the headshot on the left and the text on the right
+
+.message__recipient{
+
+	// For the master container of the text - text in gray
+
+	.cardiact__message{
+		color: $black;
+		background: #ECECEB;
+	}
+
+	// For the spacing between the headshot and the text
+
+	.img__headshot{
+		margin-right: 7px;
+	}
+
+	// For the spacing of the arrow attached to the message bubble
+
+	figcaption{
+		padding-left: 4px;
+
+		// Alignment and color of the arrow on the left of the message bubble
+
+		&:before{
+			left: 2px;
+			background: #ECECEB;
+		}
+	}
+}

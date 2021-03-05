@@ -1,0 +1,53 @@
+
+@import "../../scss/variables/variables";
+
+// For the styling of the breadcrumbs
+// These sit on the top left corner of each page, showing the link trail from where they are on the site
+
+.content__walgreens .breadcrumbs{
+	font-size: $sixteen;
+
+	// For the master container of the links
+
+	ul{
+		@extend %display-flex;
+	}
+
+	// For the container of the text and the arrow icon on the right
+
+	li, a{
+		@extend %display-inline-flex;
+		@extend %flex-center-vertical;
+	}
+
+	// For the spacing between links
+
+	li:not(:last-child){
+		margin-right: 7px;
+	}
+
+	// For the arrow icon on the right of the cotainer
+
+	.icon__arrow-right{
+		width: 12px;
+		min-width: 12px;
+		min-height: 15px;
+		margin-left: 5px;
+		padding-top: 2px;
+		color: $type-gray;
+	}
+
+	// Remove the right arrow on the last list item
+
+	li:last-child{
+		pointer-events: none;
+
+		// Change the color of the last item to show that it is not clickable
+
+		a{ color: $type-gray; }
+
+		// Remove the arrow
+
+		.icon{ display: none; }
+	}
+}

@@ -1,0 +1,69 @@
+
+@import "./src/global-css/variables/variables";
+
+// For the global styling of cards within the Status screens
+// These are used throughout the app - not on the emergency side, so these are specific to the Static screens
+
+.cardiact__card{
+	@extend %display-flex-wrap;
+	@extend %header-font;
+	position: relative;
+	width: 100%;
+	border-radius: 15px;
+	background: $white;
+
+	// For the spacing between cards
+
+	&:not(:first-child){
+		margin-top: 10px;
+	}
+
+	// For the master container of content within the cards
+
+	&--content{
+		@extend %display-flex-space-between;
+		width: 88%;
+		margin: 0 auto;
+		padding: 17px 0;
+	}
+
+	// For the header of the card
+	// This contains the icon, title, and time stamp on the right
+
+	&--header{
+		@extend %display-flex-space-between;
+		@extend %flex-center-vertical;
+		position: relative;
+		width: 100%;
+		margin-bottom: 20px;
+	}
+
+	// For the styling of the title of the card
+	// This is on the top left of the card - usually with an icon and text to the right
+
+	&--title{
+		@extend %display-flex;
+		@extend %flex-center-vertical;
+		position: relative;
+		color: $red;
+		font-size: $fourteen;
+
+		// For the spacing to the right of the icon - if there is one present
+		// The icon should be the first thing on the top left corner of the card
+
+		.icon{
+			min-width: 25px;
+			width: 25px;
+			height: 21px;
+			margin-right: 5px;
+		}
+	}
+
+	// For the styling time stamp
+	// This is typically on the top right container of the card
+
+	&--info{
+		padding-top: 1px;
+		font-size: $twelve;
+	}
+}

@@ -1,0 +1,134 @@
+
+@import "./src/global-css/variables/variables";
+
+// For the styling of the signlas on the top right side of devices
+// For the status symbols on the right of the speaker
+
+.device__signal{
+
+	// For the master container of the three symbols
+
+	ul{
+		@extend %display-flex;
+	}
+
+	li{
+		margin-left: 3px;
+
+		// Remove the marginon the first list item
+
+		&:first-child{
+			margin-left: 0px;
+		}
+	}
+
+	// Master container of the signal icon
+
+	.signal, .signal div{
+		position: relative;
+		height: 10px;
+
+		// For the bars on the far left and the far right
+
+		&:before, &:after{
+			content: ' ';
+			position: absolute;
+			width: 3px;
+			bottom: 0px;
+			border-radius: 1px;
+			background: $iphone-black;
+		}
+
+		&:before{
+			left: 0px;
+		}
+
+		&:after{
+			right: 0px;
+		}
+	}
+
+	.signal{
+		width: 15px;
+
+		&:before{
+			height: 3px;
+		}
+
+		&:after{
+			height: 9px;
+			opacity: 0.3;
+		}
+	}
+
+	// For the middle 2 bars
+
+	.signal div{
+		position: relative;
+		width: 7px;
+		margin: 0px auto;
+
+		&:before{
+			height: 5px;
+		}
+
+		&:after{
+			height: 7px;
+		}
+	}
+
+	// Master container of the wifi icon
+
+	.lte{
+		@extend %display-flex;
+		@extend %flex-center-vertical;
+		font-size: 10px;
+
+
+		em{
+			font-family: 'Noto Sans TC', sans-serif;
+		}
+	}
+
+	// Master container for the battery icon
+
+	.battery{
+		@extend %display-flex;
+		@extend %flex-center-vertical;
+		padding-right: 2px;
+
+		// For the container of the main battery
+
+		div{
+			@extend %display-flex;
+			@extend %flex-center-all;
+			position: relative;
+			width: 18px;
+			height: 10px;
+			border: 1px solid #808080;
+			border-radius: 3px;
+
+			&:after{
+				content: ' ';
+				position: absolute;
+				width: 60%;
+    			height: 6px;
+				background: $iphone-black;
+				border-radius: 1px;
+				left: 1px;
+			}
+		}
+
+		// For the nub on the right of the battery - shows the positive
+
+		&:after{
+			content: ' ';
+			position: absolute;
+			width: 1px;
+			height: 4px;
+			border-radius: 0px 2px 2px 0px;
+			background: #808080;
+			right: 0px;
+		}
+	}
+}

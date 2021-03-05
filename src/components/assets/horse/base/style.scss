@@ -1,0 +1,91 @@
+
+// For the styling of the base of the horse
+// This contains the head and the body
+
+@keyframes rotate__body {
+	0%  { transform: rotate( 0deg) scale(1, 1);  }
+	50% { transform: rotate( 6deg) scale(1.05, 1); }
+	100% { transform: rotate( 0deg) scale(1, 1); }
+}
+
+.horse__base{
+	position: relative;
+    width: 350px;
+    height: 189px;
+    animation: rotate__body 800ms ease infinite; 
+
+	// For the head on the left side of the container
+
+	&--head{
+		position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 154px;
+    	height: 134px;
+
+	    // For the master container of the head
+	    // This contains the face on the left and the neck on the right
+
+	    .horse__head{
+
+	    	@keyframes rotate__head {
+				0%  { transform: rotate( 0deg ) translate3d(0, 0, 0); }
+				50% { transform: rotate( 6deg ) translate3d(0, 6px, 0); }
+				100% { transform: rotate( 0deg  translate3d(0, 0, 0)); }
+			}
+
+	    	// For the face on the left of the container
+
+	    	&--face{
+	    		position: absolute;
+	    		top: 0;
+	    		left: 0;
+	    		width: 94px;
+	    		animation: rotate__head 800ms ease infinite; 
+	    	}
+
+	    	@keyframes rotate__neck {
+				0%  { transform: rotate( 0deg ) translate3d(0, 0, 0) scale(1, 1); }
+				50% { transform: rotate( -6deg ) translate3d(0, 2px, 0) scale(0.95, 0.95); }
+				100% { transform: rotate( 0deg ) translate3d(0, 0, 0) scale(1, 1); }
+			}
+
+	    	// For the neck on the right of the container
+
+	    	&--neck{
+	    		position: absolute;
+	    		bottom: 0;
+	    		right: 0;
+	    		width: 107px;
+	    		animation: rotate__neck 800ms ease infinite;
+	    	}
+	    }
+	}
+
+	// For the main part of the body on the right side of the container
+
+	&--body{
+		position: absolute;
+	    bottom: 0;
+	    right: 0;
+	    width: 260px;
+	}
+
+	@keyframes animate__tail {
+		0%  { transform: scale(1) rotate(-6deg); }
+		50% { transform: scale(1.1, 0.9) rotate(-6deg); }
+		100% { transform: scale(1) rotate(-6deg); }
+	}
+
+	// For the tail on the right site - attached to the body
+
+	&--tail{
+		position: absolute;
+	    width: 140px;
+	    right: -120px;
+	    top: 65px;
+	    transform: rotate(-6deg);
+	    animation: animate__tail 800ms ease infinite;
+	    transform-origin: top left;
+	}
+}

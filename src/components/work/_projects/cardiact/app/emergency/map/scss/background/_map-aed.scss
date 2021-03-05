@@ -1,0 +1,11 @@
+
+// For the placement of the aed on the map
+// This is in the top middle of the container - in Red
+
+.cardiact__map .cardiact__aed{
+	transform: translate3d(202px, 30px, 0px);
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 10;
+}

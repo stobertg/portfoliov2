@@ -1,0 +1,36 @@
+
+@import "./assets/scss/variables/variables";
+
+// For the stlying of components that deal with our partner brands
+
+.brand__logos{
+	@extend %display-flex-wrap;
+	position: relative;
+	width: 100%;
+
+	.heading{
+		width: 100%;
+		margin-bottom: 24px;
+	}
+
+	.list__contain{
+		width: 100%;
+	}
+
+	ul{
+		@extend %display-flex-space-between;
+		@extend %flex-center-vertical;
+	}
+
+	&--thumb{
+
+		li{
+			width: calc( 10% - 16px );
+			min-width: 85px;
+		}
+
+		img{
+			width: 65px;
+		}
+	}
+}

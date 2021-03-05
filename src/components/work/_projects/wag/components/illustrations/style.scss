@@ -1,0 +1,69 @@
+
+@import "../../scss/variables/variables";
+
+.illus__animation{
+	@extend %display-inline-flex;
+	@extend %flex-center-all;
+	position: relative;
+	padding: 50px 0;
+}
+
+.illus__blob{
+	@extend %display-flex;
+	@extend %flex-center-all;
+	position: absolute;
+	width: 600px;
+	height: 100%;
+	z-index: -1;
+
+	svg{
+		transform: scale(1.2);
+		width: 100%;
+	}	
+
+	&--tint-blue{
+		fill: rgba($tint-blue, 0.37);
+	}
+}
+
+
+.illus{
+
+	&__white{
+		fill: $white;
+	}
+
+	&__blue{
+		fill: $blue;
+
+		&--light{
+			fill: $light-blue;
+		}
+
+		&--dark{ 
+			fill: $dark-blue;
+
+			&-stroke{
+				stroke: $dark-blue;
+				fill: none;
+			}
+		}
+	}
+
+	&__skin--dark{
+		fill: #A24F14;
+	}
+
+	&__red{
+		fill: $red;
+	}
+
+	&__red--dark{ 
+		fill: $dark-red;
+
+		&-stroke{
+			stroke: $dark-red;
+			fill: none;
+		}
+	}
+}

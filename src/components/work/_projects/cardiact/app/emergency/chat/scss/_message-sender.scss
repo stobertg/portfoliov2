@@ -1,0 +1,39 @@
+
+// For the mesage from the person using the app - text in the blue background
+// This content aligns to the right of the container
+
+.message__sender{
+	@extend %flex-justify-right;
+
+	// For the main container of the message to the left of the headshot
+
+	.cardiact__message{
+		background: #5b95ca;
+		color: $white;
+	}
+
+	// Spacing between the headshot and the message
+
+	.img__headshot{
+		margin-left: 7px;
+	}
+
+	// Reverse the row so the headshot is on the right and the text is on the left
+
+	figure{
+		flex-direction: row-reverse;
+	}
+
+	// For the message container for the sender 
+
+	figcaption{
+		padding-right: 4px;
+
+		// For the arrow attached to the message
+
+		&:before{
+			right: 2px;
+			background: #5b95ca;
+		}
+	}
+}

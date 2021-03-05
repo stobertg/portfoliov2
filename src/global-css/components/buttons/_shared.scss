@@ -1,0 +1,105 @@
+
+// For the stylings of the buttons
+
+button{
+	position: relative;
+	border: none;
+	background: none;
+	outline: none;
+	padding: 0px;
+}
+
+// Shared button styles
+
+.btn{
+	@extend %speed-3ms;
+	@extend %display-flex;
+	@extend %flex-center-all;
+	position: relative;
+	height: 50px;
+	padding: 0 25px;
+	border-radius: 50px;
+	cursor: pointer;
+
+	// White background buttons
+
+	&__white{
+		background: $white;
+	}
+	
+	// Red background buttons
+
+	&__red{
+		background: $red;
+		color: $white;
+	}
+
+	&__blue{
+		background: $blue;
+		color: $white;
+	}
+
+	// For ghost buttons
+
+	&__no-style{
+		height: 30px;
+		box-shadow: none !important;
+	}
+
+	// Disabled buttons
+
+	&__disabled{
+		background: #e4e4e4;
+		color: #9c9c9c;
+		box-shadow: none !important;
+		pointer-events: none;
+	}
+
+	// For the close button
+	// Usually sits on the top right of a container
+
+	&__close{
+		@extend %display-flex;
+		@extend %flex-center-all;
+		position: relative;
+		cursor: pointer;
+
+		// For the background color that animates in on hover
+
+		&:before{
+			@extend %speed-3ms;
+			content: ' ';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: #f7f7f7;
+			border-radius: 50%;
+			transform: scale(0);
+		}
+
+		.icon{
+			@extend %speed-3ms;
+		}
+
+		// For the hover effects
+
+		&:hover{
+
+			.icon{
+				transform: scale(0.9);
+			}
+
+			&:before{
+				transform: scale(1);
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+

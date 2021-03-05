@@ -1,0 +1,136 @@
+
+@import "./src/global-css/variables/variables";
+
+.cardiact__victim--info{
+	margin-top: 10px;
+}
+
+// For the styling of the profile card used through out the app
+// This is used within the profile screen in the Static mode or the Status mode on the Emergency side
+
+.profile{
+
+	&__headshot{
+		position: relative;
+		width: 100%;
+		text-align: center;
+
+		// For the image in the circle container within the first card
+		// This is the headshot of the victim, with the light border around it
+		
+		&--img{
+			@extend %display-flex;
+			@extend %flex-center-all;
+			position: relative;
+			width: 80px;
+			height: 80px;
+			margin: 0 auto;
+			border-radius: 50%;
+			border: 2px solid $light-gray;
+			overflow: hidden;
+
+			// For the container of the header shot
+
+			div{
+				width: 68px;
+				height: 68px;
+				margin: 0 auto;
+				border-radius: 50%;
+				overflow: hidden;
+			}
+		}
+
+		// For the text below the headshot
+
+		figcaption{
+			padding-top: 10px;
+
+			// Set the styling of the immediate dic children within the figcaption container
+
+			> div{
+
+				// For the styling of the name
+
+				&:first-child{
+					font-size: $eighteen;
+					padding-bottom: 3px;
+				}
+
+				// For the styling of the age and gender
+
+				&:nth-child(n+2){
+					font-size: $twelve;
+				}
+			}
+		}
+	}
+
+	// For the forcable entry
+
+	&__entry{
+		margin-top: 10px;
+		color: $white;
+
+		// For the container of the text, with the green background
+
+		span{
+			display: inline-block;
+			padding: 10px 20px;
+			border-radius: 20px;
+			background: #5dab41;
+		}
+	}
+
+	// For the master container of the address, below the forcable entry
+	// This contains the pin icon with the address below the icon
+
+	&__address{
+		@extend %display-flex;
+		@extend %flex-center-horizontal;
+		width: 100%;
+		padding: 15px 0 5px;
+		font-size: $twelve;
+
+		// For the container of the address
+
+		&--item{
+			@extend %display-flex-wrap;
+			@extend %flex-center-horizontal;
+			position: relative;
+			width: 100%;
+			text-align: center;
+			line-height: 1.3;
+
+			// Make each line item go full width of the container
+
+			> div{
+				width: 100%;
+			}
+
+			// For the pin icon on the top
+
+			.icon{
+				margin: 0 auto;
+				min-width: 25px;
+				width: 25px;
+				height: 25px;
+			}
+		}
+	}
+}
+
+// For the list of the medical information, within the second card
+
+.cardiact__list{
+	margin-left: 18px;
+	padding-bottom: 5px;
+	list-style: disc;
+	font-size: $twelve;
+	line-height: 1.4;
+
+	// For the spacing of the individual line items
+
+	li{
+		padding: 2px 0;
+	}
+}

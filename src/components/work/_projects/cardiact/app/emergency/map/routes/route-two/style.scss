@@ -1,0 +1,36 @@
+
+// For the route going to the victim on the bottom of the map screen
+
+
+ @keyframes route-three{
+
+    0%, 50% { transform: translateX(0px); }
+    80%, 98% { transform: translateX(100px) scale(1); opacity: 1; }
+    99%, 100% { transform: translateX(100px) scale(0.4); opacity: 0; }
+}
+
+.route__two{
+	transform: translate3d(-64px, 171px, 0px);
+    position: absolute;
+    width: 133px;
+    height: 100px;
+    z-index: 8;
+
+    // For the styling of the routes
+
+    .route{
+    	background: #f1f1f1;
+
+    	// For the height of the route line on the left
+
+    	&__right{
+    		height: 100%;
+    	}
+
+        &__responder{
+            bottom: -12px;
+            left: 0;
+            animation: route-three 30s linear forwards infinite;
+        }
+    }
+}

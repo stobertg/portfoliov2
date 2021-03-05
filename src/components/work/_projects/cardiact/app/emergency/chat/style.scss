@@ -1,0 +1,17 @@
+
+@import "./src/global-css/variables/variables";
+
+// Chat Screen
+
+@import "scss/chat-main";
+
+// Text styling
+
+	@import "scss/time-stamp";
+	@import "scss/message-recepient";
+	@import "scss/message-sender";
+	@import "scss/typing-animation";
+
+// Bottom Controls
+
+	@import "scss/message-controls";

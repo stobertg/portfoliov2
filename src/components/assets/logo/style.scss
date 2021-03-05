@@ -1,0 +1,90 @@
+
+@import "./src/global-css/variables/variables";
+
+// For the styling of my logo
+// This logo is made in pure css - because I want to and I can do animations with it
+
+.logo{
+	position: relative;
+	width: 46px;
+	height: 70px;
+
+	// For the styling of the T
+
+	.tyler{
+		display: flex;
+		justify-content: center;
+		position: relative;
+		width: 100%;
+		height: 100%;
+
+		// For the shared styles of the psuedo elements
+
+		&:before, &:after{
+			content: ' ';
+			position: absolute;
+			background: $yellow;
+			z-index: 1;
+		}
+
+		// For the slant on the top of the T
+
+		&:before{
+			top: 8px;
+			width: 100%;
+			height: 10px;
+			transform: skewY(-20deg);
+			border-radius: 2px 2px 2px 2px;
+		}
+
+		// For the straight line below the T - the base of the T
+
+		&:after{
+			top: 13px;
+			width: 10px;
+			height: calc(100% - 16px);
+			transform: skewY(31deg);
+			border-radius: 0px 0px 2px 2px;
+		}
+	}
+
+	// For the styling of the S
+
+	.stober{
+		position: absolute;
+		width: 91%;
+		height: 43px;
+		bottom: 11px;
+
+		// For the shared styles of the psuedo elements
+
+		&:before, &:after{
+			content: ' ';
+			position: absolute;
+			height: 10px;
+		}
+
+		// For the middle slant
+
+		&:before{
+			top: 8px;
+			width: 100%;
+			background: $black;
+			transform: skewY(21deg);
+			border-radius: 0px 2px 2px 2px;
+			z-index: 0;
+		}
+
+		// For the bottom slant
+
+		&:after{
+			top: 26px;
+			right: 0;
+			width: 85%;
+			transform: skewY(-26deg);
+			background: $black;
+			border-radius: 2px 0px 2px 2px;
+			z-index: 2;
+		}
+	}
+}

@@ -1,0 +1,214 @@
+
+@import "../../scss/variables/variables";
+
+// For the master container of the list
+
+.wag__comp .list__contain{
+	position: relative;
+	width: 100%;
+
+	&--align{
+		margin-left: -15px;
+
+		&-center{
+			@extend %display-flex;
+			@extend %flex-center-horizontal;
+		}
+	}
+}
+
+// For the global styling of list components
+// For the master of unordered list - default styling
+
+.wag__comp ul{
+	@extend %display-flex-wrap;
+
+	// For the default spacing of any list items within a ul
+	// By default, these items are displayed inline and consistant spacing is needed between them
+
+	li:not(:last-child){
+		margin-right: 16px;
+	}
+
+	// By default, items that live inside of a ul do not have any styling
+	// We have this for the need to add bulleted and numbered list where needed on the site
+
+	&.list{
+
+		// Shared styling between the number and bulleted lists
+		// These either have the bullets or ordered numbers on the left side of the container
+
+		&__bullet, &__numbered{
+			margin-left: 15px;
+
+			// For the shared styling of the list items within the container
+
+			li{
+				display: list-item !important;
+				padding: 4px 0;
+				line-height: 1.4;
+			}
+
+			// If there is a list inside of a list, we need to indent those list items
+
+			ul{
+				margin-top: 8px;
+				font-size: $fourteen;
+
+				// Change the spacing of those items for heirarchy
+
+				li{
+					padding: 2px 0;
+				}
+			}
+		}
+
+		// Show the bullets for the bullet class
+
+		&__bullet{ 
+			list-style: disc; 
+			margin-left: 20px;
+		}
+
+		// Show the numbers for the numbered class
+
+		&__numbered{ 
+			list-style: decimal;
+			margin-left: 15px;
+		}
+
+		// For list wihtin inline content
+
+		&__inline{
+			@extend %display-flex-wrap;
+		}
+
+		// For the inline list that need to be aligned to the right
+		// This is if the grid doesn't accomidate the correct spacing for lis within a container
+
+		&__inline-right{
+			@extend %display-flex-wrap;
+			@extend %flex-justify-right;
+		}
+
+		// For the inline list that need to be aligned to the left
+		// This is if the grid doesn't accomidate the correct spacing for lis within a container
+
+		&__inline-left{
+			@extend %display-flex-wrap;
+			@extend %flex-justify-left;
+		}
+	}
+
+	// For the styling of list within a vertical implementation
+
+	&.list__vertical{
+
+		// Go full width with all the content within the container
+		// This part is for cases where there is a list within a list
+
+		> ul{
+			width: 100%;
+		}
+
+		// For the list items within the master container
+
+		li{
+			@extend %display-flex-wrap;
+			@extend %flex-center-vertical;
+			flex-flow: nowrap;
+			width: 100%;
+			padding: 4px 0;
+			margin-right: 0;
+			line-height: 1;
+
+			// This is for second level - if there is an icon, add the spacing to the right of the icon
+
+			> .icon{
+				margin-right: 16px;
+			}
+
+			// For links contained within a list items
+			// We need to make this full width and add a hover effect to show clickability
+
+			> a{
+				width: 100%;
+				padding: 12px 16px;
+
+				// For the background of the links - light background
+
+				&:before{
+					@extend %speed-3ms;
+					content: ' ';
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background: #f8f8f8;
+					border-radius: $border-radius;
+					opacity: 0;
+					z-index: 0;
+					transition-delay: 10ms;
+				}
+
+				// Bring the text content to the font so that the background (:before) doesn't cover it up
+
+				span{
+					z-index: 1;
+				}
+
+				// Show the background on hover or keyboard focus to show the clickability
+
+				&:hover, &:focus{
+
+					&:before{ opacity: 1; }
+				}
+			}
+		}
+
+		// If the list consist on only links, we need rto remove the default padding
+
+		&.list__links li{
+			padding: 0;
+		}
+
+		// For the spacing for the large conventions
+		// This only works if the list is declared as vertical
+
+		&--large li{
+			padding: 12px 0;
+			line-height: 1.4;
+		}
+	}
+}
+
+.wag__comp .list{
+
+	&__column{
+
+		&--3 li{
+			width: calc( 33% - 16px );
+
+			a{
+				width: 100%;
+			}
+
+			@media(max-width: $mobile){
+				width: 100%;
+				margin-bottom: 24px;
+
+				&:not(:last-child){
+					margin-right: 0;
+				}
+			}
+		}
+	}
+
+	&__vertical.list__column--2{
+
+		li{
+			width: 50%;
+		}
+	}
+}

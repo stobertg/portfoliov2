@@ -1,0 +1,14 @@
+
+@import "./src/global-css/variables/variables";
+
+@import "scss/map-main";
+		
+// Background elements
+
+	@import "scss/background/map-img";
+	@import "scss/background/map-aed";
+	@import "scss/background/map-victim";
+
+// Bottom Elements
+
+	@import "scss/bottom/bottom-container";

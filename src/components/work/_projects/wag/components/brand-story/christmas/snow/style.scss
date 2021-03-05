@@ -1,0 +1,51 @@
+
+@import "../../../../scss/variables/variables";
+
+@keyframes snow__fall {
+	0%   { transform: translateY(-110%) rotate(0deg); }
+	100% { transform: translateY(1500%) rotate(180deg); }
+}
+
+.snow__flake{
+	position: relative;
+	width: 40px;
+	height: 40px;
+	margin: 0 auto;
+	animation: snow__fall 5s linear infinite; 
+	transform: translateY(-110%);
+	
+
+	svg{
+		fill: $white;
+		
+	}
+}
+
+// For the styling of the snow
+
+.snow__contain{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	.grid{
+		height: 100%;
+
+		> .content{
+			flex-direction: row;
+			height: 100%;
+
+			&:nth-child(1) .snow__flake{ width: 25px; animation-delay: 3.5s; }
+			&:nth-child(2) .snow__flake{ width: 28px; animation-delay: 2s;   }
+			&:nth-child(3) .snow__flake{ width: 35px; animation-delay: 4s;   }
+			&:nth-child(4) .snow__flake{ 			  animation-delay: 1s; }
+			&:nth-child(5) .snow__flake{ 			  animation-delay: 3.2s; }
+			&:nth-child(6) .snow__flake{ width: 32px; animation-delay: 1.5s; }
+		}
+	}
+}
+
+
+

@@ -1,0 +1,25 @@
+// Our grid system
+
+// For 2 columns
+
+.list__column--2 li{
+	width: calc(50% - 12px);
+
+	@media(max-width: $mobile){
+		width: 100%;
+	}
+} 
+
+// For 4 columns
+
+.list__column--4 li{
+	width: calc(25% - 12px);
+
+	&:nth-child(n+5){
+		padding-top: 16px;
+	}
+
+	&:nth-child(4n+4){
+		margin-right: 0;
+	}
+}

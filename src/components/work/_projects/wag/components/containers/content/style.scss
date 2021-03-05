@@ -1,0 +1,184 @@
+
+@import "../../../scss/variables/variables";
+
+.content__walgreens .page__wrap{
+
+	.content{
+		justify-content: center;
+	}
+
+	.content__contain{
+		@extend %site-width;
+		padding: 40px 0;
+	}
+}
+
+// For the master container
+// For the spacing, if there is more than one content div within a given container
+
+.content__walgreens .content__wrap{
+	@extend %display-flex-wrap;
+
+	// For the background colors supported within this component
+
+	&--cream{
+		background: $neutral;
+
+		.card{
+			box-shadow: 0px 1px 6px 1px rgba(64,64,64,0.05);
+		}
+	}
+
+	&--dark-blue{
+		color: $white;
+		background: $dark-blue;
+	}
+
+	// For the grid system
+
+	.content__column{
+		@extend %display-flex-space-between;
+
+		&--2{
+
+			.content{
+				width: calc(50% - 16px);
+				margin-bottom: 0px;
+
+				@media(max-width: $mobile){
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+// This class is for content agnostic of a lists
+// Default list - should use this unless they need to be aligned to the left or the right
+
+.content__walgreens .content{
+	@extend %display-flex-wrap;
+	flex-direction: column;
+	position: relative;
+	width: 100%;
+	margin-bottom: 32px;
+
+	&:last-child{
+		margin-bottom: 0px;
+	}
+
+	// If the content is inline, we will recalibrate the default rendering
+
+	&__inline{
+		align-items: center;
+		flex-direction: row;
+
+		// Automate spacing for top-level div containers
+
+		> div{
+			margin-right: 25px;
+		}
+
+		.content__item{
+			width: auto;
+		}
+	}
+
+	&__contain{
+		@extend %display-flex-wrap;
+		position: relative;
+		width: 100%;
+	}
+
+	// This is the master container of any content block within the content container
+
+	&__item{
+		@extend %display-flex-wrap;
+		flex-flow: column;
+		position: relative;
+		width: 100%;
+		border-radius: $border-radius-alt;
+		line-height: 1.7;
+
+		&--inline{
+			@extend %display-flex;
+		}
+
+		// For the different types of font size that the component can adjust to
+
+		&--large{
+			font-size: $twenty-eight;
+
+			// For list that lives inside large font sizes
+			// This will chnage the default syling for lists
+
+			.list__vertical{
+				margin-left: 25px;
+
+				li{
+					padding: 3px 0;
+					line-height: 1.3;
+				}
+
+				span{
+					left: -6px;
+				}
+			}
+
+			// Change the font size on Tablet
+
+			@media(max-width: $tablet){
+				font-size: $twenty-two;
+			}
+
+			// Change the font size on mobile
+
+			@media(max-width: $mobile){
+				font-size: $eighteen;
+			}
+		}
+
+		// For the smallest largest text size supported for a content container
+
+		&--medium{
+			font-size: $eighteen;
+			line-height: 1.3;
+		}
+
+		// Colors supported
+
+		&--cream{
+			background: $neutral;
+		}
+	}
+
+	&__center{
+		@extend %display-flex;
+		@extend %flex-center-horizontal;
+		flex-direction: row;
+		text-align: center;
+		margin: 0 auto;
+
+		.content__item{
+			@extend %flex-center-horizontal;
+			flex-direction: row;
+			text-align: center;
+		}
+
+		.heading{
+			@extend %flex-center-horizontal;
+		}
+	}
+
+	&__spacing{
+
+		&--large.content__contain{
+			padding: 100px 0;
+
+			@media(max-width: $mobile){
+				padding: 50px 0;
+			}
+		}
+	}
+}	
+

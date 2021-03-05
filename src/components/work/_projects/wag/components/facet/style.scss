@@ -1,0 +1,67 @@
+
+@import "../../scss/variables/variables";
+
+// For the styling of the facets
+// This has the dismiss button on the left and the text to the right of the icon
+
+.content__walgreens .facet{	
+	@extend %display-inline-flex;
+	@extend %flex-center-vertical;
+	position: relative;
+	margin-right: 8px;
+	padding: 8px 20px 8px 8px;
+	border-radius: 44px;
+	box-shadow: 0 1px 2px rgba(207, 207, 207, 0.5);
+
+	// For the changes to the default styling of the button
+
+	button .icon{
+		color: $type-gray;
+
+		// Change the color to blue on hover
+
+		&:hover{
+			color: $light-blue;
+		}
+	}
+
+	// For the spacing between the icon and the text on the right
+
+	button + span{
+		margin-left: 8px;
+	}
+
+	// Remove the default styling for the lis
+
+	&__list{
+		position: relative;
+
+		// Changes to the default styling of the ul tag
+
+		ul{
+			padding: 12px 0;
+			flex-wrap: nowrap;
+			white-space: nowrap;
+			overflow: scroll;
+
+			// Remove the scroll bar
+
+			&::-webkit-scrollbar {
+				display: none;
+			}
+		}
+
+		// Remove the margin right on the ul, so we can add to the facet itself
+		// We need to do this so no spacing is remaining, if the facet is deleted
+
+		li:not(:last-child){
+			margin-right: 0;
+		}
+	}
+
+	// Remove the facet if the x button on the left is clicked
+
+	&__remove{
+		display: none;
+	}
+}

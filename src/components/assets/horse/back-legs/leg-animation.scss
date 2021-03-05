@@ -1,0 +1,74 @@
+
+// For the animations of the hind legs of the horse
+
+@keyframes rotate__leg--hind {
+	0%  { transform: rotate( 35deg ); }
+	40%  { transform: rotate( -55deg ); }
+	100%  { transform: rotate( 35deg ); }
+}
+
+.horse__leg--hind-front{
+	animation: rotate__leg--hind 800ms cubic-bezier(.73,.25,.28,.73) infinite; 
+	transform-origin: top center;
+
+	@keyframes rotate__leg--hind-mid {
+		0% { transform: rotate( -35deg ) }
+		20% { transform: rotate( -40deg ) }
+		50% { transform: rotate(0deg) }
+		70% { transform: rotate(60deg) }
+		100% { transform: rotate(-35deg) }
+	}
+
+	.horse__leg--hind-bottom{
+		animation: rotate__leg--hind-mid 800ms cubic-bezier(.73,.25,.28,.73) infinite;
+	    transform-origin: top center;
+	}
+
+	@keyframes rotate__leg--hind-foot {
+		0%, 20% { transform: rotate( 0deg ) }
+		50% { transform: rotate( -50deg) }
+		65% { transform: rotate(20deg) }
+		100% { transform: rotate(0deg) }
+	}
+
+	.horse__leg--hind-foot{
+		animation: rotate__leg--hind-foot 800ms ease infinite; 
+		transform-origin: top center;
+	}
+}
+
+@keyframes rotate__leg--hind-back {
+	0%, 15%  { transform: rotate( 40deg ); }
+	50%  { transform: rotate( -65deg ); }
+	100%  { transform: rotate( 40deg ); }
+}
+
+.horse__leg--hind-back{
+	animation: rotate__leg--hind-back 800ms cubic-bezier(.73,.25,.28,.73) infinite; 
+	transform-origin: top center;
+
+	@keyframes rotate__leg--hind-mid-back {
+		0% { transform: rotate( -45deg ) }
+		30% { transform: rotate( -40deg ) }
+		55% { transform: rotate(0deg) }
+		75% { transform: rotate(60deg) }
+		100% { transform: rotate(-45deg) }
+	}
+
+	.horse__leg--hind-bottom{
+		animation: rotate__leg--hind-mid-back 800ms cubic-bezier(.73,.25,.28,.73) infinite;
+	    transform-origin: top center;
+	}
+
+	@keyframes rotate__leg--hind-foot-back {
+		0%, 20% { transform: rotate( 0deg ) }
+		55% { transform: rotate( -50deg) }
+		65% { transform: rotate(20deg) }
+		100% { transform: rotate(0deg) }
+	}
+
+	.horse__leg--hind-foot{
+		animation: rotate__leg--hind-foot-back 800ms ease infinite; 
+		transform-origin: top center;
+	}
+}

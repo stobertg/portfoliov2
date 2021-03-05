@@ -1,0 +1,85 @@
+
+@import "../../../scss/variables/variables";
+
+// For the styling of the alerts within the input fields
+// This dictates border color, background, and text changes, along with the alert on the bottom of the container
+
+.input__wrap{
+
+	// For the success alerts
+
+	&--success{
+
+		// Change the input color
+
+		.input__contain{
+			border-color: $green !important;
+			background: #edf7f4;
+		}
+
+		// For the icon on the right of the input
+
+		label, .input__alert{ 
+			color: $green; 
+		}
+	}
+
+	// For the error alerts
+
+	&--error{
+
+		// Change the input color
+
+		.input__contain{
+			border-color: $dark-red !important;
+			background: #fef0f0;
+		}
+
+		// For the icon on the right of the input
+
+		label, .input__alert{
+			color: $dark-red;
+		}
+	}
+
+	// For the warning alerts
+
+	&--warning{
+
+		// Change the input color
+
+		.input__contain{
+			border-color: $skin-tone !important;
+			background: #fff8ed;
+		}
+
+		// For the icon on the right of the input
+
+		label, .input__alert{
+			color: $skin-tone;
+		}
+	}
+}
+
+// For the alerts on the bottom of the input container
+// These are the icon on the left and the text to the right, below the input field
+
+.input__alert{
+	position: relative;
+
+	// For the container of the icon and text
+
+	div{
+		@extend %display-inline-flex;
+		@extend %flex-center-vertical;
+		font-size: $fourteen;
+		border-radius: 30px;
+	}
+
+	// For the Icon on the left of the container, with the text on the right
+
+	.icon{
+		min-width: 25px;
+		margin-right: 8px;
+	}
+}

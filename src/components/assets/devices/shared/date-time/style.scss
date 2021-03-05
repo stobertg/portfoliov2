@@ -1,0 +1,53 @@
+
+@import "./src/global-css/variables/variables";
+
+// For the styling of the date an time on the left side of the container
+// This is a shared component for all of the devices
+
+.device__dt{
+
+	// For the date on the left of the speaker
+
+	&--time{
+		margin-left: 10px;
+		font-size: 11px;
+
+		strong{
+			@extend %display-flex;
+			@extend %flex-center-vertical;
+		}
+
+		// For the : in the middle - between the numbers
+
+		span:nth-child(2){
+			position: relative;
+			display: inline-block;
+			margin: 1px 1px 0px 2px;
+			height: 6px;
+			width: 2px;
+
+			// For the dots as the hour and minute seperator
+
+			&:before, &:after{
+				content: ' ';
+				position: absolute;
+				width: 2px;
+				height: 2px;
+				border-radius: 50%;
+				background: $iphone-black;
+			}
+
+			// For the dot on the top of the container
+
+			&:before{
+				top: 0px;
+			}
+
+			// For the dot on the bottom of the container
+
+			&:after{
+				bottom: 0px;
+			}
+		}
+	}
+}

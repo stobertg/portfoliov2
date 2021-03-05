@@ -1,0 +1,175 @@
+
+@import "./src/global-css/variables/variables";
+
+.example-enter {
+  opacity: 0;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 150ms;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0;
+  transition: opacity 1ms;
+}
+
+// Shared styling for the cardiact app
+
+.cardiact{
+	position: relative;
+	height: 100%;
+
+	// For the font of the emphasized text within the CardiAct app
+
+	em{ font-family: 'Noto Sans TC', sans-serif; }
+
+	// For the shared AED styling used throughout the app
+	// This is used on the map screen and the repsonders within the status screen
+
+	&__aed{
+		@extend %display-flex;
+		@extend %flex-center-all;
+		padding: 7px 10px;
+		border-radius: 10px;
+		background: $cardi-red;
+		color: $white;
+		font-size: $twelve;
+	}
+
+	// For instances of images within an li container
+	// These are typically images on the left of the container
+	// These could be either icons or circle headshot images
+
+	.img{
+		@extend %display-flex;
+		@extend %flex-center-all;
+		position: relative;
+		background: $white;
+
+		// Center the image within the container
+
+		img{
+			min-height: 100%;
+			max-height: 100%;
+			width: auto;
+			height: auto;
+		}
+	}
+
+	// For images with headshots
+
+	.img__headshot{
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		overflow: hidden;
+
+		// For smaller headshots
+		// These are typically reserved for images within list containers
+
+		&--sm{
+			width: 40px;
+			height: 40px;
+		}
+	}
+
+	// For the overlay used throughout the app
+	// This shows up when the direction button is clicked, on the bottom of the map in the emergency flow
+
+	.overlay{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(246, 246, 246, 0.95);
+		z-index: 10;
+		opacity: 0;
+		pointer-events: none;
+
+		&.show__overlay{
+			opacity: 1;
+			pointer-events: auto;
+		}
+	}
+}
+
+
+
+
+
+
+
+@keyframes scale-bg {
+
+	0%  	 { transform: scale(0); }
+	40%, 60% { transform: scale(1); }
+	100%  { transform: scale(0); }
+}
+
+%scale-bg{ animation: scale-bg 2300ms forwards cubic-bezier(0.770, 0.000, 0.175, 1.000); }
+
+
+@keyframes scale-heart {
+
+	0%  { transform: scale(0); }
+	40%, 60% { transform: scale(1); }
+	100%  { transform: scale(0); }
+}
+
+%scale-heart{ animation: scale-heart 2300ms forwards cubic-bezier(0.770, 0.000, 0.175, 1.000); }
+
+
+.cardiact__transition{
+	@extend %display-flex;
+	@extend %flex-center-all;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 9999;
+
+	&:before{
+		@extend %scale-bg;
+		content: ' ';
+		position: absolute;
+		width: 1000px;
+		height: 1000px;
+		border-radius: 50%;
+		background: $white;
+	}
+
+	.icon__victim{
+		@extend %scale-heart;
+		width: 75px;
+		height: 75px;
+		top: auto;
+		left: auto;
+		box-shadow: none;
+
+		svg{
+			width: 70%;
+			height: 70%;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,104 @@
+
+@import "./src/global-css/variables/variables";
+
+// For the vitals screen on top of the status screen in the CardiAct app
+// This has the time in distress, heart rate, and EMS status
+
+.cardiact__vitals{
+	@extend %display-flex-wrap;
+	position: relative;
+	background: $white;
+	padding-top: 10px;
+
+	// For the alignment of the main content within the vitals container
+
+	div{
+		@extend %display-flex-space-between;
+		@extend %flex-center-horizontal;
+	}
+
+	// For the time and heart rate text
+
+	&--info{
+		position: relative;
+		padding: 0px 10px;
+
+		// For the time in distress on the left of the container
+
+		&:first-child{
+			width: 52%;
+			border-right: 1px solid #efefef;
+		}
+
+		// For the beats per min on the right of the container
+
+		&:last-child{
+			width: 48%;
+		}
+
+		// Font size of the text below the numbers
+
+		em{ font-size: $twelve; }
+	}
+
+	// For the special styling of the time on the left of the container
+
+	&--time{
+		@extend %display-flex;
+		@extend %flex-center-horizontal;
+		position: relative;
+		height: 30px;
+		margin-bottom: 4px;
+		font-size: $thirty;
+		line-height: 1;
+		color: $cardi-red;
+		
+		// For the container of the time and the colon icon in the middle
+
+		div{
+			@extend %display-flex;
+			@extend %flex-center-vertical;
+		}
+
+		// For the styling of the colon icon
+		// This needs to be fixed because the default time aligns the colon to the bottom
+
+		.icon__colon{
+			position: relative;
+			width: 5px;
+			height: 15px;
+			margin: 3px 3px 0;
+
+			// For the red circles
+
+			&:before, &:after{
+				content: ' ';
+				position: absolute;
+				width: 5px;
+				height: 5px;
+				background: $cardi-red;
+				border-radius: 50%;
+			}
+
+			// Position of the circle on the top
+
+			&:before{ top: 0px; }
+
+			// Position of the circle on the bottom
+
+			&:after{ bottom: 0px; }
+		}
+	}
+
+	// For the EMS alert on the bottom of the container
+
+	&--alert{
+		width: 100%;
+		padding: 10px;
+		margin-top: 20px;
+		background: $cardi-gray;
+		border-radius: $cardi-border-radius;
+		color: $cardi-red;
+		font-size: 12px;
+	}
+}

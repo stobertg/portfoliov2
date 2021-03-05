@@ -1,0 +1,255 @@
+
+@import "./src/global-css/variables/variables";
+
+// For the general styling of the page content
+// This is the master container of the page and all of the blocks that can be used throughout the pages
+
+.page{
+	position: relative;
+	width: 100vw;
+	padding-bottom: 100px;
+	overflow: hidden;
+
+	// For the header on the top of the page
+	// This contains the page title, short description, and roles of the project
+
+	&__header{
+		position: relative;
+		color: $light-gray;
+		text-align: center;
+		margin: 30px 0 80px;
+
+		> div{
+
+			&:not(:last-child){
+				margin-bottom: 12px;
+			}
+
+			&:first-child{
+				margin-bottom: 24px;
+			}
+
+			&.intro__btn{
+				padding-top: 20px;
+			}
+		}
+
+		// For the font styling within the page header
+
+		h1{
+			font-size: $fifty;
+			color: $white;
+			line-height: 1.5;
+		}
+
+		h2{
+			font-size: $eighteen;
+		}
+	}
+
+	// For the container of each section within the page
+	// This needs to be parsed out for instanced that are full width vs contained
+	
+	.page__block{
+		position: relative;
+		max-width: 1170px;
+		width: 90%;
+		margin: 0 auto;
+		z-index: 1;
+
+		&--descp{ 
+			position: relative;
+			max-width: 1000px;
+			padding-bottom: 32px;
+
+			p{
+				font-size: $eighteen;
+			}
+		}
+
+		// If there is a title with the block 
+
+		&--title{
+			font-size: $thirty;
+
+			& + div{
+				margin-top: 24px;
+			}
+		}
+
+		// Remove the default padding on the last page block within a page
+
+		&:last-child .page__block--content{
+			padding-bottom: 50px;
+		}
+
+		&--full{
+			width: 100%;
+			max-width: 100% !important;
+		}
+
+		// For the spacing allowed within the blocks
+			
+		&--sp{
+
+			&-large{
+				padding: 150px 0;
+			}
+		}
+
+		&--content{
+			position: relative;
+			z-index: 1;
+		}
+
+		&--inline{
+			@extend %display-flex;
+			@extend %flex-center-vertical;
+		}
+
+		// For the special case where we need a solid background to communicate an asset better
+		// This will remove the distraction of the tv static background
+		// An example of this is the icon section on the Walgreens LSG project page
+
+		&--slant{
+			@extend %display-flex;
+			@extend %flex-center-horizontal;
+			max-width: 100%;
+			width: 100%;
+			margin: 205px 0;
+			padding: 100px 0;
+			z-index: 0;
+
+			// For the slants on the top and bottom of the container
+
+			&:before, &:after{
+				content: ' ';
+				position: absolute;
+				width: 150%;
+				background: inherit;
+				height: 500px;
+				z-index: 0;
+			}
+
+			// For the slant on the top of the container
+
+			&:before{
+				top: -100px;
+				transform: rotate( -8deg );
+			}
+
+			// For the slant on the bottom of the container
+
+			&:after{
+				bottom: -100px;
+				transform: rotate( -8deg );
+			}
+
+			.page__block--content{
+				max-width: 1170px;
+				margin: 0 auto;
+			}
+		}
+
+		// For the possible colors of the background
+
+		&--dark-blue{
+			background: #1a202b;
+		}
+
+		&--white{
+			background: $white;
+		}
+	}
+
+	.man__illus{
+		@extend %display-flex;
+		@extend %flex-center-all;
+		width: 140px;
+		height: 170px;
+		margin: 0 auto;
+
+		.illus__animation{
+			transform: scale( 0.3 );
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// For the GUI presentation on the Walgreens project
+// This slowly animates from left to right, displaying all of the content created for the LSG
+
+.gui{
+	position: relative;
+	width: 100vw;
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
+
+	img{
+		@extend %display-flex;
+	}
+
+	&::-webkit-scrollbar {
+	    width: 0; 
+	    background: transparent; 
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hero__img{
+	position: relative;
+	width: 100%;
+	padding: 25px 0;
+
+	img{
+		@extend %display-flex;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

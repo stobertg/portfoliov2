@@ -1,0 +1,26 @@
+
+@import "./src/global-css/variables/variables";
+
+// For the styling of the icons within the Walrgeens Project
+
+.icon__contain{
+	@extend %display-flex-wrap;
+	@extend %flex-center-all;
+	position: relative;
+	max-width: 1200px;
+	width: 90%;
+	margin: 0 auto;
+
+	.icon{
+		@extend %display-flex;
+		@extend %flex-center-all;
+		width: 85px;
+		height: 85px;
+		color: $white;
+
+		svg{
+			width: 68%;
+			height: 68%;
+		}
+	}
+}

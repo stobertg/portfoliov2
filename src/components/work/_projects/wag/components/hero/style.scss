@@ -1,0 +1,1019 @@
+
+@import "../../scss/variables/variables";
+
+// For the styling of the hero component
+// This typically lives on the top of the page, with the exception of the Homepage
+// Can also live in Tier pages with a smaller width, but still at the top of the page
+
+// For the styling of the hero component
+// This typically lives on the top of the page, with the exception of the Homepage
+// Can also live in Tier pages with a smaller width, but still at the top of the page
+
+.wag__comp .hero{
+	@extend %display-flex-wrap;
+	position: relative;
+	width: 95%;
+	max-width: 1300px;
+	margin: 0 auto;
+	border-radius: 16px;
+	font-size: $twenty-two;
+	line-height: 1.3;
+	overflow: hidden;
+
+	&__large .hero__content{
+		min-height: 480px;
+	}
+
+	// For the master container of all the content within the hero section
+
+	&__contain{
+		position: relative;
+		width: 100%;
+	}
+
+	// For the main content within the hero section
+
+	&__content{
+		@extend %display-flex-wrap;
+		position: relative;
+		width: 100%;
+		max-height: 390px;
+		min-height: 390px;
+
+		> .content{
+
+			&:first-child{
+				padding-right: 100px;
+			}
+
+			&:last-child{
+
+				.btn__wrap{
+					position: absolute;
+					top: 0;
+					right: 0;
+				}
+			}
+		}
+
+		@media(max-width: $tablet){
+			max-height: none;
+			min-height: 400px;
+		}
+
+		@media(max-width: $mobile){
+			min-height: auto;
+		}
+	}
+
+	// For the shorter heros
+	// This is to keep spacing rules for different designs and save space where needed
+
+	&__small{
+		min-height: 224px;
+	}
+
+	// This is specfically or the heros that contains the text on the left of the container
+	// For this, we need to allow for height auto so that the hero adjust, depending 
+	// On how much text is within the container
+
+	&__alt{
+		max-height: auto;
+	}
+
+	// For the the container, on the left side of the hero
+
+	&__text{
+		@extend %display-flex;
+		@extend %flex-center-vertical;
+		position: relative;
+		width: 50%;
+		z-index: 1;
+
+		// For the container of the text within the master container
+		// We are centering the text, with spacing within the background container
+		
+		&--content{
+			@extend %display-flex;
+			@extend %flex-center-vertical;
+			position: relative;
+			width: 80%;
+			height: 100%;
+			margin: 0 auto;
+			padding: 40px 0;
+		}
+
+		&--trans{
+			position: relative;
+			z-index: 10; 
+
+			& + .hero__img{
+				position: absolute;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 1;
+			}
+		}
+
+		// For the different colors supported
+
+		&--white { color: $white;     }
+		&--blue  { color: $dark-blue; }
+
+		@media(max-width: $mobile){
+			background: $dark-blue;
+			color: $white;
+		}
+	}
+
+	&__text--bg,  &__bg-{
+
+		&-cream { 
+			background: $neutral;  
+
+			@media(max-width: $mobile){
+
+				.hero__text--content{
+					border-bottom: 1px solid $white;
+				}
+			} 
+		}
+
+		// For the different colors of the hero
+		// For the blue background
+
+		&-light-blue{
+			background: #c2e8ff;
+			color: $dark-blue;
+		}
+
+		&-blue{
+			background: $dark-blue;
+			color: $white;
+		}
+
+		&-tint-blue{
+			background: $tint-blue;
+		}
+
+		// For the green background
+
+		&-green{
+			background: $green;
+			color: $white;
+		}
+
+		// For the red background
+
+		&-red{
+			background: $red;
+			color: $white;
+		}
+
+		// For the pink background
+
+		&-pink{
+			background: $pink;
+			color: $white;
+		}
+	}
+
+	// Add subtle spacing between the title and the text below the title
+
+	.heading{
+		margin-bottom: 4px;
+	}
+
+	// For the hero image
+	// This is either stand alone, if there is no text, or rendered on the right side of the container
+	// With the text on the left
+
+	&__img{
+		@extend %display-flex;
+		@extend %flex-center-all;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		z-index: 0;
+
+		// We need to center the image in the container, as well as keeping it full width and height
+		// Within that container - it needs to act as a traditional background image, while maintaining alt text
+
+		img{
+			@extend %display-flex;
+			position: absolute;
+			top: -9999px;
+		    left: -9999px;
+		    right: -9999px;
+		    bottom: -9999px;
+			min-height: 100%;
+			max-height: 100%;
+			min-width: 100%;
+			width: auto;
+			height: auto;
+			margin: auto;
+			object-fit: cover;
+		}	
+
+		@media(max-width: $mobile){
+			position: relative;
+
+			img{
+				left: auto;
+				right: 0;
+			}
+		}
+	}
+
+	// This is a conditional class that appears if the text on the left of the hero has a background color
+	// This truns the hero into a 50 / 50 split, with the text on the left of the hero and the image on the right
+
+	&__split{
+
+		// This is a conditional statement within the css
+		// The logic is if there is text, change the contains to 50/50 so that they are displayed inline
+
+		.hero__img{
+			right: 0;
+			left: auto;
+			width: 50%;
+		}
+	}
+
+	// For the container of the links directly below the hero, in the neutral background
+
+	&__links{
+		@extend %display-flex-wrap;
+		@extend %flex-center-horizontal;
+		align-self: flex-end;
+		position: relative;
+		width: 100%;
+		font-size: $sixteen;
+		background: $neutral;
+
+		.btn__wrap{
+
+			&:not(:last-child):after{
+				content: '';
+				position: absolute;
+				right: 0;
+				height: 40%;
+				width: 1px;
+				background: $disabled-gray;
+			}
+		}
+
+		a{
+			@extend %flex-center-all;
+			padding: 28px 20px;
+			margin: 0 24px;
+
+			&:before{
+				@extend %speed-3ms;
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: 60%;
+				border-radius: 50px;
+				background: $white;
+				z-index: 0;
+				opacity: 0;
+			}
+
+			> span{
+				position: relative;
+				z-index: 1;
+			}
+
+			&:hover{
+
+				&:before{
+					opacity: 1;
+				}
+			}
+		}
+
+		@media(max-width: $mobile){
+			padding: 12px 0;
+
+			.btn__wrap{
+				width: 100%;
+
+				&:not(:last-child):after{
+					display: none;
+				}
+			}
+
+			a{
+				width: 95%;
+				padding: 12px 16px;
+				margin: 0 auto;
+				justify-content: flex-start;
+
+				&:before{
+					height: 100%;
+					left: 0;
+				}				
+			}
+		}
+	}
+
+	// For the hero ctas that are on the bottom of the hero section
+	// This section is optional but provides a space if there is a secondary action to the hero
+
+	&__cta{
+		@extend %display-flex-wrap;
+		@extend %flex-center-all;
+		border-bottom: 1px solid #f8f8f8;
+
+		// For the link container within the CTA component
+		// This is the component directly below the hero image section
+
+		.btn__wrap a{
+			padding: 20px 0;
+
+			// For the underline that shows up on hover
+			// Setting the initial style
+
+			&:after{
+				@extend %speed-3ms;
+				content: ' ';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 3px;
+				border-radius: $border-radius $border-radius 0 0;
+				background: $blue;
+				transform: scale(0,1);
+			}
+
+			// For the container of the text within the Cta
+			// This is needed if there is an icon, to the left of the text
+
+			span{
+				@extend %display-flex-wrap;
+				@extend %flex-center-all;
+			}
+
+			// On hover, show the underline below the icon and text
+
+			&:hover{
+
+				&:after{
+					transform: scale(1,1);
+				}
+			}
+		}
+
+		// If there is an icon within the Cta, we need to add the spacing between the text
+
+		.icon{ margin-right: 12px; }
+	}
+
+	// For the changes of the hero component on tablet breakpoints
+	// This will reverse the composition - by arraging the image on left and text on the right
+	// This means that the image is rendered on the top, and the text on the botton
+
+	@media(max-width: $mobile){
+		min-height: auto;
+		font-size: $eighteen;
+
+		.hero__content{
+			flex-flow: column-reverse;
+		}
+
+		// Change the size of the text to be height auto
+		// This will allow the text to inherit height, so that it isn't cut off by any overflow
+
+		.hero__text{
+			min-height: auto;
+
+			// Change the container of the image and the text to go full width
+			
+			&, &+ .hero__img{
+				width: 100%;
+				height: 100%;
+			}
+
+			// For the spacing of the text within the container
+			
+			&--content{
+				padding: 24px 0 30px;
+				width: 90%;
+			}
+		}
+
+		// Add a set height to the image, but not the text
+		// We need to set this standard for consistancy
+
+		.hero__img{
+			min-height: 200px;
+			max-height: 200px;
+		}
+
+		.logo__mywalgreens--full, .logo__mywalgreens--full-white{
+			max-width: 370px;
+			width: 95%;
+		}
+	}
+
+	&__alt--bs{
+
+		.hero__content{
+			min-height: 430px;
+		}
+
+		.hero__text{
+			width: 37%;
+
+			&--content{
+				width: 70%;
+			}
+		}
+
+		.hero__illus{
+			@extend %display-flex;
+			@extend %flex-center-all;
+			position: relative;
+			width: 63%;
+		}
+
+		@media(max-width: $tablet){
+
+			.heading{
+				width: 80%;
+				margin: 0 auto;
+				justify-content: center;
+				margin-bottom: 32px;
+				font-size: $fifty;
+
+				> div{
+					text-align: center;
+				}
+			}
+
+			.hero__content{
+				flex-direction: column;
+				min-height: auto;
+				padding: 52px 0;
+			}
+
+			.hero__text{
+				width: 100%;
+				height: auto;
+
+				&--content{
+					padding: 0;
+					width: 90%;
+					height: auto;
+				}
+			}
+
+			.hero__illus{
+				width: 100%;
+			}
+		}
+
+		@media(max-width: 620px){
+
+			.hero__illus{
+				justify-content: flex-start;
+			}
+		}
+	}
+
+	// For full size heros
+
+	&__full{
+		max-width: 100%;
+		min-height: auto;
+		width: 100%;
+		max-height: none;
+		font-size: $sixteen;
+	}
+}
+
+
+
+
+
+
+@keyframes bulb__illus--swing {
+	0%   { transform: rotate(0deg); }
+	50%  { transform: rotate(1deg); }
+	100% { transform: rotate(0deg); }
+}
+
+
+.bs__illus{
+	@extend %display-flex-space-between;
+	animation: bulb__illus--swing 5s ease infinite; 
+	align-self: flex-start;
+	position: absolute;
+	top: -40px;
+	right: 0;
+	width: 100%;
+	height: 95%;
+
+	@media(max-width: 1348px){
+		height: 400px;
+	}
+
+	@media(max-width: 1290px){
+		height: 390px;
+	}
+
+	@media(max-width: 1230px){
+		height: 380px;
+
+		.illus__bulb--connect{
+			width: 92%;
+		}
+	}
+
+	@media(max-width: 1130px){
+		height: 370px;
+
+		.illus__bulb--connect{
+			width: 93%;
+		}
+	}
+
+	@media(max-width: 1049px){
+		height: 415px;
+
+		.illus__bulb--connect{
+			width: 94%;
+		}
+	}
+
+	@media(max-width: 990px){
+		height: 405px;
+	}
+
+	@media(max-width: 975px){
+		height: 400px;
+	}
+
+	@media(max-width: 900px){
+		height: 390px;
+	}
+
+	@media(max-width: 825px){
+		height: 380px;
+	}
+
+	@media(max-width: 775px){
+		height: 370px;
+	}
+
+	@media(max-width: $tablet){
+		top: 0;
+	}
+
+	@media(max-width: 680px){
+		height: 360px;
+	}
+
+	@media(max-width: 593px){
+		height: 350px;
+	}
+
+	@media(max-width: 565px){
+		height: 340px;
+	}
+
+	@media(max-width: 505px){
+		height: 330px;
+	}
+
+	
+
+	&--wrap{
+
+		@media(max-width: $tablet){
+			transform: rotate(-30deg) translate(67px, -80px);
+		    position: absolute;
+		    top: 0;
+		    left: -20px;
+		    width: 95%;
+		    height: 100%;
+
+		    .illus__bulb--connect{
+		    	width: 87%;
+		    	top: 104px;
+    			transform: rotate(-2deg);
+		    }
+		}
+
+		@media(max-width: 990px){
+
+			.illus__bulb--connect{
+				width: 89%;
+				top: 100px;
+				transform: rotate(-3deg);
+			}
+		}
+
+		@media(max-width: 880px){
+
+			.illus__bulb--connect{
+				width: 90%;
+				top: 95px;
+				transform: rotate(-2deg);
+			}
+		}
+
+		@media(max-width: 775px){
+			
+			.illus__bulb--connect{
+				width: 92%;
+				top: 95px;
+				transform: rotate(-3deg);
+			}
+		}
+
+		@media(max-width: 680px){
+			
+			.illus__bulb--connect{
+				width: 94%;
+			}
+		}
+
+		@media(max-width: 565px){
+			
+			.illus__bulb--connect{
+				width: 96%;
+			}
+		}
+
+		@media(max-width: 414px){
+
+			transform: rotate(-40deg) translate(67px, -80px);
+
+			.illus__bulb--connect{
+				top: 105px;
+				left: 20px;
+				width: 100%;
+			}
+		}
+	}
+}
+
+
+.bs__products{
+	position: relative;
+	width: 590px;
+	min-width: 590px;
+	z-index: 10;
+	margin-left: 16px;
+
+	.list__column--3 li{
+
+		&:first-child, &:last-child{
+			width: calc( 32% - 16px );
+		}
+	}
+
+	li:nth-child(2){
+		width: calc( 36% - 16px );
+
+		img{
+			padding: 16px 12px;
+		}
+	}
+
+	.card{
+		text-align: center;
+		box-shadow: none;
+	}
+
+	ul{
+		@extend %flex-center-vertical;
+		margin-left: 16px;
+	}
+
+	@media(max-width: $tablet){
+		margin-left: 0;
+	}
+
+	@media(max-width: $mobile){
+		min-width: 100%;
+		width: 100%;
+
+		.list__contain{
+			width: 100%;
+			overflow: scroll;
+		}
+
+		.list__column--3{
+			flex-wrap: nowrap;
+
+			li {
+				width: calc(33% - 16px);
+				min-width: 180px;
+				max-width: 180px;
+				margin: 0 16px 0 0;
+				flex: 1;
+
+				img{
+					padding: 0px 0;
+				}
+
+				.card{
+					height: 100%;
+				}
+
+
+				&:first-child, &:last-child{
+					min-width: 220px;
+					max-width: 220px;
+				}
+
+
+				&:first-child{
+					padding-left: 40px;
+				}
+
+				&:last-child{
+					padding-right: 40px;
+				}
+			}
+		}
+	}
+}
+
+
+@keyframes bulb__swing-1 {
+	0%   { transform: translateY(-14px) rotate(40deg); }
+	50%  { transform: translateY(-14px) rotate(10deg); }
+	100% { transform: translateY(-14px) rotate(40deg); }
+}
+
+@keyframes bulb__swing-2 {
+	0%   { transform: translate3d( -15px, -20px, 0 ) rotate(10deg); }
+	50%  { transform: translate3d( -15px, -20px, 0 ) rotate(-10deg); }
+	100% { transform: translate3d( -15px, -20px, 0 ) rotate(10deg); }
+}
+
+
+.illus__bulb{
+
+
+	&--connect{
+		position: absolute;
+	    top: 113px;
+	    left: 7px;
+	    width: 90.5%;
+	    z-index: 0;
+	    transform: rotate(4deg);
+
+	    svg{
+	    	fill: $holiday-red;
+	    }
+	}
+
+	&--wrap{
+		@extend %display-flex-wrap;
+		position: relative;
+
+		.illus__bulb{
+			position: relative;
+			width: 60px;
+			transform-origin: top center;
+			z-index: 1;
+
+			.st0{fill:$holiday-red;}
+			.st1{fill:#323363;}
+
+			&--line{
+				@extend %display-flex;
+				width: 100%;
+				fill: #D81F36;
+			}
+		}
+		
+
+		&-v1{
+			width: 23%;
+			align-self: flex-start;
+
+			.illus__bulb{
+				padding-top: 6px;
+				animation: bulb__swing-1 5s ease infinite; 
+
+				&--line > div{
+					width: 30px;
+				}
+			}
+		}
+
+		&-v2{
+			width: 23%;
+			align-self: flex-end;
+			transform: translate(100px, 50px);
+
+			.illus__bulb{
+				width: 60px;
+				animation: bulb__swing-2 5.1s ease infinite;
+
+				&--line > div{
+					width: 100%;
+				}
+			}
+
+			@media(max-width: $tablet){
+				transform: translate(100px, 0px);
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+.hero__alt--bs-holiday{
+
+	@media(max-width: 1250px){
+
+		.hero__text{
+			width: 45%;
+		}
+
+		.hero__illus{
+			width: 55%;
+
+			> div{
+				transform: scale(0.75);
+			}
+		}
+	}
+
+	@media(max-width: $tablet){
+
+		.hero__content{
+			flex-direction: column-reverse;
+			padding-top: 0;
+		}
+
+		.hero__text, .hero__illus{
+			width: 100%;
+		}
+
+		.hero__illus{
+
+			> div{
+				transform: scale(1);
+			}
+		}
+	}
+
+	@media(max-width: 400px){
+
+		.hero__illus{
+
+			&--presents{
+				height: 260px;
+			}
+
+			> div{
+				transform: scale(0.7);
+				transform-origin: top;
+			}
+		}
+	}
+}
+
+.hero__illus--presents{
+	@extend %display-flex;
+	@extend %flex-center-all;
+	flex-direction: column;
+
+	> div{
+		@extend %display-flex;
+		@extend %flex-center-vertical;
+		position: relative;
+		height: auto;
+	}
+}
+
+
+// For the holiday heros
+// For christmas, this is with the text and buttons on the left, and presents on the right of the container
+
+.holiday__present{
+	@extend %display-flex;
+	@extend %flex-center-horizontal;
+	position: relative;
+	color: $dark-blue;
+
+	// shared styling of the present images
+
+	img{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 0;
+	}
+
+	&--text{
+		position: relative;
+		text-align: center;
+		width: 60%;
+		margin: 0 auto 14px;
+		align-self: flex-end;
+		z-index: 1;
+
+		.heading{
+    		line-height: 0.8;
+    	}
+
+		sup{
+			font-size: $thirty-six;
+			vertical-align: super;
+		}
+
+		> div:last-child{
+			width: 80%;
+			margin: 0 auto;
+		}
+
+		@media(max-width: $tablet){
+
+			.heading{
+	    		line-height: 0.9;
+	    		margin-bottom: 0;
+	    		font-size: 50px;
+	    	}
+
+			sup{
+				font-size: 23px;
+			}
+		}
+	}
+
+	&--1{
+		min-width: 435px;
+    	height: 347px;
+	}
+
+	&--2{
+		min-width: 360px;
+		width: 360px;
+    	height: 415px;
+    	transform: translate(-40px, -10px);
+
+    	.holiday__present--text{
+    		width: 70%;
+    		margin-bottom: 60px;
+    	}
+	}
+
+	@media(max-width: $tablet){
+		margin-bottom: 20px;
+
+		&--1{
+			min-width: 350px;
+			height: 279px;
+		}
+
+		&--2{
+			width: 300px;
+    		min-width: 300px;
+    		height: 347px;
+		}
+	}
+}
+
+.hero__alt--bs{
+
+	.btn__contain{
+		width: 300px;
+
+		.btn__wrap{
+			margin-bottom: 12px;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

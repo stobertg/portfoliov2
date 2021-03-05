@@ -1,0 +1,43 @@
+
+@import "./src/global-css/variables/variables";
+
+.device{
+
+	// For the content to the left and the right of the speaker
+
+	&__info{
+		@extend %display-flex-space-between;
+		align-content: flex-end;
+		position: relative;
+		bottom: 0px;
+		width: 91%;
+
+		// Reset the paddings for the lis so there is no padding
+
+		li{ padding: 0px 0px; }
+	}
+
+	// For the header where the items needs to be white
+
+	&__info-white{
+		color: $white;
+
+		.device__dt--time span, .signal, .signal div, .battery, .battery div{
+
+			&:before, &:after{
+				background: $white;
+			}
+		}
+
+		.battery{
+
+			&:after{
+				background: rgba($white, 0.5);
+			}
+
+			div{
+				border-color: rgba($white, 0.5);
+			}
+		}
+	}
+}

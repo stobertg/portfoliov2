@@ -1,0 +1,106 @@
+
+@import "./src/global-css/variables/variables";
+
+// For the styling of the process work within the CardiAct page
+// This is in the middle of the page, below the project info
+
+.block__process{
+	position: relative;
+	padding-top: 100px;
+	color: $white;
+
+	p{
+		line-height: 1.5;
+	}
+
+	// For the first variation of the lock-up for the process block
+	// This contains three images, in an overlapping format
+
+	.page__block{
+
+		&:not(:last-child){
+			margin-bottom: 50px;
+		}
+
+		.hero__img{
+			@extend %display-flex;
+			flex-direction: column;
+			width: 100%;
+		}
+
+		&--var-1{
+			position: relative;
+			width: 100%;
+
+			.hero__img{
+				padding-bottom: 350px;
+
+				> div{
+					@extend %display-flex;
+					@extend %flex-center-all;
+					position: absolute;
+					width: 100%;
+					bottom: 25px;
+
+					img{
+						box-shadow: 0 10px 20px rgba( #000, 0.1 );
+
+						&:last-child{
+							transform: translateX( -80px );
+							width: 500px;
+							padding: 30px;
+							background: $white;
+						}
+					}
+				}
+			}
+		}
+
+		&--var-2{
+
+			.hero__img{
+
+				img{
+					box-shadow: 0 10px 20px rgba( #000, 0.9 );
+
+					&:first-child{
+						width: 70%;
+					}
+
+					&:nth-child( 2 ){
+						width: 100%;
+					}
+
+					&:last-child{
+						width: 80%;
+						align-self: flex-end;
+					}
+				}
+			}
+		}
+
+		&--var-3{
+
+			.hero__img{
+
+				img{
+					box-shadow: 0 10px 20px rgba( #000, 0.9 );
+
+					&:first-child{
+						width: 70%;
+					}
+
+					&:nth-child( 2 ){
+						align-self: flex-end;
+						width: 80%;
+					}
+
+					&:last-child{
+						width: 50%;
+						align-self: center;
+					}
+				}
+			}
+		}
+	}
+}

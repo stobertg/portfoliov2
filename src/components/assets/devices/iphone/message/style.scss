@@ -1,0 +1,36 @@
+
+@import "./src/global-css/variables/variables";
+
+// For the prompt message in the message container
+
+.iphone__message-prompt{
+	width: calc(100% - 45px);
+	height: 36px;
+
+	.message__input{
+		@extend %display-flex;
+		@extend %flex-center-vertical;
+		border: 1px solid #d4d4d4;
+		height: 100%;
+		border-radius: 20px;
+		padding-right: 3px;
+	}
+	
+	input{
+		width: 87%;
+		font-size: $twelve;
+		padding: 0px 12px 2px;
+	}
+}
+
+
+input{
+	@extend %display-flex;
+	@extend %flex-center-vertical;
+	height: 100%;
+	width: 100%;
+	border: none;
+	outline: none;
+	background: none;
+	font-family: 'Noto Sans TC', sans-serif;
+}

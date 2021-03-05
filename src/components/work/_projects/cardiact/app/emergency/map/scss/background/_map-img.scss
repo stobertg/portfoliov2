@@ -1,0 +1,19 @@
+
+// For the styling of the actual map within the app
+
+.cardiact__map-img{
+	@extend %display-flex;
+	@extend %flex-center-horizontal;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+
+	// Centering the image within the center of the map container
+
+	img{
+		position: absolute;
+		width: 110%;
+		right: -9px;
+	}
+}

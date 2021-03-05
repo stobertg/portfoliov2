@@ -1,0 +1,49 @@
+
+// Import the animations 
+
+@import 'leg-animation';
+
+// For the styling of the horse legs
+// This container will be amnimated to show the horse in motion
+
+.horse__leg{
+	position: relative;
+	width: 50px;
+	height: 167px;
+
+	// For the top part of the leg
+
+	&--top{
+		position: absolute;
+	    top: 0;
+	    right: 0;
+	    width: 44px;
+	}
+
+	// For the middle of the leg
+
+	&--bottom{
+		position: absolute;
+	    top: 86px;
+	    left: 19px;
+	    width: 15px;
+	    height: 82px;
+	}
+
+	// For the foot, on the bottom of the container
+
+	&--foot{
+		position: absolute;
+	    bottom: 0;
+	    left: -4px;
+	    width: 20px;
+	}
+
+	// For the leg behind the front one - on the right side of the horse
+
+	&--back{
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+}

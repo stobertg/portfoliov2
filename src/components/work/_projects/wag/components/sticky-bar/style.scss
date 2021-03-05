@@ -1,0 +1,93 @@
+
+@import "./assets/scss/variables/variables";
+
+// For the styling of the sticky bar
+// This is the component that is fixed to the bottom the browser
+
+.sticky__bar{
+	@extend %speed-6ms;
+	@extend %display-flex;
+	@extend %flex-center-vertical;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	color: $white;
+	transform: translateY(100%);
+	z-index: 9990;
+
+	// Show the sticky bar into view when the button is clicked
+
+	&--active{
+		transform: translateY(0px);
+	}
+
+	// For the content that lives inside of the sticky bar
+
+	&--content{
+		@extend %display-flex-space-between;
+		@extend %flex-center-vertical;
+		width: 90%;
+		margin: 0 auto;
+		padding: 16px 0;
+	}
+
+	// For the description on the left of the container
+
+	&--descp{
+		max-width: 70%;
+		line-height: 1.5;
+	}
+	// For the action buttons on the right of the container
+	// This contains the primary action button, with the close button to the right of it
+
+	&--action{
+		align-self: flex-end;
+	}
+
+	// For the changes to the default styling of the dismiss button
+
+	.btn__dismiss{
+		color: $white;
+	}
+
+	// For the different colors of the bar that the branding supports
+
+	&--red	 	 { background: $red;       }
+	&--blue 	 { background: $dark-blue; }
+	&--green	 { background: $green; 	   }
+	&--pink	 	 { background: $pink;      }
+
+	// This is for the only light background we support for the sticky bar
+	// So we need to change the colors a bit
+
+	&--tint-blue { 
+		background: $tint-blue; 
+		color: $type-gray; 
+
+		// Change the color of the dimiss icon button to the right of the button
+
+		.btn__dismiss{ color: $blue; }
+	}
+	
+	// For mobile changes within the sticky bar
+
+	@media(max-width: $mobile){
+
+		// Change the positioning of the description text on the left side of the container
+
+		&--descp{
+			max-width: 100%;
+			width: 100%;
+			padding: 20px 0;
+		}
+
+		// Change the positioning of the close icon to be on the top right of the container
+
+		&--action .btn__dismiss{
+			position: absolute;
+			top: 8px;
+			right: 8px;
+		}
+	}
+}

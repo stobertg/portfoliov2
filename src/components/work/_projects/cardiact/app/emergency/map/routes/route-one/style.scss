@@ -1,0 +1,118 @@
+ 
+@import "./src/global-css/variables/variables";
+
+// For the main route to the victim
+// This is the main animation for the responder getting to the victim
+
+.route__main{
+	transform: translate3d(64px, 141px, 0px);
+	position: absolute;
+	width: 132px;
+    height: 175px;
+	z-index: 10;
+
+	// For the route on the right - line where the animation begins
+
+	@keyframes remove-route-right {
+
+		0%   	   { transform: scale(1,1); }
+		30%, 100%  { transform: scale(1,0); }
+	}
+
+	%remove-route-right{ animation: remove-route-right 30s linear forwards infinite; }
+
+	.route__right{
+		@extend %remove-route-right;
+		transform-origin: top left;
+		height: 100%;
+	}
+
+	// For the route on the top - middle part of the route
+
+	@keyframes remove-route-top {
+
+		0%, 30%   { transform: scale(1,1); }
+		47%, 100% { transform: scale(0,1); }
+	}
+
+	%remove-route-top{ animation: remove-route-top 30s linear forwards infinite; }
+
+	.route__top{
+		@extend %remove-route-top;
+		transform-origin: top left;
+	}
+
+	// For the route on the left - where the animation ends
+
+	@keyframes remove-route-left {
+
+		0%, 47% { transform: scale(1,1); }
+		55%, 100%  { transform: scale(1,0); }
+	}
+
+	%remove-route-left{ animation: remove-route-left 30s linear forwards infinite; }
+
+	.route__left{
+		@extend %remove-route-left;
+		transform-origin: bottom left;
+		height: 30px;
+	}
+}
+
+// For the styling of the main user of the app
+// Shows the route the user takes to get to the victim
+
+@keyframes route-user {
+
+	0%   	 { transform: translate3d( 0px, 0px, 0px );      						 }
+	30%  	 { transform: translate3d( 0px, -159px, 0px );   						 }
+	47%  	 { transform: translate3d( -127px, -159px, 0px ); 						 }
+	55%, 99% { transform: translate3d( -127px, -135px, 0px ); opacity: 1; 			 }
+	100% 	 { transform: translate3d( -127px, -135px, 0px ) scale(0.8); opacity: 0;  }
+}
+
+@keyframes rotate-user {
+
+	0%, 30%   { transform: rotate(0deg);    }
+	31%, 46%  { transform: rotate(-90deg);  }
+	47%, 55%  { transform: rotate(-180deg); }
+	56%, 100% { transform: rotate(-270deg); }
+}
+
+@keyframes pulse-user {
+
+	0%   { transform: scale( 0.92 ); }
+	50%  { transform: scale( 1 );    }
+	100% { transform: scale( 0.92 ); }
+}
+
+%pulse-user{ animation: pulse-user 3s forwards infinite; }
+%move-user{ animation: route-user 30s linear forwards infinite; }
+%rotate-user{ animation: rotate-user 30s forwards infinite; }
+
+.route__user{
+	@extend %move-user;
+	@extend %display-flex;
+	@extend %flex-center-all;
+	position: absolute;
+	bottom: 0px;
+	right: -12px;
+	width: 28px;
+	height: 28px;
+	background: #5591f5;
+	border-radius: 50%;
+	border: 2px solid $white;
+	box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+	color: $white;
+	z-index: 20;
+	overflow: hidden;
+
+	// For the direction arrow in the blue section
+
+	.icon{
+		@extend %rotate-user;
+		min-width: 12px;
+		width: 12px;
+		height: 10px;
+	}
+}

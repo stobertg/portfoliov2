@@ -1,0 +1,18 @@
+
+// For the styling on the bottom of the chat
+// Here a user can type text, use voice text or upload a picture
+
+.cardiact__chat-menu{
+	@extend %display-flex-space-between;
+	@extend %flex-center-vertical;
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	padding: 15px 15px 20px 10px;
+	background: $white;
+
+	.icon__camera{
+		position: absolute;
+		transform: scale(0.6);
+	}
+}

@@ -1,0 +1,149 @@
+
+@import "./src/global-css/variables/variables";
+
+.icon__camera{
+	position: relative;
+	min-width: 50px;
+	width: 50px;
+	min-height: 39px;
+	height: 39px;
+
+	&-top{
+		@extend %display-flex;
+		@extend %flex-center-all;
+		width: 100%;
+		height: 5px;
+
+		// For the button of the left of the container
+
+		&:before{
+			content: ' ';
+			position: absolute;
+			width: 9%;
+			height: 2px;
+			border-radius: 10px;
+			background: $black;
+			left: 7px;
+		}
+
+		// For the shutter in the middle top of the camera
+
+		div{
+			position: relative;
+			padding: 0px 4px;
+			width: 56%;
+			height: 6px;
+
+			span{
+				position: relative;
+				display: block;
+				width: 100%;
+				height: 100%;
+				background: $black;
+				border-radius: 8px 8px 0px 0px;
+			}
+
+			// For the curves on the bottom right and left of the container
+
+			&:before, &:after{
+				content: ' ';
+				position: absolute;
+				width: 5px;
+				height: 5px;
+				background-image: radial-gradient(circle at 100% 0, transparent 0%, transparent 5px, $black 5px);
+				bottom: 0px;
+			}
+
+			// For the curve on the bottom left
+
+			&:before{
+				transform: rotate(270deg);
+				left: 1px;
+			}
+
+			// For the curve on the bottom right
+
+			&:after{
+				right: 1px;
+			}
+		}
+	}
+
+	&-base{
+		@extend %display-flex;
+		@extend %flex-center-all;
+		position: relative;
+		width: 100%;
+		height: calc(100% - 5px);
+		border-radius: 8px;
+		background: $black;
+	}
+
+	// For the circle in the center of the container
+
+	.camera__circle{
+		@extend %display-flex;
+		@extend %flex-center-all;
+		position: relative;
+		width: 25px;
+		height: 25px;
+		margin-bottom: 1px;
+
+		// For the circle in the middle
+
+		&:before{
+			content: ' ';
+			position: absolute;
+			width: 21px;
+			height: 21px;
+			border-radius: 50%;
+			border: 2px solid $white;
+		}
+
+		// For the dot on the top right
+
+		&:after{
+			content: ' ';
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			width: 3px;
+			height: 3px;
+			border-radius: 50%;
+			background: $white;
+		}
+	}
+}
+
+.icon__gray{
+
+	.icon__camera-top{
+
+		&:before, div span{
+			background: #808080;
+		}
+
+		div:before, div:after{
+			background-image: radial-gradient(circle at 100% 0, transparent 0%, transparent 5px, #808080 5px);
+		}
+	}
+
+	.icon__camera-base{
+		background: #808080;
+	}
+}
+
+.btn__icon-sm{
+	@extend %display-flex;
+	@extend %flex-center-all;
+	width: 26px;
+	height: 26px;
+	min-width: 26px;
+	min-height: 26px;
+	background: #808080;
+	border-radius: 50%;
+
+	.icon{
+		transform: scale(0.4);
+	}
+}

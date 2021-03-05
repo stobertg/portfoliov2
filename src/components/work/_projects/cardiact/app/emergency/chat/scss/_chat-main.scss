@@ -1,0 +1,85 @@
+
+// For the styling of the chat page in the CardiAct app prototype
+// This is the screen for the responders and emergency contacts to communicate for full transparency
+
+.cardiact__chat{
+	position: relative;
+	padding: 25px 0px;
+	width: 100%;
+	height: calc(100% - 126.58px);
+	background: $white;
+
+	// Master container of the chat list
+
+	&-content{
+		padding: 0px 4%;
+	}
+
+	// For the spacing of the list items within the container
+
+	li{ 
+		@extend %display-flex;
+		padding: 0px;
+		margin-bottom: 10px; 
+	}
+
+	// Master container of the message that holds the image and the text
+
+	figure{
+		@extend %display-flex;
+	}
+
+	// For the headshot attached to the message of who sent the message
+
+	.img__headshot.img__headshot--sm{
+		@extend %display-flex;
+		@extend %flex-center-all;
+		min-width: 35px;
+		width: 35px;
+		min-height: 35px;
+		height: 35px;
+		border-radius: 50%;
+		overflow: hidden;
+
+		// Center the image within the container
+		// This is for images that contains unknown height and width
+
+		img{
+			max-height: 100%;
+			width: auto;
+			height: auto;
+			min-height: 100%;
+		}
+	}
+
+	// For the master container of the message
+
+	figcaption{
+		position: relative;
+
+		// For the arrow that points to the person
+		// This is arrows is on the left or the right of the message bubble
+
+		&:before{
+			content: ' ';
+			position: absolute;
+			transform: rotate(45deg);
+			top: 13px;
+			width: 10px;
+			height: 10px;
+		}
+	}
+
+	// Styling of the message within the figcaption container
+
+	.cardiact__message{
+		@extend %display-flex;
+		@extend %flex-center-vertical;
+		border-radius: 15px;
+		padding: 11px 16px;
+		font-size: $twelve;
+		max-width: 170px;
+		min-height: 37px;
+		line-height: 1.3;
+	}
+}

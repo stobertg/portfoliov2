@@ -1,0 +1,144 @@
+
+@import "../../../scss/variables/variables";
+
+// This is the global styling for the grid system
+// This is our base, and most important for automation between Desktop to Tablet to Mobile
+
+.content__walgreens .grid{
+	@extend %display-flex-wrap;
+	position: relative;
+	width: 100%;
+	
+	.content{
+		flex-flow: column;
+		align-self: flex-start;
+		margin-bottom: 0;
+		justify-content: flex-start !important;
+	}
+
+	// For the columns within the grid - the max number is 6
+	// This is for the two column grid
+	// It's important that we represent this visually - for example, traditional grids would have a two column
+	// convention at two 6 column grids. This is a flawed rationale and will create inconsistancy with spacing from design
+
+	&__columns--2 > .content{
+		width: 50%;
+		padding: 0 8px;
+
+		&:nth-child( 2n + 1 ){
+			padding-left: 0;
+		}
+
+		&:nth-child( 2n + 4 ){
+			padding-right: 0;
+		}
+
+		&:nth-child(n+3){
+			margin-top: 16px;
+		}
+
+		&:nth-child(n+3){
+			margin-top: 16px;
+		}
+	
+		// Make full width on mobile
+
+		@media(max-width: $mobile){
+			width: 100%;
+			margin-bottom: 32px;
+		}
+	}
+
+	&__columns--4 > .content{
+		width: 25%;
+		padding: 0 8px;
+
+		&:nth-child( 4n + 1 ){
+			padding-left: 0;
+		}
+
+		&:nth-child( 4n + 4 ){
+			padding-right: 0;
+		}
+
+		&:nth-child(n+5){
+			margin-top: 16px;
+		}
+
+		@media(max-width: $tablet){
+			width: 50%;
+
+			&:nth-child(n+3){
+				margin-top: 16px;
+			}
+		}
+	
+		// Make full width on mobile
+
+		@media(max-width: $mobile){
+			width: 100%;
+
+			&:nth-child(n+2){
+				margin-top: 16px;
+			}
+		}
+	}
+
+	&__columns--6 > .content{
+		width: 16.66%;
+		padding: 0 8px;
+	}
+
+	&__columns--mobile{
+
+		&-2 > .content{
+
+			@media(max-width: $mobile){
+				width: 50%;
+
+				&:nth-child(n){
+					padding: 0 8px;
+				}
+
+				&:nth-child( 2n + 1 ){
+					padding-left: 0;
+				}
+
+				&:nth-child( 2n + 2 ){
+					padding-right: 0;
+				}
+
+				&:nth-child(2){
+					margin-top: 0;
+				}
+
+				&:nth-child(n + 3){
+					margin-top: 16px;
+				}
+			}
+		}
+	}
+
+	&__dividers > .content{
+
+		&:after{
+			content: ' ';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+			width: 1px;
+			height: 80%;
+			background: $disabled-gray;
+		}
+
+		&:nth-child( 4n + 4 ):after{
+			display: none;
+		}
+	}
+
+	&__cards--inline .content{
+		align-self: auto;
+	}
+}

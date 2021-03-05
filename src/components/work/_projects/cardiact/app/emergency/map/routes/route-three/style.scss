@@ -1,0 +1,48 @@
+
+// For the route going to the victim on the top of the container
+
+.route__three{
+	transform: translate3d(66px, 0px, 0px);
+    position: absolute;
+    width: 130px;
+    height: 146px;
+	z-index: 9;
+
+	// Styling of the routes within the container
+
+	.route{
+		background: #f1f1f1;
+		opacity: 0.5;
+
+		// For the route on the right of the container
+
+		&__right{
+			height: 100%;
+		}
+
+		// For the line on the bottom left that goes outside the container
+
+		&__bottom:after{
+			content: ' ';
+			position: absolute;
+			background: inherit;
+			left: 0px;
+			bottom: -20px;
+			width: 5px;
+			height: 20px;
+		}
+	}
+
+	@keyframes route-two {
+
+		0%, 50% { transform: translateY(-50px); }
+		80%, 98% { transform: translateY(30px) scale(1); opacity: 1; }
+		99%, 100% { transform: translateY(30px) scale(0.4); opacity: 0; }
+	}
+
+	.route__responder{
+		top: 0;
+		right: -12px;
+		animation: route-two 30s linear forwards infinite;
+	}
+}

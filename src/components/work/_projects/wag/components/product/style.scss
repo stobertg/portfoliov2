@@ -1,0 +1,68 @@
+
+@import "./assets/scss/variables/variables";
+
+// For the styling of the product card
+// This has the product item and description on the top and buttons on the bottom
+
+.card__product{
+
+	// For the container of all of the content within the card
+
+	.card__content{
+		width: 82%;
+	}
+
+	// For the container of the chunks within the product card container
+
+	.product__item{
+		width: 100%;
+
+		// For the alignment of the buttons and purchase options on the bottom of the container
+
+		&--purchase{
+			width: 100%;
+			align-self: flex-end;
+		}
+
+		// Changes to allow a faux column format for links
+
+		.card__item > a{
+			@extend %display-flex-wrap;
+		}
+	}
+
+	// Changes to the default styling of the buttons
+
+	.btn{
+		padding: 0;
+
+		// Spacing for the container of the buttons
+
+		&__contain{
+			padding-top: 12px;
+
+			a, button{
+				width: 100%;
+			}
+		}
+	}
+
+	// For the container of the product image on the top of the card
+	// Add spacing on the bottom of the container
+
+	&--img{
+		padding-bottom: 20px;
+	}
+
+	// For the styling of the checkbox container on the bottom of the card
+	// These are optional
+
+	.checkbox{
+		@extend %flex-center-horizontal;
+		margin-top: 12px;
+	}
+}
+
+.list__product .card__contain{
+	height: 100%;
+}

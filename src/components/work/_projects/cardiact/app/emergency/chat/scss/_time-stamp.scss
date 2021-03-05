@@ -1,0 +1,23 @@
+
+// Styling of the time stamp for the messages
+// Contains the day and the time
+
+.message__time-stamp{
+	margin-bottom: 18px;
+	font-size: 9px;
+
+	// Center align the text
+
+	div{
+		@extend %display-flex;
+		@extend %flex-center-all;
+	}
+
+	// For the styling of the bolded text in the time stamp
+
+	strong{
+		margin-right: 5px;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+}
