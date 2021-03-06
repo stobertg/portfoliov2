@@ -1,5 +1,5 @@
 
-// For the animations of the hind legs of the horse
+// The shared animation for the legs
 
 @keyframes rotate__leg--hind {
 	0%  { transform: rotate( 35deg ); }
@@ -7,9 +7,15 @@
 	100%  { transform: rotate( 35deg ); }
 }
 
+// For the animations of the hind legs of the horse
+// This is on the right side of th container
+// Below is for the foreground leg
+
 .horse__leg--hind-front{
 	animation: rotate__leg--hind 800ms cubic-bezier(.73,.25,.28,.73) infinite; 
 	transform-origin: top center;
+
+	// For the animation of the hind leg, based on the placement of the leg
 
 	@keyframes rotate__leg--hind-mid {
 		0% { transform: rotate( -35deg ) }
@@ -19,10 +25,14 @@
 		100% { transform: rotate(-35deg) }
 	}
 
+	// For the placement of the hind leg
+
 	.horse__leg--hind-bottom{
 		animation: rotate__leg--hind-mid 800ms cubic-bezier(.73,.25,.28,.73) infinite;
 	    transform-origin: top center;
 	}
+
+	// For the animation of the foot, changes based on the placement of the leg
 
 	@keyframes rotate__leg--hind-foot {
 		0%, 20% { transform: rotate( 0deg ) }
@@ -31,11 +41,15 @@
 		100% { transform: rotate(0deg) }
 	}
 
+	// Animation placement of the foot
+
 	.horse__leg--hind-foot{
 		animation: rotate__leg--hind-foot 800ms ease infinite; 
 		transform-origin: top center;
 	}
 }
+
+// For the animation of the back hind leg
 
 @keyframes rotate__leg--hind-back {
 	0%, 15%  { transform: rotate( 40deg ); }
@@ -43,9 +57,13 @@
 	100%  { transform: rotate( 40deg ); }
 }
 
+// For the container of back hind leg
+
 .horse__leg--hind-back{
 	animation: rotate__leg--hind-back 800ms cubic-bezier(.73,.25,.28,.73) infinite; 
 	transform-origin: top center;
+
+	// For the animation of the hind leg, based on the placement of the leg
 
 	@keyframes rotate__leg--hind-mid-back {
 		0% { transform: rotate( -45deg ) }
@@ -55,10 +73,14 @@
 		100% { transform: rotate(-45deg) }
 	}
 
+	// For the placement of the hind leg
+
 	.horse__leg--hind-bottom{
 		animation: rotate__leg--hind-mid-back 800ms cubic-bezier(.73,.25,.28,.73) infinite;
 	    transform-origin: top center;
 	}
+
+	// For the animation of the foot, changes based on the placement of the leg
 
 	@keyframes rotate__leg--hind-foot-back {
 		0%, 20% { transform: rotate( 0deg ) }
@@ -66,6 +88,8 @@
 		65% { transform: rotate(20deg) }
 		100% { transform: rotate(0deg) }
 	}
+
+	// Animation placement of the foot
 
 	.horse__leg--hind-foot{
 		animation: rotate__leg--hind-foot-back 800ms ease infinite; 

@@ -2,10 +2,14 @@
 @import "./src/global-css/variables/variables";
 
 // For the prompt message in the message container
+// This is on the bottom of the iphone container
+// Currently only used in the CardiAct App message screen
 
 .iphone__message-prompt{
 	width: calc(100% - 45px);
 	height: 36px;
+
+	// For the input container, that holds the inpur
 
 	.message__input{
 		@extend %display-flex;
@@ -15,22 +19,12 @@
 		border-radius: 20px;
 		padding-right: 3px;
 	}
+
+	// Changes / additions to the default styling of inputs
 	
 	input{
 		width: 87%;
 		font-size: $twelve;
 		padding: 0px 12px 2px;
 	}
-}
-
-
-input{
-	@extend %display-flex;
-	@extend %flex-center-vertical;
-	height: 100%;
-	width: 100%;
-	border: none;
-	outline: none;
-	background: none;
-	font-family: 'Noto Sans TC', sans-serif;
 }

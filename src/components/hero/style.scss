@@ -1,0 +1,15 @@
+
+@import "./src/global-css/variables/variables";
+
+// For the styling of hero images
+// This is the container of all of the images within the portfolio
+
+.hero__img{
+	position: relative;
+	width: 100%;
+	padding: 25px 0;
+
+	// For the image within the container
+
+	img{ @extend %display-flex; }
+}

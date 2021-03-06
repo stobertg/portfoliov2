@@ -1,8 +1,8 @@
+
 import React, { useState } from 'react'
 import symbolDefs from '../../../../../../../images/cardiact/icons/symbol-defs.svg'
 import CardiHeader from '../../shared/header/header'
-import VictimCard from '../../shared/victim/card/card'
-import styles from "./style.scss"
+import './style.scss'
 
 const CardiStaticHeader = ( props ) => {
   const [ selected, setSelected ] = useState( false );

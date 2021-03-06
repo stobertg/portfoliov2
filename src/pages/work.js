@@ -6,8 +6,8 @@ import loadData from "./fetchers";
 import Tilt from 'react-parallax-tilt';
 
 import PageWrap from '../components/page/page'
-import ProjectThumb from '../components/thumbs/thumbs'
 import Website from '../components/assets/devices/web/web'
+import '../components/work/style.scss'
 
 import Gather from '../images/gather/hero.jpg'
 import Walgreens from '../images/wag/heros/coupons.jpg'
@@ -17,6 +17,7 @@ import Taa from '../images/taa/designs/hero.jpg'
 import Misc from '../images/misc/montage/map.jpg'
 
 const Work = () => {
+  // eslint-disable-next-line
   const [state, setState] = useState();
   const loadingContext = useContext(LoadingContext);
 
@@ -26,7 +27,7 @@ const Work = () => {
     loadingContext.done();
   };
 
-  useEffect(() => { loading(); }, []);
+  useEffect(() => { loading(); });
 
   const images = [
     { id: 0, image: Gather, alt: "This is the Alt text" },
@@ -41,7 +42,7 @@ const Work = () => {
   return (
 
   	<PageWrap className="work">
-      <div className="project__thumb">
+      <div className="project__bg">
         <Tilt
           trackOnWindow={ true }
           tiltMaxAngleX={ 10 }

@@ -14,62 +14,6 @@
 	background: $dark-blue;
 	color: $white;
 
-	&--info{
-		width: 100%;
-
-		.device__info{
-			width: 98%;
-			margin: 0 auto 6px;
-
-			strong{
-				font-weight: 400;
-			}
-		}
-
-		.device__dt{
-			transform: scale(0.7);
-			transform-origin: center left;
-
-			&--time{
-				margin-left: 0;
-			}
-		}
-
-		.device__signal{
-			transform: scale(0.8);
-			transform-origin: center right;
-		}
-	}
-
-	&--contain{
-		@extend %display-flex-space-between;
-		position: relative;
-		width: 95%;
-		margin: 0 auto;
-	}
-
-	// For the minimize, close and expand buttons on the right side of the container
-
-	&--size{
-		@extend %display-flex;
-		@extend %flex-center-vertical;
-		position: relative;
-
-		span{
-			width: 10px;
-			height: 10px;
-			border-radius: 50%;
-
-			&:not(:last-child){
-				margin-right: 8px;
-			}
-
-			&:first-child{ background: $red; }
-			&:nth-child(2){ background: $yellow; }
-			&:last-child{ background: $green; }
-		}
-	}
-
 	// For the master containers of the section containing the url
 
 	&--actions{
@@ -79,28 +23,55 @@
 		width: 100%;
 	}
 
+	// For the container of all the items within the device browser
+
+	&--contain{
+		@extend %display-flex-space-between;
+		position: relative;
+		width: 95%;
+		margin: 0 auto;
+	}
+
 	// For the actions on the left and right side of the container
 
 	&--nav{
 		@extend %display-flex;
 		@extend %flex-center-vertical;
 		position: relative;
+		width: 150px;
+
+		// For the container on the left - align the items to the left in the container
+
+		&:last-child{
+			justify-content: flex-end;
+		}
+
+		// For the spacing between the icons within the container
 
 		> div:not(:last-child){
 			margin-right: 24px;
 		}
 
+		// Shared styling of the icons on the left and the right
+		// These are contained within the browser--nav container
+
 		.browser__icon{
 			@extend %display-flex;
 			@extend %flex-center-all;
+
+			// Size and the colors of the icons in the container
 			
 			svg{
 				fill: #6592ef;
 				width: 16px;
 			}
 
+			// For the sizing of the forwardsa an back icon within the left container
+
 			&--arrow{
 				width: 6px;
+
+				// Change the color a bit for the icons
 
 				&:nth-child(2) svg{
 					fill: #707170;
@@ -113,6 +84,40 @@
 			&--share, &--add{
 				width: 14px;
 			}
+		}
+
+		// Remove these sections on mobile
+
+		@media( max-width: $mobile ){
+			display: none;
+		}
+	}
+
+	// For the minimize, close and expand buttons on the left side of the container
+
+	&--size{
+		@extend %display-flex;
+		@extend %flex-center-vertical;
+		position: relative;
+
+		// Setting the size of the buttons and making them into circles
+
+		span{
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+
+			// For the spacing between each buttons, excluding the last item
+
+			&:not(:last-child){
+				margin-right: 8px;
+			}
+
+			// For the colors for each of the buttons
+
+			&:first-child{ background: $red; }
+			&:nth-child(2){ background: $yellow; }
+			&:last-child{ background: $green; }
 		}
 	}
 
@@ -142,6 +147,7 @@
 		}
 
 		// For the reload icon on the right of the container
+		// Contains the circle in the middle and the arrow on the top center
 
 		&-reload{
 			@extend %display-flex;
@@ -179,45 +185,3 @@
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

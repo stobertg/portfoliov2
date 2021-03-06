@@ -1,3 +1,4 @@
+
 import React from 'react'
 import DeviceHeader from '../shared/header/header'
 import "./style.scss"

@@ -18,3 +18,14 @@ input{
     -moz-appearance: none;
     appearance: none;
 }
+
+input{
+	@extend %display-flex;
+	@extend %flex-center-vertical;
+	height: 100%;
+	width: 100%;
+	border: none;
+	outline: none;
+	background: none;
+	font-family: 'Noto Sans TC', sans-serif;
+}

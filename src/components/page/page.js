@@ -1,3 +1,4 @@
+
 import React from 'react'
 import Fade from 'react-reveal/Fade';
 import Block from './page-block'
@@ -6,7 +7,7 @@ import './style.scss'
 const PageWrap = ( props ) => {
 	return(
 
-		<div className={`page${ props.className ? ' ' + 'page__' + props.className : ''}`}>
+		<div className={`page${ props.className ? ' page__' + props.className : '' }`}>
 			{ props.title 
 
 				? <Block>

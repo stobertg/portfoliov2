@@ -1,6 +1,7 @@
+
 import React from 'react'
-import styles from "./style.scss"
 import George from '../../../../../../../../../images/cardiact/prototype/george.jpg'
+import './style.scss'
 
 const MapRouteThree = () => (
   

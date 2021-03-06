@@ -31,20 +31,6 @@
 	}
 }
 
-
-
-
-
-
-// .animation__horse{
-// 	@extend %display-flex;
-// 	@extend %flex-center-all;
-// 	position: relative;
-// 	width: 100vw;
-// 	height: 100vh;
-// }
-
-
 // For the animation of the horse
 
 .animation__horse{
@@ -55,17 +41,8 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	// background: $white;
 	z-index: 9999;
 }
-
-
-
-
-
-
-
-
 
 .horse__contain{
 	@extend %display-flex;
@@ -160,23 +137,3 @@
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

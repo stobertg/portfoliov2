@@ -1,5 +1,5 @@
+
 import React from 'react'
-import CardiCard from '../../card/card'
 import Edgar from '../../../../../../../../images/cardiact/prototype/edgar.jpg'
 import "./style.scss"
 

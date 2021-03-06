@@ -1,7 +1,6 @@
+
 import React from 'react'
 import DeviceBrowser from '../shared/browser/browser'
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/opacity.css';
 import './style.scss'
 
 const Website = ( props ) => {

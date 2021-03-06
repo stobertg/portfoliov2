@@ -1,6 +1,7 @@
+
 import React from 'react'
-import styles from "./style.scss"
 import symbolDefs from '../../../../../../../../../images/cardiact/icons/symbol-defs.svg'
+import './style.scss'
 
 const MapRouteOne = ( props ) => (
   
@@ -11,13 +12,13 @@ const MapRouteOne = ( props ) => (
 
 	  <span className="route__user">
 	    <span className="icon icon__nav icon__direction">
-	      <svg><use xlinkHref={`${symbolDefs}#icon__nav`}></use></svg>
+	      <svg><use xlinkHref={`${ symbolDefs }#icon__nav`}></use></svg>
 	    </span>
 	  </span>
 
 	  <span className="pin__victim">
 	    <span className="icon icon__sm icon__victim">
-        <svg><use xlinkHref={`${symbolDefs}#icon__victim`}></use></svg>
+        <svg><use xlinkHref={`${ symbolDefs }#icon__victim`}></use></svg>
       </span>
 	  </span>
 	</div>

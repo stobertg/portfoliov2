@@ -1,4 +1,6 @@
 
+// Animation of the knight to go up and down as the horse runs 
+
 @keyframes animate__knight {
 	0%  { transform: rotate(-3deg); }
 	50% { transform: rotate(0deg); }
@@ -6,6 +8,7 @@
 }
 
 // For the styling of the knight
+// This is the knight that sits on top of the horse - declaring the animation and color
 
 .knight{
 	animation: animate__knight 800ms ease infinite;
@@ -15,6 +18,7 @@
 	&__person{fill:#e4e4e4;}
 }
 
+// For the position of the knight that sits on the horse
 
 .horse__knight{
 	position: absolute;
@@ -23,6 +27,8 @@
     width: 150px;
     z-index: 10;
 }
+
+// For the animation of the lance and the arm
 
 @keyframes animate__lance {
 	0%  { transform: rotate(0deg); }
@@ -39,12 +45,16 @@
     width: 540px;
     animation: animate__lance 800ms ease infinite;
 
+    // For the placement of the sholder of the arm holding the lance
+
     &--shoulder{
     	position: absolute;
 	    top: 46px;
 	    right: 0;
 	    width: 55px;
     }
+
+    // For the color of the arm and the lance
 
     svg{
     	fill: #e4e4e4;

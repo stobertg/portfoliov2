@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import CardiModal from '../../../shared/modal/modal'
 import symbolDefs from '../../../../../../../../images/cardiact/icons/symbol-defs.svg'
 import "./style.scss"
@@ -25,7 +25,7 @@ const CardiDirections = ( props ) => {
 	return (
 
     <div 
-      className={`cardiact__map-bottom${ props.isOpen ? ' ' + 'show__dir-expanded' :'' }${ props.confirmOpen ? ' ' + 'show__confirm' :'' }`}>
+      className={`cardiact__map-bottom${ props.isOpen ? ' show__dir-expanded' :'' }${ props.confirmOpen ? ' show__confirm' :'' }`}>
       <div 
         className="btn__contain" 
         onClick={() => {
@@ -87,7 +87,7 @@ const CardiDirections = ( props ) => {
       <div className="btn__contain-bottom">
         <div className="btn__contain">
           <div 
-            className={`btn btn__red btn__confirm-alt${ props.confirmOpen ? ' ' + 'btn__disabled' :'' }`}
+            className={`btn btn__red btn__confirm-alt${ props.confirmOpen ? ' btn__disabled' :'' }`}
             onClick={ props.openConfirm }>
               <strong>I'm with Victim</strong>
           </div>

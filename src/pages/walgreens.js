@@ -8,30 +8,25 @@ import PageWrap from '../components/page/page'
 import PageInfo from '../components/page-info/page-info'
 import Block from '../components/page/page-block'
 import Website from '../components/assets/devices/web/web'
+import WagGui from '../components/work/_projects/wag/gui/gui'
 import WagIcons from '../components/work/_projects/wag/icons/icons'
 
-import WagLogo from '../images/wag/global/logo-mark.svg'
 import WagCoupon from '../images/wag/heros/coupons.jpg'
-import WagGui from '../images/wag/heros/gui.jpg'
 import WagHero from '../images/wag/heros/site.jpg'
 import IllusManWithWallet from '../components/work/_projects/wag/components/illustrations/man-with-wallet/man-with-wallet'
 
 const Walgreens = () => {
+  // eslint-disable-next-line
   const [state, setState] = useState();
   const loadingContext = useContext(LoadingContext);
 
   const loading = async () => {
-    //loading some data
     const data = await loadData();
     setState(data);
-
-    //call method to indicate that loading is done
     loadingContext.done();
   };
 
-  useEffect(() => {
-    loading();
-  }, []);
+  useEffect(() => { loading(); });
 
   return (
 
@@ -44,7 +39,7 @@ const Walgreens = () => {
   	>
 
   		<Block>
-        <Fade bottom distance="32px">
+        <Fade bottom distance="32px" ssrReveal="true">
           <Website url="lsg.walgreens.com" image={ WagCoupon } alt="Walgreens Live Style Guide" />
         </Fade>
       </Block>
@@ -75,7 +70,7 @@ const Walgreens = () => {
 
       <Block type="full" bgColor="white" spacing="large">
         <Fade>
-          <div className="gui"><img style={{ width: 5000 }} src={ WagGui } /></div>
+          <WagGui />
         </Fade>
       </Block>
 

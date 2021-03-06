@@ -11,10 +11,10 @@ import PhonePresentation from '../components/work/phone-pres/presentation'
 import PageInfo from '../components/page-info/page-info'
 import Process from '../components/work/_projects/cardiact/process/process'
 
-import Logo from '../images/cardiact/hero/logo.svg'
 import Poster from '../images/cardiact/poster/poster.jpg'
 
 const Cardiact = () => {
+  // eslint-disable-next-line
   const [state, setState] = useState();
   const loadingContext = useContext(LoadingContext);
 
@@ -24,7 +24,7 @@ const Cardiact = () => {
     loadingContext.done();
   };
 
-  useEffect(() => { loading(); }, []);
+  useEffect(() => { loading(); });
 
   return (
 

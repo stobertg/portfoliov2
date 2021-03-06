@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { PreloadingSwitch } from "react-easy-preload";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Preloader from '../preloader/preloader'
@@ -6,7 +6,6 @@ import Logo from '../assets/logo/logo'
 
 import Work from '../../pages/work'
 import About from '../../pages/about'
-import Walgreen from '../../pages/walgreens'
 import Walgreens from '../../pages/walgreens'
 import Castle from '../../pages/castle'
 import Cardiact from '../../pages/cardiact'

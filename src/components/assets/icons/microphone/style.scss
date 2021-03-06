@@ -9,6 +9,9 @@
 	min-height: 39px;
 	height: 39px;
 
+	// For the top container of the microphone
+	// This contains the speaker and the border circle at the bottom of the container
+
 	&-top{
 		@extend %display-flex;
 		@extend %flex-center-horizontal;
@@ -37,6 +40,8 @@
 			width: 100%;
 			overflow: hidden;
 
+			// For the border
+
 			&:before{
 				content: ' ';
 				position: absolute;
@@ -48,6 +53,9 @@
 			}
 		}
 	}
+
+	// For the bottom container of the microphone
+	// this contains the stand - middle line and bottom line
 
 	&-bottom{
 		@extend %display-flex;
@@ -79,17 +87,14 @@
 		}
 	}
 
+	// To change the color of the icon from white to black, use this class
+
 	&.icon__white{
 
 		.icon__mic-top{
 
-			&:before{
-				background: $white;
-			}
-
-			span:before{
-				border-color: $white;
-			}
+			&:before{ background: $white; }
+			span:before{ border-color: $white; }
 		}
 
 		.icon__mic-bottom{
@@ -98,5 +103,24 @@
 				background: $white;
 			}
 		}
+	}
+}
+
+// Changing the icon to be smaller
+
+.btn__icon-sm{
+	@extend %display-flex;
+	@extend %flex-center-all;
+	width: 26px;
+	height: 26px;
+	min-width: 26px;
+	min-height: 26px;
+	background: #808080;
+	border-radius: 50%;
+
+	// Change the sizing of the icon in the container
+
+	.icon{
+		transform: scale(0.4);
 	}
 }

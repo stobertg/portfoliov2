@@ -20,6 +20,7 @@ import Assignment from '../images/gather/assignments.jpg'
 import Library from '../images/gather/library.jpg'
 
 const Gather = () => {
+  // eslint-disable-next-line
   const [state, setState] = useState();
   const loadingContext = useContext(LoadingContext);
 
@@ -29,7 +30,7 @@ const Gather = () => {
     loadingContext.done();
   };
 
-  useEffect(() => { loading(); }, []);
+  useEffect(() => { loading(); });
 
   return (
 

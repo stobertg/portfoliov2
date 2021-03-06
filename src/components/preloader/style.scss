@@ -1,6 +1,10 @@
 
 @import "./src/global-css/variables/variables";
 
+// For the preloader of the site
+// This is the knight on the horse - it only shows up once the site is first visited
+// After that, just the top bar is shown when loading pages
+
 @keyframes animateBg {
 	0%   { opacity: 0; }
 	100% { opacity: 1; }
@@ -12,7 +16,7 @@
 }
 
 // For the styling of the preloader
-// This is a global component that shows up on every page, before the page is loaded
+// This is a global component that shows up on the index page, before the page is loaded
 
 .preloader{
 	@extend %display-flex;
@@ -36,9 +40,13 @@
 		animation: animateBg 300ms cubic-bezier(.21,.71,.52,.99) forwards; 
 	}
 
+	// Change the default sizing of the knight animation to be a bit smaller
+
 	.horse__contain{
 		transform: scale(0.7);
 	}
+
+	// For the container of the horse animation
 	
 	.animation__horse{
 		transform: scale(0);
@@ -47,5 +55,3 @@
 		animation-delay: 300ms;
 	}
 }
-
-

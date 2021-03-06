@@ -1,8 +1,9 @@
+
 import React from 'react'
-import Icon from '../components/icon/icon'
+import Icon from './icon'
 import './style.scss'
 
-const WagIcons = ( props ) => {
+const WagIcons = () => {
 	const icons = [
 		{ icon: 'device--desktop' },
 		{ icon: 'device--tablet' },

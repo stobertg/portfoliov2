@@ -1,6 +1,8 @@
 
 @import "./src/global-css/variables/variables";
 
+// For the styling of the camera icon
+
 .icon__camera{
 	position: relative;
 	min-width: 50px;
@@ -8,13 +10,16 @@
 	min-height: 39px;
 	height: 39px;
 
-	&-top{
+	// For the top container of the camera icon
+	// This contains the shutter and the take picture button
+
+	&--top{
 		@extend %display-flex;
 		@extend %flex-center-all;
 		width: 100%;
 		height: 5px;
 
-		// For the button of the left of the container
+		// For the button on the left of the container
 
 		&:before{
 			content: ' ';
@@ -22,7 +27,7 @@
 			width: 9%;
 			height: 2px;
 			border-radius: 10px;
-			background: $black;
+			background: #808080;
 			left: 7px;
 		}
 
@@ -33,6 +38,8 @@
 			padding: 0px 4px;
 			width: 56%;
 			height: 6px;
+
+			// For the base of the shutter
 
 			span{
 				position: relative;
@@ -50,7 +57,7 @@
 				position: absolute;
 				width: 5px;
 				height: 5px;
-				background-image: radial-gradient(circle at 100% 0, transparent 0%, transparent 5px, $black 5px);
+				background-image: radial-gradient(circle at 100% 0, transparent 0%, transparent 5px, #808080 5px);
 				bottom: 0px;
 			}
 
@@ -69,14 +76,16 @@
 		}
 	}
 
-	&-base{
+	// For the base of the camera
+
+	&--base{
 		@extend %display-flex;
 		@extend %flex-center-all;
 		position: relative;
 		width: 100%;
 		height: calc(100% - 5px);
 		border-radius: 8px;
-		background: $black;
+		background: #808080;
 	}
 
 	// For the circle in the center of the container
@@ -112,38 +121,5 @@
 			border-radius: 50%;
 			background: $white;
 		}
-	}
-}
-
-.icon__gray{
-
-	.icon__camera-top{
-
-		&:before, div span{
-			background: #808080;
-		}
-
-		div:before, div:after{
-			background-image: radial-gradient(circle at 100% 0, transparent 0%, transparent 5px, #808080 5px);
-		}
-	}
-
-	.icon__camera-base{
-		background: #808080;
-	}
-}
-
-.btn__icon-sm{
-	@extend %display-flex;
-	@extend %flex-center-all;
-	width: 26px;
-	height: 26px;
-	min-width: 26px;
-	min-height: 26px;
-	background: #808080;
-	border-radius: 50%;
-
-	.icon{
-		transform: scale(0.4);
 	}
 }

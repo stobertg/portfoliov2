@@ -8,6 +8,9 @@
 	100% { transform: rotate( 0deg) scale(1, 1); }
 }
 
+// For the base of the horse
+// This contains all of the components that make up the horse
+
 .horse__base{
 	position: relative;
     width: 350px;
@@ -28,6 +31,8 @@
 
 	    .horse__head{
 
+	    	// For the animation of the head and the head of the horse
+
 	    	@keyframes rotate__head {
 				0%  { transform: rotate( 0deg ) translate3d(0, 0, 0); }
 				50% { transform: rotate( 6deg ) translate3d(0, 6px, 0); }
@@ -43,6 +48,8 @@
 	    		width: 94px;
 	    		animation: rotate__head 800ms ease infinite; 
 	    	}
+
+	    	// For the animation of the neck of the horse
 
 	    	@keyframes rotate__neck {
 				0%  { transform: rotate( 0deg ) translate3d(0, 0, 0) scale(1, 1); }
@@ -70,6 +77,8 @@
 	    right: 0;
 	    width: 260px;
 	}
+
+	// For the animation of the tail on the horse
 
 	@keyframes animate__tail {
 		0%  { transform: scale(1) rotate(-6deg); }

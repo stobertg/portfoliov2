@@ -1,6 +1,8 @@
 
 @import "./src/global-css/variables/variables";
 
+// For the header of the device to support time on the left and ultilities on the right
+
 .device{
 
 	// For the content to the left and the right of the speaker
@@ -22,6 +24,8 @@
 	&__info-white{
 		color: $white;
 
+		// Set the color all of the icons to be white
+
 		.device__dt--time span, .signal, .signal div, .battery, .battery div{
 
 			&:before, &:after{
@@ -29,11 +33,18 @@
 			}
 		}
 
+		// Change the colors of the battery left and the nub on the left to be a bit less white
+
 		.battery{
+
+			// For the batter level in the center of the container
+			// This is different than the border
 
 			&:after{
 				background: rgba($white, 0.5);
 			}
+
+			// For the nub on the left
 
 			div{
 				border-color: rgba($white, 0.5);

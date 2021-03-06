@@ -1,6 +1,7 @@
+
 import React from 'react'
 import CardiModal from '../modal/modal'
-import styles from "./style.scss"
+import './style.scss'
 
 const CardiContain = ( props ) => {
 	return (
@@ -8,11 +9,13 @@ const CardiContain = ( props ) => {
     <div className="cardiact__wrap">
       <div className="cardiact__content">
 
-        { props.title ?
-          <div className="cardiact__content--intro">
-            <h2><strong>{ props.title }</strong></h2>
-            <p>{ props.text }</p>
-          </div> : null
+        { props.title 
+          ? <div className="cardiact__content--intro">
+              <h2><strong>{ props.title }</strong></h2>
+              <p>{ props.text }</p>
+            </div> 
+
+          : null
         }
 
         { props.children }
@@ -25,6 +28,7 @@ const CardiContain = ( props ) => {
               isModalOpen={ props.isModalOpen }
               modalOpen={ props.modalOpen }
             /> 
+            
           : null
         }
       </div>

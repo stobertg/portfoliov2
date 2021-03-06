@@ -1,0 +1,91 @@
+
+@import "./src/global-css/variables/variables";
+
+// For the master container of all of the content on the work page
+// This is the page that shows up once the user comes to the site
+
+.page__work{
+	@extend %display-flex;
+	@extend %flex-center-all;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	padding-bottom: 0;
+	z-index: 0;
+}
+
+// For the text in the center of the container
+// This is the list of all the projects within the portfolio
+
+.work__list{
+	position: absolute;
+	color: $white;
+	font-size: $fifty;
+	text-align: center;
+
+	// For the container of the project links
+
+	a{
+		@extend %display-inline-flex;
+		@extend %flex-center-vertical;
+		position: relative;
+		padding: 5px 0;
+
+		// For the line that animtes in on hover
+		// This line shows up in the middle of the text
+
+		&:after{
+			@extend %speed-6ms;
+			content: ' ';
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: 3px;
+			background: $white;
+			transform: scale( 0, 1 );
+		}
+
+		// Show the line on hover
+
+		&:hover:after{
+			transform: scale( 1, 1 );
+		}
+	}
+
+	// Change the font to be serif and the font weight to be thinner
+
+	strong{
+		@extend %body-font;
+		font-weight: 300;
+	}
+}
+
+// For the styling of the project background
+// This is the background where the image changes based on the project, with the perspective changing on mouse move
+
+.project__bg{
+	@extend %display-inline-flex;
+	@extend %flex-center-all;
+	position: relative;
+
+	// For the contatiner for the image
+
+	> div{
+		@extend %display-flex;
+		position: relative;
+		width: 1000px;
+		height: 600px;
+		overflow: hidden;
+		opacity: 0.08;
+		z-index: 0;
+
+		// For the sizing of the image within the container
+		
+		img{
+			@extend %display-flex;
+			width: 100%;
+		}
+	}
+}

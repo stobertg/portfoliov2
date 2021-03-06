@@ -1,7 +1,8 @@
 
 @import "./src/global-css/variables/variables";
 
-// Styling for the nav
+// Styling for the styling of the global nav
+// This is located on the top of each page - containing the logo on the left and three links on the right
 
 .header{
 	position: relative;
@@ -9,6 +10,8 @@
 	color: $white;
 	background: none;
 	z-index: 10;
+
+	// For the container of all the content within the header
 
 	nav{
 		@extend %display-flex-space-between;
@@ -18,15 +21,24 @@
 		margin: 0 auto;
 		padding: 20px 0;
 
-		.logo{
-			transform: scale( 0.7 );
-		}
+		// For the logo on the left side of the container
+		// Need to adjust the sizing of the default logo size
+
+		.logo{ transform: scale( 0.7 ); }
+
+		// For the container of each individual link on the right side of the container
 
 		> div a {
 			position: relative;
 			padding: 12px 0;
 
-			// for the underline that shows up on hover
+			// For the spacing between each of the links, exculding the last a tag
+
+			&:not(:last-child){
+				margin-right: 16px;
+			}
+
+			// For the white underline that shows up on hover
 
 			&:after{
 				@extend %speed-3ms;
@@ -40,18 +52,11 @@
 				transform: scale( 0 , 1 );
 			}
 
-			&:not(:last-child){
-				margin-right: 16px;
-			}
+			// When a user hovers over a link, show the bottom line
 
 			&:hover:after{
 				transform: scale( 1 , 1 );
 			}
 		}
-	}
-
-	ul{
-		@extend %display-flex;
-		@extend %flex-center-vertical;
 	}
 }

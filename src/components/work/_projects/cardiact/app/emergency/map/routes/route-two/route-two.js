@@ -1,6 +1,7 @@
+
 import React from 'react'
-import styles from "./style.scss"
 import RichardIII from '../../../../../../../../../images/cardiact/prototype/richardiii.jpg'
+import './style.scss'
 
 const MapRouteTwo = () => (
   

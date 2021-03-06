@@ -1,20 +1,15 @@
+
 import React from 'react'
-import styles from "./style.scss"
+import './style.scss'
 
-// Components needed
+const PresentationText = ( props ) => {
+	return (
 
-import PresentationTitle from './title/title'
+	  <div className="stage__text">
+	  	{ props.children }
+	  </div>
 
-class PresentationText extends React.Component {
-	render() {
-		return (
-
-		  <div className="stage__text">
-		  	{this.props.children}
-		  </div>
-
-		)
-	}
+	)
 }
 
 export default PresentationText

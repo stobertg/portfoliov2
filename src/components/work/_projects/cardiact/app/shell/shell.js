@@ -1,66 +1,50 @@
+
 import React from 'react'
 import Phone from '../../../../../assets/devices/iphone/iphone'
-import CardiHeader from '../shared/header/header'
 import CardiActEmergency from '../emergency/emergency'
 import CardiActStatic from '../static/static'
 import symbolDefs from '../../../../../../images/cardiact/icons/symbol-defs.svg'
 import "./style.scss"
 
-class CardiAct extends React.Component {
-	constructor(props) {
-    super(props);
-    this.state = {
-    	phoneInfoWhite: true,
-    }
-  }
+const CardiAct = ( props ) => {
+	return (
 
-  phoneInfoWhite() {
-  	this.setState({ phoneInfoWhite: !this.state.phoneInfoWhite });
-  }
+		<Phone white={ true }>
 
-	render() {
-		return (
+			{ props.transition 
+				? <div className="cardiact__transition">
+						<span className="icon icon__sm icon__victim">
+							<svg><use xlinkHref={`${symbolDefs}#icon__victim`}></use></svg>
+			      </span>
+					</div> 
 
-			<Phone 
-				white={ this.state.phoneInfoWhite }
-				>
+				: null
+			}
 
-				{ this.props.transition 
-					? <div className="cardiact__transition">
-							<span className="icon icon__sm icon__victim">
-								<svg><use xlinkHref={`${symbolDefs}#icon__victim`}></use></svg>
-				      </span>
-						</div> 
+			{ props.emergencyMode 
+				? <CardiActEmergency 
+				  	showMapText={() => props.showMapText()}
+			    	showStatusText={() => props.showStatusText()}
+			    	showChatText={() => props.showChatText()}
+			    	showConfirmText={() => props.showConfirmText()}
+			    	removeConfirmText={() => props.removeConfirmText()}
+				  /> 
 
-					: null
-				}
+				: null
+			}
 
-				{ this.props.emergencyMode 
-					? <CardiActEmergency 
-					  	phoneInfoWhite={() => this.phoneInfoWhite()}
-					  	showMapText={() => this.props.showMapText()}
-				    	showStatusText={() => this.props.showStatusText()}
-				    	showChatText={() => this.props.showChatText()}
-				    	showConfirmText={() => this.props.showConfirmText()}
-				    	removeConfirmText={() => this.props.removeConfirmText()}
-					  /> 
+			{props.staticMode 
+				? <CardiActStatic 
+						showStatusText={() => props.showStaticStatusText()}
+						showContactsText={() => props.showStaticContactsText()}
+						showProfileText={() => props.showStaticProfileText()}
+					/> 
 
-					: null
-				}
+				: null
+			}
+		</Phone>
 
-				{this.props.staticMode 
-					? <CardiActStatic 
-							showStatusText={() => this.props.showStaticStatusText()}
-							showContactsText={() => this.props.showStaticContactsText()}
-							showProfileText={() => this.props.showStaticProfileText()}
-						/> 
-
-					: null
-				}
-			</Phone>
-
-		)
-	}
+	)
 }
 
 export default CardiAct

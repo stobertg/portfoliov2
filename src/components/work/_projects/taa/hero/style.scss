@@ -91,11 +91,15 @@
 			z-index: 1;
 		}
 
+		// For the gradient on the top of the container
+
 		&:before{
 			top: 0;
 			background: rgb(0,0,0);
 			background: linear-gradient(180deg, rgba( #1e1e1e, 1 ) 0%, rgba( #1e1e1e, 0 ) 100%);
 		}
+
+		// For the gradient on the bottom of the container
 
 		&:after{
 			bottom: 0;
@@ -105,13 +109,8 @@
 	}
 }
 
-
-
-
-
-
-
-
+// For the decorative lines that run through the full height of the page
+// This is within the center of the page
 
 .taa__deco{
 	position: absolute;
@@ -119,7 +118,8 @@
 	left: 0;
 	width: 100%;
 	height: 150%;
-	// background: $white;
+
+	// For the container of the lines
 
 	ul{
 		@extend %display-flex;
@@ -128,32 +128,17 @@
 		height: 100%;
 	}
 
+	// For the styling of the lines
+
 	li{
 		position: relative;
 		width: 12.5%;
 		height: 100%;
+
+		// Add the line to the right side of the container except for the last container
 
 		&:not(:last-child){
 			border-right: 1px solid rgba( $white, 0.03 );
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

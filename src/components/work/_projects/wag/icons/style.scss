@@ -2,6 +2,7 @@
 @import "./src/global-css/variables/variables";
 
 // For the styling of the icons within the Walrgeens Project
+// This is in a grid system containing all of the icons
 
 .icon__contain{
 	@extend %display-flex-wrap;
@@ -11,12 +12,16 @@
 	width: 90%;
 	margin: 0 auto;
 
+	// For the container of the individual icons
+
 	.icon{
 		@extend %display-flex;
 		@extend %flex-center-all;
 		width: 85px;
 		height: 85px;
 		color: $white;
+
+		// For the sizing of the icon within the container
 
 		svg{
 			width: 68%;

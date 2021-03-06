@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+
+import React from 'react'
 import VictimCard from '../victim/card/card'
 import "./style.scss"
 
 const CardiHeader = ( props ) => {
-  const [ selected, setSelected ] = useState( false )
 	return (
 	  
 	  <div className="cardiact__header">

@@ -6,11 +6,13 @@
 
 .device__dt{
 
-	// For the date on the left of the speaker
+	// For the date to the left of the speaker wihtin the iPhone
 
 	&--time{
 		margin-left: 10px;
 		font-size: 11px;
+
+		// Center the time within the container
 
 		strong{
 			@extend %display-flex;

@@ -6,7 +6,7 @@ const Icon = ( props ) => {
 	return(
 
 		<span 
-			className={`icon icon__${ props.icon }${ props.size ? ' ' + 'icon__' +  props.size:'' }${ props.type ? ' ' + 'icon__' +  props.type:'' } ${ props.color ? ' ' + 'icon__' +  props.color:'' }`}
+			className={`icon icon__${ props.icon }${ props.size ? ' icon__' +  props.size:'' }${ props.type ? ' icon__' +  props.type:'' } ${ props.color ? ' icon__' +  props.color:'' }`}
 			aria-hidden={ props.ariaHidden ? 'true':'false'}
 			focusable="false"
 		>

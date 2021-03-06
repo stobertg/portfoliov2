@@ -17,6 +17,7 @@ import StMarks from '../images/castle/stmarks__tower.jpg'
 import Tudor from '../images/castle/tudor.jpg'
 
 const Castle = () => {
+  // eslint-disable-next-line
   const [state, setState] = useState();
   const loadingContext = useContext(LoadingContext);
 
@@ -26,7 +27,7 @@ const Castle = () => {
     loadingContext.done();
   };
 
-  useEffect(() => { loading(); }, []);
+  useEffect(() => { loading(); });
 
   return (
 

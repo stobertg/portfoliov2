@@ -1,0 +1,25 @@
+
+@import "./src/global-css/variables/variables";
+
+// For the GUI presentation on the Walgreens project
+// This slowly animates from left to right, displaying all of the content created for the LSG
+
+.gui{
+	position: relative;
+	width: 100vw;
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
+
+	// For the GUI image within the container
+
+	img{
+		@extend %display-flex;
+	}
+
+	// Remove the scrollbar on the GUI component
+
+	&::-webkit-scrollbar {
+	    width: 0; 
+	    background: transparent; 
+	}
+}
