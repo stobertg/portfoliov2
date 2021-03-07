@@ -12,12 +12,29 @@ https://keanankoppenhaver.com/
 
 Team members worked with:
 
-Gather: Faraj Khasib ( back-end ) 
-CardiAct: Geoff Burroughs - https://www.linkedin.com/in/burrougw/
-Walgreens: Ryne Estwing - http://ryneestwing.com/, Mike Pruim - https://www.mikepruim.com/, Akemi Hong - http://www.studioakemi.com/work-1
+Gather: 
+<br/>
+Faraj Khasib ( back-end ) 
+<br/><br/>
+CardiAct: 
+<br/>
+Geoff Burroughs - https://www.linkedin.com/in/burrougw/
+<br/><br/>
+Walgreens: 
+<br/>
+Ryne Estwing - http://ryneestwing.com/ 
+<br/>
+Mike Pruim - https://www.mikepruim.com/ 
+<br/>
+Akemi Hong - http://www.studioakemi.com/work-1
 
+<br/><br/>
 Credit to the third-party libraries used:
+<br/>
 react-tilt: https://www.npmjs.com/package/react-parallax-tilt
+<br/>
 react-easy-preload: https://www.npmjs.com/package/react-easy-preload?activeTab=readme
+<br/>
 react-reveal: https://www.react-reveal.com/examples/common/custom/
+<br/>
 react-count-up: https://www.npmjs.com/package/react-countup
