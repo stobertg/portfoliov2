@@ -1,4 +1,6 @@
 
+<img src="./src/images/global/siteshot.jpg" alt="Tyler Stober Portfolio" />
+<br/>
 Thanks for visiting my Portfolio repo for www.tylerstober.com
 <br/>
 Don't hesitate to email stobertg@gmail.com for new projects and inquiries.
