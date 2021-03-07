@@ -3,8 +3,9 @@
 <br/>
 Thanks for visiting my Portfolio repo for www.tylerstober.com
 <br/>
-Don't hesitate to email stobertg@gmail.com for new projects and inquiries.
+Email stobertg@gmail.com for new projects and inquiries.
 
+<br/>
 This is for viewing / observational purposes only ( i.e. Potential Clients / Employers )
 <br/>
 Visit https://codepen.io/stobertg for front end contributions available for free use.
