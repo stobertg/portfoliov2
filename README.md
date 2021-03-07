@@ -4,8 +4,7 @@
 Thanks for visiting my Portfolio repo for www.tylerstober.com
 <br/>
 Email stobertg@gmail.com for new projects and inquiries.
-
-<br/>
+<br/><br/>
 This is for viewing / observational purposes only ( i.e. Potential Clients / Employers )
 <br/>
 Visit https://codepen.io/stobertg for front end contributions available for free use.
