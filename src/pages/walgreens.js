@@ -13,7 +13,7 @@ import WagIcons from '../components/work/_projects/wag/icons/icons'
 
 import WagCoupon from '../images/wag/heros/coupons.jpg'
 import WagHero from '../images/wag/heros/site.jpg'
-import IllusManWithWallet from '../components/work/_projects/wag/components/illustrations/man-with-wallet/man-with-wallet'
+import IllusManWithWallet from '../components/work/_projects/wag/illustration/man-with-wallet'
 
 const Walgreens = () => {
   // eslint-disable-next-line

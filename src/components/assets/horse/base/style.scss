@@ -13,69 +13,69 @@
 
 .horse__base{
 	position: relative;
-    width: 350px;
-    height: 189px;
-    animation: rotate__body 800ms ease infinite; 
+	width: 350px;
+	height: 189px;
+	animation: rotate__body 800ms ease infinite; 
 
 	// For the head on the left side of the container
 
 	&--head{
 		position: absolute;
-	    top: 0;
-	    left: 0;
-	    width: 154px;
-    	height: 134px;
+		top: 0;
+		left: 0;
+		width: 154px;
+		height: 134px;
 
-	    // For the master container of the head
-	    // This contains the face on the left and the neck on the right
+		// For the master container of the head
+		// This contains the face on the left and the neck on the right
 
-	    .horse__head{
+		.horse__head{
 
-	    	// For the animation of the head and the head of the horse
+			// For the animation of the head and the head of the horse
 
-	    	@keyframes rotate__head {
+			@keyframes rotate__head {
 				0%  { transform: rotate( 0deg ) translate3d(0, 0, 0); }
 				50% { transform: rotate( 6deg ) translate3d(0, 6px, 0); }
 				100% { transform: rotate( 0deg  translate3d(0, 0, 0)); }
 			}
 
-	    	// For the face on the left of the container
+			// For the face on the left of the container
 
-	    	&--face{
-	    		position: absolute;
-	    		top: 0;
-	    		left: 0;
-	    		width: 94px;
-	    		animation: rotate__head 800ms ease infinite; 
-	    	}
+			&--face{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 94px;
+				animation: rotate__head 800ms ease infinite; 
+			}
 
-	    	// For the animation of the neck of the horse
+			// For the animation of the neck of the horse
 
-	    	@keyframes rotate__neck {
+			@keyframes rotate__neck {
 				0%  { transform: rotate( 0deg ) translate3d(0, 0, 0) scale(1, 1); }
 				50% { transform: rotate( -6deg ) translate3d(0, 2px, 0) scale(0.95, 0.95); }
 				100% { transform: rotate( 0deg ) translate3d(0, 0, 0) scale(1, 1); }
 			}
 
-	    	// For the neck on the right of the container
+			// For the neck on the right of the container
 
-	    	&--neck{
-	    		position: absolute;
-	    		bottom: 0;
-	    		right: 0;
-	    		width: 107px;
-	    		animation: rotate__neck 800ms ease infinite;
-	    	}
-	    }
+			&--neck{
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				width: 107px;
+				animation: rotate__neck 800ms ease infinite;
+			}
+		}
 	}
 
 	// For the main part of the body on the right side of the container
 
 	&--body{
 		position: absolute;
-	    bottom: 0;
-	    right: 0;
-	    width: 260px;
+		bottom: 0;
+		right: 0;
+		width: 260px;
 	}
 
 	// For the animation of the tail on the horse
@@ -90,11 +90,11 @@
 
 	&--tail{
 		position: absolute;
-	    width: 140px;
-	    right: -120px;
-	    top: 65px;
-	    transform: rotate(-6deg);
-	    animation: animate__tail 800ms ease infinite;
-	    transform-origin: top left;
+		width: 140px;
+		right: -120px;
+		top: 65px;
+		transform: rotate(-6deg);
+		animation: animate__tail 800ms ease infinite;
+		transform-origin: top left;
 	}
 }

@@ -1,275 +1,228 @@
 
 @import "./src/global-css/variables/variables";
 
+// This animation fades in and out with scale
+// This is for the master loading container of the component
+
 @keyframes loadingContainer {
-  0% { transform: scale(0.2); opacity:0; }
-  20%, 50% { transform: scale(1); opacity:1; }
-  80%, 100% { transform: scale(0.7); opacity: 0; }
+	0% { transform: scale(0.2); opacity:0; }
+	20%, 50% { transform: scale(1); opacity:1; }
+	80%, 100% { transform: scale(0.7); opacity: 0; }
 }
 
-// Variable used to share the animation above
+// For the container of the Goldin logo
 
-%loading-container{ animation: loadingContainer 2800ms infinite cubic-bezier(0.770, 0.000, 0.175, 1.000); }
-
-.loading{
-
-  &__contain{
-    @extend %display-flex;
-    @extend %flex-center-all;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: $white;
-    z-index: 9999;
-  }
-
-  &__animation{
-    @extend %loading-container;
-    // @extend %display-flex;
-    // @extend %flex-center-all;
-    width: 100px;
-    height: 100px;
-
-    // .goldin__logo{
-    // 	position: absolute;
-    // 	transform: scale( 0.85 );
-    // }
-  }
+.loading__animation{
+	position: relative;
+	width: 100px;
+	height: 100px;
+	animation: loadingContainer 2800ms infinite cubic-bezier(0.770, 0.000, 0.175, 1.000);
 }
 
-
-
-
-
+// Animations of the g, based on the six sides of the hex
 
 @keyframes topRightBlock {
-  0%, 6% { transform: skewY(30deg) scale(0,1); }
-  12%,100% { transform: skewY(30deg) scale(1,1); }
+	0%, 6% { transform: skewY(30deg) scale(0,1); }
+	12%,100% { transform: skewY(30deg) scale(1,1); }
 }
-
-// Variable used to share the animation above
-
-%top-right-block{ animation: topRightBlock 2800ms infinite ease; }
 
 @keyframes topLeftBlock {
-  0%, 11% { transform: skewY(-30deg) scale(0,1); }
-  17%, 100% { transform: skewY(-30deg) scale(1,1); }
+	0%, 11% { transform: skewY(-30deg) scale(0,1); }
+	17%, 100% { transform: skewY(-30deg) scale(1,1); }
 }
-
-// Variable used to share the animation above
-
-%top-left-block{ animation: topLeftBlock 2800ms infinite ease; }
 
 @keyframes midLeftBlock {
   0%, 16% { transform: skewY(-30deg) scale(1,0); }
   22%,100% { transform: skewY(-30deg) scale(1,1); }
 }
 
-// Variable used to share the animation above
-
-%mid-left-block{ animation: midLeftBlock 2800ms infinite ease; }
-
 @keyframes bottomLeftBlock {
-  0%, 21% { transform: skewY(30deg) scale(0,1); }
-  27%, 100% { transform: skewY(30deg) scale(1,1); }
+	0%, 21% { transform: skewY(30deg) scale(0,1); }
+	27%, 100% { transform: skewY(30deg) scale(1,1); }
 }
-
-// Variable used to share the animation above
-
-%bottom-left-block{ animation: bottomLeftBlock 2800ms infinite ease; }
 
 @keyframes bottomRightBlock {
-  0%, 26% { transform: skewY(-30deg) scale(0,1); }
-  32%, 100% { transform: skewY(-30deg) scale(1,1); }
+	0%, 26% { transform: skewY(-30deg) scale(0,1); }
+	32%, 100% { transform: skewY(-30deg) scale(1,1); }
 }
-
-// Variable used to share the animation above
-
-%bottom-right-block{ animation: bottomRightBlock 2800ms infinite ease; }
 
 @keyframes midRightBlock {
-  0%, 31% { transform: skewY(30deg) scale(0,1); }
-  37%, 100% { transform: skewY(30deg) scale(1,1); }
+	0%, 31% { transform: skewY(30deg) scale(0,1); }
+	37%, 100% { transform: skewY(30deg) scale(1,1); }
 }
-
-// Variable used to share the animation above
-
-%mid-right-block{ animation: midRightBlock 2800ms infinite ease; }
 
 @keyframes showShadow{
-  0%, 31% { opacity: 0; }
-  37%,100% { opacity: 1; }
+	0%, 31% { opacity: 0; }
+	37%,100% { opacity: 1; }
 }
 
-%show-shadow{ animation: showShadow 2800ms infinite; }
-
-// For the Goldin logo made in pure css
+// For the master container of the goldin logo
+// This is the hex line animation that shows up on the top of the Goldin project
 
 .goldin__logo{
-  position: relative;
-  width: 110px;
-  width: 110px;
-  height: 129px;
-  overflow: hidden;
+	position: relative;
+	width: 110px;
+	width: 110px;
+	height: 129px;
+	overflow: hidden;
 
-  .g{
+	// This holds all of the containers that make up the g animation
+	// For the shared styles for the top and the bottom part of the g
 
-    // For the shared styles for the top and the bottom part of the g
+	.g__shared{
+		position: relative;
+		width: 100%;
+		height: 58px;
 
-    &__shared{
-      position: relative;
-      width: 100%;
-      height: 58px;
+		// For the shared styling of the lines within the g
 
-      // For the shared styling of the lines within the g
+		&:before, &:after{
+			content: ' ';
+			position: absolute;
+			width: 50%;
+			height: 26px;
+		}
 
-      &:before, &:after{
-        content: ' ';
-        position: absolute;
-        width: 50%;
-        height: 26px;
-      }
+		// For the left slant
 
-      // For the left slant
+		&:before{
+			top: 0;
+			left: 0;
+		}
 
-      &:before{
-        top: 0;
-        left: 0;
-      }
+		// For the right slant
 
-      // For the right slant
+		&:after{
+			top: 32px;
+			right: 0;
+		}
+	}
 
-      &:after{
-        top: 32px;
-        right: 0;
-      }
-    }
+	// For the styling of the top part of the g
 
-    // For the styling of the top part of the g
+	.g__top{
+		z-index: 2;
 
-    &__top{
-      z-index: 2;
+		// The left and the right slant should be black
 
-      // The left and the right slant should be black
+		&:before, &:after{
+			transform-origin: center right;
+			background: $black;
+		}
 
-      &:before, &:after{
-        transform-origin: center right;
-        background: $black;
-      }
+		// For the slant on the left
 
-      // For the slant on the left
+		&:before{
+			animation: topLeftBlock 2800ms infinite ease;
+		}
 
-      &:before{
-        @extend %top-left-block;  
-      }
+		// For the slant on thre right
 
-      // For the slant on thre right
+		&:after{
+			animation: topRightBlock 2800ms infinite ease;
+		}
+	}
 
-      &:after{
-        @extend %top-right-block;
-      }
-    }
+	// For the styling on the bottom part of the g
 
-    // For the styling on the bottom part of the g
+	.g__bottom{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 2;
 
-    &__bottom{
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      z-index: 2;
+		// The left and the right slant should be orange
 
-      // The left and the right slant should be orange
+		&:before, &:after{
+			transform-origin: center left;
+			background: $orange;
+		}
 
-      &:before, &:after{
-        transform-origin: center left;
-        background: $orange;
-      }
+		// For the slant on the left
 
-      // For the slant on the left
+		&:before{
+			animation: bottomLeftBlock 2800ms infinite ease;
+		}
 
-      &:before{
-        @extend %bottom-left-block;
-      }
+		// For the slant on the right
 
-      // For the slant on the right
+		&:after{
+			animation: bottomRightBlock 2800ms infinite ease;
+		}
+	}
 
-      &:after{
-        @extend %bottom-right-block;
-      }
-    }
+	// For the container within the middle of the component
+	// This has the orange lines on the left and the slant line on the right
 
-    &__middle{
-      position: absolute;
-      top: 32px;
-      width: 100%;
-      height: 65px;
-      overflow: hidden;
+	.g__middle{
+		position: absolute;
+		top: 32px;
+		width: 100%;
+		height: 65px;
+		overflow: hidden;
 
-      // For the orange line on the left of the container
+		// For the orange line on the left of the container
 
-      &--left{
-        @extend %mid-left-block;
-        transform-origin: top left;
-        position: relative;
-        width: 23px;
-        height: 100%;
-        background: $orange;
-        z-index: 1;
+		&--left{
+			animation: midLeftBlock 2800ms infinite ease;
+			transform-origin: top left;
+			position: relative;
+			width: 23px;
+			height: 100%;
+			background: $orange;
+			z-index: 1;
 
-        // For the shadow on the top of the line
+			// For the shadow on the top of the line
 
-        &:before{
-          content: ' ';
-          // position: absolute;
-          transform: skewY(12deg);
-          width: 100%;
-          height: 29px;
-          background: #bd5727;
-        }
-      }
+			&:before{
+				content: ' ';
+				transform: skewY(12deg);
+				width: 100%;
+				height: 29px;
+				background: #bd5727;
+			}
+		}
 
-      // For the orange line on the right of the container
+		// For the orange line on the right of the container
 
-      &--right{
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        width: 37px;
-        height: 48px;
-        z-index: 3;
+		&--right{
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			width: 37px;
+			height: 48px;
+			z-index: 3;
 
-        &:before{
-          content: ' ';
-          position: absolute;
-          @extend %mid-right-block;
-          transform-origin: center right;
-          position: absolute;
-          right: 0;
-          bottom: 0;
-          width: 37px;
-          height: 26px;
-          background: $orange;
-          z-index: 1;
-        }
+			// For the shadow below the line
 
-        // For the dark shadow below the line
+			&:before{
+				content: ' ';
+				position: absolute;
+				animation: midRightBlock 2800ms infinite ease;
+				transform-origin: center right;
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				width: 37px;
+				height: 26px;
+				background: $orange;
+				z-index: 1;
+			}
 
-        &:after{
-          content: ' ';
-          position: absolute;
-          @extend %show-shadow;
-          transform: skewX(-61deg) skewY(12deg);
-          right: -16px;
-          bottom: 5px;
-          width: 43px;
-          height: 10px;
-          background: #bd5727;
-          z-index: 0;
-        }
-      }
-    }
-  }
+			// For the dark shadow below the line
+
+			&:after{
+				content: ' ';
+				position: absolute;
+				animation: showShadow 2800ms infinite;
+				transform: skewX(-61deg) skewY(12deg);
+				right: -16px;
+				bottom: 5px;
+				width: 43px;
+				height: 10px;
+				background: #bd5727;
+				z-index: 0;
+			}
+		}
+	}
 }
-

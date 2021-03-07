@@ -141,7 +141,7 @@ const WagIcons = () => {
 		
 		<div className="icon__contain">
 			{ icons.map(( icon, index ) =>
-				<Icon icon={ icon.icon } />
+				<Icon key={ icon.icon} icon={ icon.icon } />
 			)}
 	  </div>
 

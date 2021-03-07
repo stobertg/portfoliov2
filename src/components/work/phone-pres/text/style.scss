@@ -1,0 +1,116 @@
+
+@import "./src/global-css/variables/variables";
+
+// For the aniamtions of the text
+// Text is changed when buttons are clicked within the app
+
+@keyframes text__up {
+	0%, 2.5%   { transform: translateY( 20px  ); opacity: 0; z-index: 0; }
+	4.5%, 40%  { transform: translateY( 0px   ); opacity: 1; z-index: 1; }
+	41%, 100%  { transform: translateY( -20px ); opacity: 0; z-index: 0; }
+}
+
+@keyframes text__up--2 {
+	0%, 41.5% { transform: translateY( 20px);   opacity: 0; z-index: 0; }
+	43%, 97%  { transform: translateY( 0px );   opacity: 1; z-index: 1; }
+	100% 	  { transform: translateY( -20px ); opacity: 0; z-index: 0; }
+}
+
+// For the text to the right of the phone
+// This text is meant to explain what is happening in each screen displayed on the phone
+// This text switches, based on the button the user clicks
+
+.stage__text{
+	position: relative;
+	min-height: 392px;
+	padding-bottom: 139px;
+
+	// For the text animations depending on what button is clicked and the animation goin on for each screen
+	// This is the text that is right below the title section
+
+	.animation__text{
+		position: relative;
+		width: 100%;
+		line-height: 1.1;
+
+		// For the text below the title desc
+		// This is the main text describing each of the screens - changes depending on the button clicked
+
+		p{
+			font-size: $eighteen;
+			color: $white;
+			line-height: 1.75;
+		}
+
+		// Set the animation features of the div within the container
+
+		div{
+			@extend %animate__in;
+			animation-delay: 300ms;
+			opacity: 0;
+		}
+
+		// For the animation setup for the decsription div within the container
+		// Delay the description until the title is shown first 
+
+		&--descp div{ animation-delay: 600ms; }
+
+		// For the main text container
+		// There will always be a --1 div, but there could be a --2 depending on the screen
+
+		&--1{
+			@extend %display-flex;
+			@extend %flex-center-vertical;
+			position: relative;
+			width: 100%;
+
+			// For the positioning of the text within the container
+
+			div{
+				opacity: 0;
+
+				// Delay each child by 600ms
+
+				&:nth-child(n){
+					animation-delay: 600ms;
+					z-index: 0;
+				}
+
+				// For the aniamtion of the first container
+
+				&:first-child{ animation: text__up 30s ease forwards infinite; }
+
+				// For the animation of the second container
+
+				&:nth-child(2){
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					opacity: 0;
+					animation: text__up--2 30s ease forwards infinite;
+				}
+			}
+		}
+
+		// Depending on the screen there can be a 2 - this positions that text within the container
+		// This text would be hidden by default
+
+		&--2{
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			// For the text to animate in, when the time is declared
+
+			div{ @extend %animate__in--deep; }
+		}
+
+		// To hide the text before it is shown
+
+		&--hide{
+			visibility: hidden;
+			height: 0px;
+		}
+	}
+}

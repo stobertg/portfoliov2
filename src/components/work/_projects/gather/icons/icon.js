@@ -1,3 +1,4 @@
+
 import React from 'react'
 import symbolDefs from '../../../../../images/gather/icons/gather-alt.svg'
 import './style.scss'

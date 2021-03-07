@@ -2,7 +2,7 @@
 @import "../../../global-css/variables/variables";
 
 // For the styling of the phone presentations within the app
-// These are areas to display protypes such as CardiAct and MetroUC
+// These are areas to display protypes such as CardiAct
 
 .stage__phone{
 	@extend %display-flex;
@@ -28,105 +28,6 @@
 		max-width: 500px;
 		min-height: 500px;
 		margin-left: 75px;
-	}
-
-	// For the text to the right of the phone
-	// This text is meant to explain what is happening in each screen displayed on the phone
-
-	.stage__text{
-		position: relative;
-		min-height: 392px;
-		padding-bottom: 139px;
-
-		&--mode{
-			@extend %animate__in;
-			animation-delay: 800ms;
-			overflow: hidden;
-			position: relative;
-			height: 30px;
-			font-size: $eighteen;
-			color: $white;
-			padding: 3px 0 7px 0;
-			opacity: 0;
-
-			strong{
-				@extend %speed-6ms;
-				display: block;
-
-				&:last-child{
-					position: absolute;
-					top: 0;
-					left: 0;
-					transform: translateY(110%);
-					opacity: 0;
-				}
-			}
-
-			&-switch{
-
-				strong{
-					animation: none;
-
-					&:first-child{
-						@extend %speed-3ms;
-						transform: translateY(-110%);
-						opacity: 0;
-					}
-
-					&:last-child{
-						transform: translateY(0px);
-						opacity: 1;
-					}
-				}
-			}
-		}
-
-		p{
-			font-size: $eighteen;
-			color: $white;
-			line-height: 1.75;
-		}
-
-		// For the title of the text
-
-		&--title{
-			margin-bottom: 10px;
-
-			> div{
-
-				&:last-child{
-					font-size: $fifty;
-					color: $white;
-					line-height: 1.5;
-					// letter-spacing: -0.02em;
-				}
-			}
-		}
-	}
-
-	// For the controls on the top right of the container
-
-	&--logo{
-		position: absolute;
-		bottom: 120px;
-		right: 0;
-
-		figure{
-			@extend %display-flex;
-			@extend %flex-center-all;
-			width: 110px;
-
-			.icon__victim{
-				top: auto;
-				left: auto;
-				margin-top: 5px;
-				z-index: 10;
-			}
-
-			img{
-				opacity: 0.2;
-			}
-		}
 	}
 
 	// For the buttons on the bottom of the phone
@@ -221,22 +122,54 @@
 			pointer-events: none;
 		}
 	}
+
+	// This is for the decorative item on bottom right of the container
+	// This contains the logo in the background and the animated heart on the top
+
+	&--logo{
+		position: absolute;
+		bottom: 120px;
+		right: 0;
+
+		// For the container of all of the content within the master container
+
+		figure{
+			@extend %display-flex;
+			@extend %flex-center-all;
+			width: 110px;
+
+			// For the posiiton of the animating heart icon
+			// To sit in the center of the container
+
+			.icon__victim{
+				top: auto;
+				left: auto;
+				margin-top: 5px;
+				z-index: 10;
+			}
+
+			// Fade out the logo of the background a bit
+
+			img{
+				opacity: 0.2;
+			}
+		}
+	}
 }
 
-
+// For the aniamtions of the text
+// Text is changed when buttons are clicked within the app
 
 @keyframes title__up {
-
 	0%, 1%    { transform: translateY( 100%  ); opacity: 0; }
 	3%, 40%   { transform: translateY( 0px   ); opacity: 1; }
 	41%, 100% { transform: translateY( -100% ); opacity: 0; }
 }
 
 @keyframes title__up--2 {
-
-	0%, 40%    { transform: translateY( 100% ); opacity: 0; }
-	41.5%, 97% { transform: translateY( 0px );  opacity: 1; }
-	100%  	   { transform: translateY( -100% );  opacity: 0; }
+	0%, 40%    { transform: translateY( 100% );  opacity: 0; }
+	41.5%, 97% { transform: translateY( 0px );   opacity: 1; }
+	100%  	   { transform: translateY( -100% ); opacity: 0; }
 }
 
 %title__up     { animation: title__up 30s ease forwards infinite; }
@@ -246,20 +179,19 @@
 
 
 @keyframes text__up {
-
 	0%, 2.5%   { transform: translateY( 20px  ); opacity: 0; z-index: 0; }
 	4.5%, 40%  { transform: translateY( 0px   ); opacity: 1; z-index: 1; }
 	41%, 100%  { transform: translateY( -20px ); opacity: 0; z-index: 0; }
 }
 
-@keyframes text__up--2 {
+%text__up     { animation: text__up 30s ease forwards infinite; }
 
+@keyframes text__up--2 {
 	0%, 41.5% { transform: translateY( 20px);   opacity: 0; z-index: 0; }
 	43%, 97%  { transform: translateY( 0px );   opacity: 1; z-index: 1; }
 	100% 	  { transform: translateY( -20px ); opacity: 0; z-index: 0; }
 }
 
-%text__up     { animation: text__up 30s ease forwards infinite; }
 %text__up--2  { animation: text__up--2 30s ease forwards infinite; }
 
 .stage__right{
@@ -329,43 +261,7 @@
 }
 
 
-// For the text animations depending on what button is clicked and the animation goin on for each screen
 
-.animation__text{
-	position: relative;
-	width: 100%;
-	line-height: 1.1;
-
-	&--1{
-		@extend %display-flex;
-		@extend %flex-center-vertical;
-		position: relative;
-		width: 100%;
-
-		div:nth-child(2){
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			opacity: 0;
-		}
-	}
-
-	&--2{
-		position: absolute;
-		top: 0;
-		left: 0;
-
-		div{
-			@extend %animate__in--deep;
-		}
-	}
-
-	&--hide{
-		visibility: hidden;
-		height: 0px;
-	}
-}
 
 
 
@@ -379,12 +275,16 @@
 	transform: translate3d( 50px, 20px, 0 );
 	opacity: 0.7;
 
+	// For the container of the gradient
+
 	.gradient-bg {
 		fill: url(#header-shape-gradient) #fff;
-		// fill: linear-gradient(344deg, rgba(207,42,42,1) 0%, rgba(255,0,0,1) 50%, rgba(252,147,69,1) 100%);
 		width: 100%;
 		height: 100%;
 	}
+
+	// For the colors that make up the blob
+	// Goes from light red on the top left to dark red on the bottom right
 
 	#header-shape-gradient {
 	  --color-start: #f55024;
@@ -392,18 +292,3 @@
 	  --color-stop: #b10000;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

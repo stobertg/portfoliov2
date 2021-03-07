@@ -16,7 +16,7 @@ import Process8 from '../../../../../images/cardiact/process/peight.jpg'
 import Process9 from '../../../../../images/cardiact/process/pnine.jpg'
 import Process10 from '../../../../../images/cardiact/process/pten.jpg'
 
-const Process = ( props ) => {
+const Process = () => {
 	return(
 
 		<div className="block__process">

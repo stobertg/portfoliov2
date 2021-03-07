@@ -9,9 +9,9 @@
 	padding-top: 100px;
 	color: $white;
 
-	p{
-		line-height: 1.5;
-	}
+	// Change the default line height of the description text of the process
+
+	p{ line-height: 1.5; }
 
 	// For the first variation of the lock-up for the process block
 	// This contains three images, in an overlapping format
@@ -28,12 +28,20 @@
 			width: 100%;
 		}
 
+		// For the second variation of the process lockup
+		// This is the container of the "Research, defining users" section
+
 		&--var-1{
 			position: relative;
 			width: 100%;
 
+			// For the first image within the container
+			// This address the spacing between the next section, with the two bottom images riding the padding decalred here
+
 			.hero__img{
 				padding-bottom: 350px;
+
+				// For the sizing and alignment of the two images on the bottom of the container
 
 				> div{
 					@extend %display-flex;
@@ -42,8 +50,12 @@
 					width: 100%;
 					bottom: 25px;
 
+					// For the shadow on each of the images within the container
+
 					img{
 						box-shadow: 0 10px 20px rgba( #000, 0.1 );
+
+						// For the sizing and background adjustments of the image on the right of the container
 
 						&:last-child{
 							transform: translateX( -80px );
@@ -56,50 +68,54 @@
 			}
 		}
 
-		&--var-2{
+		// For the second variation of the process lockup
+		// This is the container of the "Sketching, prototype" section
 
-			.hero__img{
+		&--var-2 .hero__img img{
+			box-shadow: 0 10px 20px rgba( #000, 0.9 );
 
-				img{
-					box-shadow: 0 10px 20px rgba( #000, 0.9 );
+			// Size of the first image within the container
 
-					&:first-child{
-						width: 70%;
-					}
+			&:first-child{ 
+				width: 70%; 
+			}
 
-					&:nth-child( 2 ){
-						width: 100%;
-					}
+			// Size of the second image within the container
 
-					&:last-child{
-						width: 80%;
-						align-self: flex-end;
-					}
-				}
+			&:nth-child( 2 ){ 
+				width: 100%; 
+			}
+
+			// Size and position of the third image within the container
+
+			&:last-child{
+				width: 80%;
+				align-self: flex-end;
 			}
 		}
 
-		&--var-3{
+		// For the third variation of the process lockup
+		// This is the container of the User testing and final design
 
-			.hero__img{
+		&--var-3 .hero__img img{
+			box-shadow: 0 10px 20px rgba( #000, 0.9 );
 
-				img{
-					box-shadow: 0 10px 20px rgba( #000, 0.9 );
+			// Size of the first image within the container
 
-					&:first-child{
-						width: 70%;
-					}
+			&:first-child{
+				width: 70%;
+			}
+			// Size and position of the second image within the container
 
-					&:nth-child( 2 ){
-						align-self: flex-end;
-						width: 80%;
-					}
+			&:nth-child( 2 ){
+				align-self: flex-end;
+				width: 80%;
+			}
+			// Size and position of the third image within the container
 
-					&:last-child{
-						width: 50%;
-						align-self: center;
-					}
-				}
+			&:last-child{
+				width: 50%;
+				align-self: center;
 			}
 		}
 	}

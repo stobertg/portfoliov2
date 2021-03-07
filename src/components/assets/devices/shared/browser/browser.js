@@ -49,7 +49,7 @@ const DeviceBrowser = ( props ) => {
 
 					<div className="device__browser--url">
 						<span className="device__browser--url-text"><span>A</span><span>A</span></span>
-						<span className="device__browser--url-address">{ props.url }</span>
+						<span className="device__browser--url-address">{ props.sudoUrl }</span>
 						<span className="device__browser--url-reload"><span></span></span>
 					</div>
 

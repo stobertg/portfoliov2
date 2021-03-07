@@ -8,7 +8,7 @@ const Website = ( props ) => {
 		
 		<div className="device__web">
 		  <div className="device__web--contain">
-		  	<DeviceBrowser url={ props.url } />
+		  	<DeviceBrowser sudoUrl={ props.url } />
 
 		  	{ props.image
 		  		? <img

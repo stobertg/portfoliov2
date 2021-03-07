@@ -1,0 +1,63 @@
+
+// This is for the styling and animation of the wallet
+// This is located within the hand - with the wallet base and the dollars that pop out
+
+@keyframes animate__dollar--1{
+	0%  { transform: translateY(50px) rotate(0deg); }
+	20%, 100% { transform: translateY(30px) rotate(26deg); }
+}
+
+@keyframes animate__dollar--2 {
+	0%  { transform: translateY(38px) rotate(0deg); }
+	20%, 100% { transform: translateY(30px) rotate(15deg); }
+}
+
+// For the styling of the wallet animaton
+// This is a stand alone animation but can be combined with other illustrations
+
+.illus__wallet{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 110px;
+	padding-top: 25px;
+	overflow: hidden;
+	z-index: 0;
+
+	// For the blue dollars within the wallet
+
+	&--dollar{
+		position: absolute;
+		right: 0;
+		top: 0;
+
+		// For the position of the dollars within the wallet
+
+		&-1, &-2{
+			transform-origin: bottom right;
+		}
+
+		// For the first dollar
+
+		&-1{
+			width: 70%;
+			animation: animate__dollar--2 5s ease infinite forwards alternate;
+			z-index: 0;
+		}
+
+		// For the second dollar
+
+		&-2{
+			width: 90%;
+			animation: animate__dollar--1 5s ease infinite forwards alternate;
+			z-index: 1;
+		}
+	}
+
+	// For the container of the wallet
+
+	&--main{
+		position: relative;
+		z-index: 2;
+	}
+}

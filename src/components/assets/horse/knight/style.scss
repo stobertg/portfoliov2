@@ -22,10 +22,10 @@
 
 .horse__knight{
 	position: absolute;
-    top: 0;
-    left: 114px;
-    width: 150px;
-    z-index: 10;
+	top: 0;
+	left: 114px;
+	width: 150px;
+	z-index: 10;
 }
 
 // For the animation of the lance and the arm
@@ -40,23 +40,21 @@
 
 .knight__lance{
 	position: absolute;
-    right: 26px;
-    top: 0px;
-    width: 540px;
-    animation: animate__lance 800ms ease infinite;
+	right: 26px;
+	top: 0px;
+	width: 540px;
+	animation: animate__lance 800ms ease infinite;
 
-    // For the placement of the sholder of the arm holding the lance
+	// For the placement of the sholder of the arm holding the lance
 
-    &--shoulder{
-    	position: absolute;
-	    top: 46px;
-	    right: 0;
-	    width: 55px;
-    }
+	&--shoulder{
+		position: absolute;
+		top: 46px;
+		right: 0;
+		width: 55px;
+	}
 
-    // For the color of the arm and the lance
+	// For the color of the arm and the lance
 
-    svg{
-    	fill: #e4e4e4;
-    }
+	svg{ fill: #e4e4e4; }
 }

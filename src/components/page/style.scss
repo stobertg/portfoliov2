@@ -19,22 +19,48 @@
 		text-align: center;
 		margin: 30px 0 80px;
 
+		// For the spacing between each of the items within the header
+
 		> div{
+
+			// For the spacing between the image and the titke of the page
 
 			&:not(:last-child){
 				margin-bottom: 12px;
 			}
 
+			// Spacing between the title and the subtitle 
+
 			&:first-child{
 				margin-bottom: 24px;
 			}
+
+			// If there is a button on the bottom of the container
+			// This would be an outside link if there is more the view about the project
 
 			&.intro__btn{
 				padding-top: 20px;
 			}
 		}
 
-		// For the font styling within the page header
+		// For the container of the image or illustration on the top of the container
+
+		&--illus{
+			@extend %display-flex;
+			@extend %flex-center-all;
+			width: 140px;
+			height: 170px;
+			margin: 0 auto;
+
+			// Reduce the scale of the image or illustration
+
+			.illus__animation{
+				transform: scale( 0.3 );
+			}
+		}
+
+		// For the font styling of the main title of the page
+		// This the text right below the hero image, illustration, or animation
 
 		h1{
 			font-size: $fifty;
@@ -42,9 +68,9 @@
 			line-height: 1.5;
 		}
 
-		h2{
-			font-size: $eighteen;
-		}
+		// For the font size of the subtitle - below the main title of the page
+
+		h2{ font-size: $eighteen; }
 	}
 
 	// For the container of each section within the page
@@ -57,54 +83,64 @@
 		margin: 0 auto;
 		z-index: 1;
 
-		&--descp{ 
-			position: relative;
-			max-width: 1000px;
-			padding-bottom: 32px;
-
-			p{
-				font-size: $eighteen;
-			}
-		}
-
-		// If there is a title with the block 
-
-		&--title{
-			font-size: $thirty;
-
-			& + div{
-				margin-top: 24px;
-			}
-		}
-
 		// Remove the default padding on the last page block within a page
 
 		&:last-child .page__block--content{
 			padding-bottom: 50px;
 		}
 
+		// For the condition if the page block needs to go full width
+		// This is needed to support blacks that have a custom background color
+
 		&--full{
 			width: 100%;
 			max-width: 100% !important;
 		}
 
-		// For the spacing allowed within the blocks
-			
-		&--sp{
-
-			&-large{
-				padding: 150px 0;
-			}
-		}
+		// For the master container of all of the content that lives in Page Block
 
 		&--content{
 			position: relative;
 			z-index: 1;
 		}
 
+		// If the content in the container needs to be displayed side-by-side
+
 		&--inline{
 			@extend %display-flex;
 			@extend %flex-center-vertical;
+		}
+
+		// For the spacing allowed within the blocks
+			
+		&--sp-large{
+			padding: 150px 0;
+		}
+
+		// Set the font size of the text within the container
+
+		p{ font-size: $eighteen; }
+
+		// This is seldom used but spported if text is needed to explain the content in the block
+		// This is used in places such as the process page in the CardiAct project
+
+		&--descp{ 
+			position: relative;
+			max-width: 1000px;
+			padding-bottom: 32px;
+		}
+
+		// If there is a title with the block - this is the first div within the descp container
+
+		&--title{
+			font-size: $thirty;
+
+			// Spacing between the title and the text
+			// This is conditional so if there is no text below the title, the spacing won't be observed
+
+			& + div{
+				margin-top: 24px;
+			}
 		}
 
 		// For the special case where we need a solid background to communicate an asset better
@@ -145,6 +181,9 @@
 				transform: rotate( -8deg );
 			}
 
+			// Changes to the with and alignment of the main content within the slant
+			// This is because the slant goes full width of the container
+
 			.page__block--content{
 				max-width: 1170px;
 				margin: 0 auto;
@@ -152,25 +191,12 @@
 		}
 
 		// For the possible colors of the background
+		// For dark blue color support
 
-		&--dark-blue{
-			background: #1a202b;
-		}
+		&--dark-blue{ background: #1a202b; }
 
-		&--white{
-			background: $white;
-		}
-	}
+		// For white color support
 
-	.man__illus{
-		@extend %display-flex;
-		@extend %flex-center-all;
-		width: 140px;
-		height: 170px;
-		margin: 0 auto;
-
-		.illus__animation{
-			transform: scale( 0.3 );
-		}
+		&--white{ background: $white; }
 	}
 }

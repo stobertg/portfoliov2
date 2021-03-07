@@ -1,0 +1,120 @@
+
+@import "./src/global-css/variables/variables";
+
+// For the animations used in the title section
+// Text is changed when buttons are clicked within the app
+
+@keyframes title__up {
+	0%, 1%    { transform: translateY( 100%  ); opacity: 0; }
+	3%, 40%   { transform: translateY( 0px   ); opacity: 1; }
+	41%, 100% { transform: translateY( -100% ); opacity: 0; }
+}
+
+@keyframes title__up--2 {
+	0%, 40%    { transform: translateY( 100% );  opacity: 0; }
+	41.5%, 97% { transform: translateY( 0px );   opacity: 1; }
+	100%  	   { transform: translateY( -100% ); opacity: 0; }
+}
+
+// Mater containter of the text to the right of the phone
+
+.stage__text{
+
+	// For the styling of the title text
+	// This sits on the top of the text container within the phone presentation
+	// This holds the Mode and the large Title text below the modes
+
+	&--title{
+		margin-bottom: 10px;
+
+		// For the styling of the large text below the Static / Emergency mode text
+
+		> div:last-child{
+			font-size: $fifty;
+			color: $white;
+			line-height: 1.5;
+		}
+
+		// For the animation of the text within the container
+
+		.animation__text{
+			overflow: hidden;
+
+			// If there is an animation with more than one text showings
+
+			&--1 div{
+				opacity: 0;
+
+				// Set the delay to show the text on a given screen
+
+				&:nth-child(n){
+					animation-delay: 600ms;
+					z-index: 0;
+				}
+
+				// For the animation of the first text - this is shown by default
+
+				&:first-child{ animation: title__up 30s ease forwards infinite; }
+
+				// Coniditional - if there is more than one text blocks within an animation
+
+				&:nth-child(2){ animation: title__up--2 30s ease forwards infinite; }
+			}
+		}
+	}
+
+	// For the mode text on the top of the container
+	// This switches between Emergency and Static mode, based on the toggle button clicked
+
+	&--mode{
+		@extend %animate__in;
+		animation-delay: 800ms;
+		overflow: hidden;
+		position: relative;
+		height: 30px;
+		font-size: $eighteen;
+		color: $white;
+		padding: 3px 0 7px 0;
+		opacity: 0;
+
+		// For the container of each of the text items - Emergency mode and Static
+
+		strong{
+			@extend %speed-6ms;
+			display: block;
+
+			// Placement of the Static Mode text that is hidden on default
+			// Appears when the avatar icon is clicked in the toggle button
+
+			&:last-child{
+				position: absolute;
+				top: 0;
+				left: 0;
+				transform: translateY(110%);
+				opacity: 0;
+			}
+		}
+
+		// Amiation when the toggle button is clicked
+		// This will change the mode to Static Mode as mentioned above
+
+		&-switch strong{
+			animation: none;
+
+			// Remove the text "Emergency Mode" out of view
+
+			&:first-child{
+				@extend %speed-3ms;
+				transform: translateY(-110%);
+				opacity: 0;
+			}
+
+			// Animate the "Static Mode" text into view
+
+			&:last-child{
+				transform: translateY(0px);
+				opacity: 1;
+			}
+		}
+	}
+}

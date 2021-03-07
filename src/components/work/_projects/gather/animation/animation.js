@@ -1,17 +1,18 @@
+
 import React from 'react'
 import './style.scss'
 
-const GatherAnimation = ( props ) => {
+const GatherAnimation = () => {
 	return(
 
-		<div class="loading__animation">
-			<div class="goldin__logo">
-				<div class="g__shared g__top"></div>
-				<div class="g__middle">	
-					<div class="g__middle--left"></div>
-					<div class="g__middle--right"></div>
+		<div className="loading__animation">
+			<div className="goldin__logo">
+				<div className="g__shared g__top"></div>
+				<div className="g__middle">	
+					<div className="g__middle--left"></div>
+					<div className="g__middle--right"></div>
 				</div>
-				<div class="g__shared g__bottom"></div>
+				<div className="g__shared g__bottom"></div>
 			</div>
 		</div>
 

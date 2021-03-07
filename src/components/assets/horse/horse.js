@@ -10,7 +10,7 @@ const AnimationHorse = () => {
   return(
 
 	  <div className="animation__horse">
-		  <div className="horse__contain">
+		  <div className="animation__horse--contain">
 			  <div className="horse">
 			  	<div className="horse__knight">
 			  		<Knight />

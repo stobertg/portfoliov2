@@ -1,0 +1,282 @@
+
+@import "./src/global-css/variables/variables";
+
+// This is the styling of the Man with the wallet animation
+// This is located in the Walgreens project - the very first item on the top of the container
+
+.illus{
+
+	// For the master container of the illustration and animation
+	// This holds the man with the wallet and the blob in the background
+
+	&__animation{
+		@extend %display-inline-flex;
+		@extend %flex-center-all;
+		position: relative;
+		padding: 50px 0;
+	}
+
+	// For the master container of the man with the wallet illustration
+	// This is the illustration on the Walgreens page, at the very top of the page - with the man looking at the wallet
+
+	&__man--wallet{
+		@extend %display-inline-flex;
+		position: relative;
+		padding: 0 20px 20px 50px;
+
+		// Set all of the svgs within the container to be flex
+
+		svg{ @extend %display-flex; }
+
+		// For the face of the man with the wallet - this is on the top of the container
+		// This animation is more subtle but also contains the eyes 
+
+		@keyframes animate__face {
+			0%  { transform: rotate(-5deg); }
+			30%, 100% { transform: rotate(0deg); }
+		}
+
+		// For the master container of the head and the body of the illustration
+		// This excludes the arm animation
+
+		&-base{
+			position: relative;
+			width: 300px;
+			padding-top: 143px;
+		}
+
+		// For the positioning and sizing of the head
+
+		&-head{
+			position: absolute;
+			top: 0;
+			left: 63px;
+			width: 155px;
+			height: 197px;
+			z-index: 1;
+		}
+
+		// For the position of the face and declaring the animation
+
+		&-face{
+			position: relative;
+			width: 100%;
+			z-index: 1;
+			animation: animate__face 5s ease infinite forwards alternate;
+			transform-origin: center right;
+		}
+
+		// For the positioning of the neck
+
+		&-neck{
+			position: absolute;
+			bottom: 0;
+			right: 26px;
+	    	width: 57px;
+	    	z-index: 0;
+		}
+
+		// For the container of the eyes
+		// These sit within the glasses, as well, dots, that are represented as eyes
+		// For the animation
+
+		@keyframes animate__eyes {
+			0%  { transform: scale(1,1); }
+			5% { transform: scale(1,0); }
+			10%, 100% { transform: scale(1,1); }
+		}
+
+		// For the master container of the eyes
+
+		&-eyes{
+			@extend %display-flex;
+			@extend %flex-center-vertical;
+			position: absolute;
+			top: 80px;
+			width: 100%;
+			height: 30px;
+			padding-left: 25px;
+			z-index: 10;
+
+			// For direct containers of the eyes
+
+			div{
+				position: relative;
+				width: 50px;
+				height: 8px;
+				transform: rotate(5deg);
+
+				// Styling of the eyes
+
+				&:before, &:after{
+					content: ' ';
+					position: absolute;
+					width: 8px;
+					height: 8px;
+					border-radius: 50%;
+					background: $black;
+					animation: animate__eyes 5s ease infinite;
+				}
+
+				// Placement of the eyes
+
+				&:before{ left: 0; }
+				&:after{ right: 0 }
+			}
+		}
+
+		// For the body of the man
+		// This only contains the shirt section - with the blue shit, collar and the outline
+		// First declare the animation
+		
+		@keyframes animate__body {
+			0%  { transform: rotate(-3deg) translateX(10px); }
+			30%, 100% { transform: rotate(0deg) translateX(0); }
+		}
+
+		// Positioning of the body and attaching the animation
+
+		&-body{
+			position: relative;
+			width: 100%;
+			z-index: 0;
+			animation: animate__body 5s ease infinite forwards alternate;
+		}
+
+		// For the main container of the animation
+		// This holds the arm, hand, and wallet
+
+		@keyframes animate__main {
+			0%  { transform: rotate(-5deg) scale(0.95); }
+			30%, 100% { transform: rotate(0deg) scale(1); }
+		}
+
+		// Master container of the arm and the wallet
+
+		&-main{
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			width: 100%;
+			height: 310px;
+			animation: animate__main 5s ease infinite forwards alternate;
+			transform-origin: top right;
+		}
+
+		// For the placement of the arm in the bottom right of the container
+		// For the container of the arm
+
+		&-arm{
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			width: 270px;
+		}
+
+		// For the placement of the hand container
+		// This contains the hand on the bottom, and the wallet on the top
+
+		@keyframes animate__hand {
+			0%  { transform: rotate(-15deg) scale(0.95); }
+			30%, 100% { transform: rotate(0deg) scale(1); }
+		}
+
+		// For the master container
+
+		&-hand{
+			@extend %display-flex;
+			flex-direction: row-reverse;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 125px;
+			padding-top: 42px;
+			animation: animate__hand 5s ease infinite forwards alternate;
+			transform-origin: bottom right;
+
+			// For the styling of the hand, on the bottom of the container
+
+			&-hand{
+				position: relative;
+				width: 90px;
+				z-index: 10;
+			}
+		}
+	}
+
+	// For the styling of the background blob
+	// This sits behind the man with the wallet
+
+	&__blob{
+		@extend %display-flex;
+		@extend %flex-center-all;
+		position: absolute;
+		width: 600px;
+		height: 100%;
+
+		// For the sizing of the blob
+
+		svg{
+			transform: scale( 1.2 );
+			width: 100%;
+		}	
+
+		// For the color of the blob
+
+		&--white{
+			fill: rgba( $white, 0.5 );
+		}
+	}
+
+	// For the colors used within the illustration - This is the color for the individual svgs
+	// Support of the skin color
+
+	&__skin--dark{ fill: #A24F14; }
+
+	// Support of white color
+
+	&__white{ fill: #fff; }
+
+	// Support of blue color
+
+	&__blue{
+		fill: #284b9b;
+
+		// Support of light blue color
+
+		&--light{ fill: #0082aa; }
+
+		// Support of dark blue color
+
+		&--dark{ 
+			fill: #323264;
+
+			// Support of stroke color
+			// This is for the arm of the illustration
+
+			&-stroke{
+				stroke: #323264;
+				fill: none;
+			}
+		}
+	}
+
+	// Support of the colors within the base of the wallet
+	// For the support of the red color
+
+	&__red{ fill: #e63214; }
+
+	// Fpr the support of the dark red color
+	// This is the outline on the base of the wallet
+
+	&__red--dark{ 
+		fill: #aa0a0a;
+
+		// For the support of the outline at the base of the wallet
+
+		&-stroke{
+			stroke: #aa0a0a;
+			fill: none;
+		}
+	}
+}

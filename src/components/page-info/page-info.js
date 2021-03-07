@@ -23,7 +23,7 @@ const PageInfo = ( props ) => {
             <div><h4><strong>Roles / Skills</strong></h4></div>
             <ul>
             	{ props.skills.map(( skill, index ) =>
-	              <li>{ skill.skill }</li>
+	              <li key={ skill.skill }>{ skill.skill }</li>
 	            )}
             </ul>
           </div>
@@ -32,7 +32,7 @@ const PageInfo = ( props ) => {
             <div><h4><strong>Project</strong></h4></div>
             <ul>
             	{ props.project.map(( project, index ) =>
-              	<li>{ project.project }</li>
+              	<li key={ project.project }>{ project.project }</li>
             	)}
             </ul>
           </div>

@@ -1,3 +1,4 @@
+
 import React from 'react'
 import Icon from './icon'
 import './style.scss'
@@ -17,7 +18,6 @@ const GatherIcons = ( props ) => {
 		{ icon: 'link--menu' },
 		{ icon: 'cal--menu' },
 		{ icon: 'money--menu' },
-		{ icon: 'dashboard--menu' },
 		{ icon: 'pen--menu' },
 		{ icon: 'question--menu' },
 		{ icon: 'video--menu' },
@@ -31,7 +31,7 @@ const GatherIcons = ( props ) => {
 		
 		<div className="icon__contain">
 			{ icons.map(( icon, index ) =>
-				<Icon icon={ icon.icon } />
+				<Icon key={ icon.icon } icon={ icon.icon } />
 			)}
 	  </div>
 
