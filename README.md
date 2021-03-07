@@ -1,8 +1,10 @@
 
 Thanks for visiting my Portfolio repo for www.tylerstober.com
+<br/>
 Don't hesitate to email stobertg@gmail.com for new projects and inquiries.
 
 This is for viewing / observational purposes only ( i.e. Potential Clients / Employers )
+<br/>
 Visit https://codepen.io/stobertg for front end contributions available for free use.
 
 Special thanks to Keanan Koppenhaver - forever greatful for the coding mentorship
