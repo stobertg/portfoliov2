@@ -14,6 +14,12 @@
 	padding: 100px 0;
 	color: $white;
 
+	// Changes to the spacing on mobile breakpoints
+
+	@media( max-width: $mobile ){
+		padding: 50px 0;
+	}
+
 	// For the container of all of the content within the master container
 
 	&--content{
@@ -31,6 +37,12 @@
 		margin-bottom: 32px;
 		font-size: $thirty;
 		line-height: 1.5;
+
+		// Change the font size on mobile breakpoints
+
+		@media( max-width: $mobile ){
+			font-size: $twenty-two;
+		}
 	}
 
 	// For the styling of the paragraph within the page info
@@ -48,6 +60,13 @@
 		@extend %display-flex;
 		position: relative;
 		margin-top: 50px;
+
+		// Change the alignment to be stacked on mobile breakpoints
+
+		@media( max-width: $mobile ){
+			margin-top: 32px;
+			flex-wrap: wrap;
+		}
 	}
 
 	&--list{
@@ -64,5 +83,15 @@
 		// For the spacing between the list items
 
 		li{ padding: 8px 0; }
+
+		// Changes to spacing on mobile breakpoints
+
+		@media( max-width: $mobile ){
+			width: 100%;
+
+			&:not(:last-child){
+				margin: 0 0 32px 0;
+			}
+		}
 	}
 }

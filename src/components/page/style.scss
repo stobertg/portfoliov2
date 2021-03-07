@@ -15,9 +15,10 @@
 
 	&__header{
 		position: relative;
-		color: $light-gray;
-		text-align: center;
 		margin: 30px 0 80px;
+		text-align: center;
+		color: $light-gray;
+		line-height: 1.5;
 
 		// For the spacing between each of the items within the header
 
@@ -65,12 +66,33 @@
 		h1{
 			font-size: $fifty;
 			color: $white;
-			line-height: 1.5;
+
+			// Change the font size on mobile breakpoints
+
+			@media( max-width: $mobile ){
+				font-size: $thirty;
+			}
 		}
 
 		// For the font size of the subtitle - below the main title of the page
 
-		h2{ font-size: $eighteen; }
+		h2{ 
+			font-size: $eighteen; 
+
+			// Change the font size on mobile breakpoints
+
+			@media( max-width: $mobile ){
+				font-size: $sixteen;
+			}
+		}
+
+		// For changes to the spacing on mobile breakpoints
+
+		@media ( max-width: $mobile ){
+			width: 90%;
+			margin: 30px auto 32px;
+			line-height: 1.3
+		}
 	}
 
 	// For the container of each section within the page
@@ -87,6 +109,12 @@
 
 		&:last-child .page__block--content{
 			padding-bottom: 50px;
+
+			// Remove the padding on the bottom on mobile breakpoints
+
+			@media( max-width: $mobile ){
+				padding-bottom: 0;
+			}
 		}
 
 		// For the condition if the page block needs to go full width
@@ -115,6 +143,12 @@
 			
 		&--sp-large{
 			padding: 150px 0;
+
+			// Change the spacing on mobile breakpoints
+
+			@media( max-width: $mobile ){
+				padding: 50px 0;
+			}
 		}
 
 		// Set the font size of the text within the container

@@ -38,6 +38,8 @@ const PageWrap = ( props ) => {
 			}
 			
 			{ props.children }
+
+			<div className="app__bg"></div>
 		</div>
 
 	)

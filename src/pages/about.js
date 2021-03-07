@@ -26,7 +26,7 @@ const About = () => {
   return (
 
   	<PageWrap className="about">
-      <Fade bottom distance="100px">
+      <Fade bottom distance="50px">
         <Bio />
       </Fade>
 

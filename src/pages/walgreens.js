@@ -39,13 +39,13 @@ const Walgreens = () => {
   	>
 
   		<Block>
-        <Fade bottom distance="32px" ssrReveal="true">
+        <Fade bottom distance="200px">
           <Website url="lsg.walgreens.com" image={ WagCoupon } alt="Walgreens Live Style Guide" />
         </Fade>
       </Block>
 
       <Block>
-        <Fade bottom distance="32px">
+        <Fade bottom distance="150px">
           <PageInfo
             title="Bridging Design and Front End"
             descp={

@@ -12,4 +12,10 @@
 	// For the image within the container
 
 	img{ @extend %display-flex; }
+
+	// Changes to the spacing on mobile breakpoints
+
+	@media( max-width: $mobile ) {
+		padding: 12px 0;
+	}
 }

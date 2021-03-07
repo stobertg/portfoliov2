@@ -51,7 +51,7 @@ const Gather = () => {
       </Block> 
   
       <Block>
-        <Fade bottom distance="32px">
+        <Fade bottom distance="150px">
           <PageInfo
             title="Creating a E-Learning Platform"
             descp={

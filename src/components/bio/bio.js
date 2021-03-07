@@ -2,7 +2,7 @@
 import React from 'react'
 import './style.scss'
 
-import Social from '../../components/social/social'
+import Social from './social/social'
 import Resume from '../../images/global/stobert_resume.pdf'
 
 const Bio = () => {
@@ -24,7 +24,7 @@ const Bio = () => {
 	      instagram="https://www.instagram.com/ttylerer/"
 	      medium="https://medium.com/@TylerStober"
 	      codepen="http://codepen.io/stobertg/"
-	      linkedIn="https://www.linkedin.com/in/tyler-stober-4010974a"
+	      linkedIn="https://www.linkedin.com/in/tyler-stober"
 	    />
 	  </div>
 
