@@ -11,7 +11,7 @@ Visit https://codepen.io/stobertg for front end contributions available for free
 <br/><br/>
 Special thanks to Keanan Koppenhaver - forever greatful for the coding mentorship
 https://keanankoppenhaver.com/
-
+<br/><br/>
 Team members worked with:
 
 Gather: 
