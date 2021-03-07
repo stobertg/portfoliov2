@@ -28,7 +28,7 @@ Mike Pruim - https://www.mikepruim.com/
 <br/>
 Akemi Hong - http://www.studioakemi.com/work-1
 
-<br/><br/>
+<br/>
 Credit to the third-party libraries used:
 <br/>
 react-tilt: https://www.npmjs.com/package/react-parallax-tilt
