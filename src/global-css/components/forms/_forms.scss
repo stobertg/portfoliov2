@@ -1,13 +1,10 @@
 
 // For the global styling of forms
 
-form{
-
-	legend{
-		@extend %display-flex;
-		width: 100%;
-		padding-bottom: 16px;
-	}
+form legend{
+	@extend %display-flex;
+	width: 100%;
+	padding-bottom: 16px;
 }
 
 // Remove the default styling for the input fields
@@ -18,6 +15,8 @@ input{
     -moz-appearance: none;
     appearance: none;
 }
+
+// For the dfault styling of the inputs
 
 input{
 	@extend %display-flex;

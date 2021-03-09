@@ -5,7 +5,7 @@
 // This is typically below the first part of the project page - the hero of the project
 // This contains a description of the project, project details, and roles and skills
 
-.page__info{
+.page__block .page__info{
 	@extend %body-font;
 	@extend %display-flex-space-between;
 	@extend %flex-center-vertical;
@@ -51,6 +51,12 @@
 	p{
 		font-size: $twenty-two;
 		line-height: 1.75;
+
+		// Change the font size on mobile breakpoints
+
+		@media( max-width: $mobile ){
+			font-size: $eighteen;
+		}
 	}
 
 	// For the lists below the main text of the project info
@@ -60,12 +66,14 @@
 		@extend %display-flex;
 		position: relative;
 		margin-top: 50px;
+		font-size: $eighteen;
 
 		// Change the alignment to be stacked on mobile breakpoints
 
 		@media( max-width: $mobile ){
 			margin-top: 32px;
 			flex-wrap: wrap;
+			font-size: $sixteen;
 		}
 	}
 

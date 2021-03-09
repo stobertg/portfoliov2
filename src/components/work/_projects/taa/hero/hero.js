@@ -13,7 +13,7 @@ const TaaHero = ( props ) => {
 	return(
 
 		<div className="hero__taa">
-			<Fade bottom>
+			<Fade distance="100px" bottom>
 		    <div className="page__header">
 					<div className="hero__taa--content">
 			      <div className="hero__taa--title">

@@ -20,22 +20,22 @@ const Process = () => {
 	return(
 
 		<div className="block__process">
-			<Fade bottom distance="32px">
+			<Fade bottom distance="100px">
 				<ProcessBlock
 					title="1. Research and Benchmarking"
-					descp="For user testing, we took our prototype to a nearby hospital to test with four employees, who were all CPR certified, which we're inline with our target users to use the App. During User testing, we were able to identify key pain points and insight that allowed us to revise our app and move to the final design phase of v1."
+					descp="Our process began with extensive research into the human heart, and cardiac arrest. We needed to understand how it functioned, and what exactly was occurring during cardiac arrest in order to design for a scenario where it was happening."
 				>
 					<img src={ Process1 } alt="St Albans Cathedral" />
 				</ProcessBlock>
 
 				<ProcessBlock
 					className="var-1"
-					title="2. Research, Defining Users, and Exhausted Paths"
-					descp="For user testing, we took our prototype to a nearby hospital to test with four employees, who were all CPR certified, which we're inline with our target users to use the App. During User testing, we were able to identify key pain points and insight that allowed us to revise our app and move to the final design phase of v1."
+					title="2. Research, Defining Users, and User Flows"
+					descp="After becoming familiar with the process of treating a victim of cardiac arrest, we needed to look into how our application would fit into this scenario. We began to develop flow charts in order to visually develop the functionality of the app, and identify opportunities where we could save time or solve an issue. "
 				>
 					<img src={ Process2 } alt="St Albans Cathedral" />
 	        <div>
-		        <img style={{ width: 400 }} src={ Process3 } alt="St Albans Cathedral" />
+		        <img src={ Process3 } alt="St Albans Cathedral" />
 		        <img src={ Process4 } alt="St Albans Cathedral" />
 		      </div>
 				</ProcessBlock>
@@ -43,7 +43,7 @@ const Process = () => {
 				<ProcessBlock
 					className="var-2"
 					title="3. Sketching, Paper Prototypes, and Wireframes"
-					descp="For user testing, we took our prototype to a nearby hospital to test with four employees, who were all CPR certified, which we're inline with our target users to use the App. During User testing, we were able to identify key pain points and insight that allowed us to revise our app and move to the final design phase of v1."
+					descp="Based on our research and interviews, we began to develop our application beginning with sketching. After completing the paper prototype, we developed digital wireframes. Here we concentrated on taking revisions and additions from the paper prototype and refined our flow, hierarchical structure and typography along with developing graphic elements."
 				>
 					<img src={ Process5 } alt="St Albans Cathedral" />
 	        <img src={ Process6 } alt="St Albans Cathedral" />
@@ -53,7 +53,7 @@ const Process = () => {
 				<ProcessBlock
 					className="var-3"
 					title="4. User Testing"
-					descp="For user testing, we took our prototype to a nearby hospital to test with four employees, who were all CPR certified, which we're inline with our target users to use the App. During User testing, we were able to identify key pain points and insight that allowed us to revise our app and move to the final design phase of v1."
+					descp="To test our initial prototype, we visited University Hospital at the University of Cincinnati where we tested and interviewed five employees who are CPR certified in Basic Life Support (BLS). We conducted a mix of Obtrusive and Unobtrusive testing. For three of the five testers we let them explore the app, having them speak aloud their thoughts as they went though, while we were quiet and documenting if what they were seeing is what we expected or any areas that proved to be confusing."
 				>
 					<img src={ Process8 } alt="St Albans Cathedral" />
 	        <img src={ Process9 } alt="St Albans Cathedral" />

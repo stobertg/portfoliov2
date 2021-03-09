@@ -20,12 +20,8 @@ strong{
 	font-weight: 900;
 }
 
-::selection {
-  background: $yellow;
-  color: $black;
-}
+// For the highlighting effect 
+// When the user highlight text, we're gonna make it look like a high lighter
 
-::-moz-selection {
-  background: $yellow;
-  color: $black;
-}
+::-moz-selection { background: $yellow; color: $black; }
+	 ::selection { background: $yellow; color: $black; }

@@ -10,13 +10,14 @@ import Block from '../components/page/page-block'
 import Website from '../components/assets/devices/web/web'
 import TaaHero from '../components/work/_projects/taa/hero/hero'
 import HeroImg from '../components/hero/hero'
+import NextProject from '../components/next-project/next-project'
 
 import Hero from '../images/taa/designs/hero.jpg'
 import Plans from '../images/taa/designs/plans.jpg'
 import Collections from '../images/taa/designs/collection.jpg'
 import Blog from '../images/taa/designs/blog.jpg'
 import About from '../images/taa/designs/about.jpg'
-
+import Misc from '../images/misc/montage/map.jpg'
 
 const Taa = () => {
   // eslint-disable-next-line
@@ -38,37 +39,34 @@ const Taa = () => {
       <TaaHero />
 
       <Block>
-        <Fade bottom>
+        <Fade bottom distance="200px" force="true">
           <HeroImg><Website url="www.theapparelagency.com" image={ Hero } alt="TAA Plans Page" /></HeroImg>
         </Fade>
       </Block>
 
       <Block>
-        <Fade bottom distance="32px">
+        <Fade bottom distance="150px">
           <PageInfo
-            title="Bridging Design and Front End"
+            title="Threads for Days"
             descp={
               <div>
-                <p>At Walgreens, my role is the creation, design, and front end development of the Live Style Guide (LSG), which governs the design and front end integrity of components that live throughout Walgreens.com. Other responsibilities include Front End Devlopement of Walgreens Homepage, header, and content tier pages. Other design responsibilties include icon development and experimental projects.</p>
-                <p>As the lead on the LSG team since 2017, my efforts has been to bridge the design, dev, and accessability teams, which were previously siloed parts of the organization that have since been brought a bit closer under the common goal of the LSG.</p>
+                <p>A standard project for creating a marketing website for The Apparel Agency in Chicago, IL. In addition to the design, I was tasked with developing the site in WordPress, creating a personalized theme, and writing PHP to handle content inputted by the agency.</p>
+                <p>My main inspiration for the design was using the tools of the sowers to subtly incorporate into the site. Also at the time, the grid lines were a popular trend, and I utilized that trend as thread lines to relate back to sowing.</p>
               </div>
             }
             project={[
-              { project: 'Full Time - Walgreens' },
-              { project: '2017 - Present' }
+              { project: 'Doejo - 2016' },
             ]}
             skills={[
-              { skill: 'LSG Leadership' },
-              { skill: 'UI/UX Design' },
-              { skill: 'Front End Development' },
-              { skill: 'Accessibility' }
+              { skill: 'UX/UI Design' },
+              { skill: 'Front End Development' }
             ]}
           />
         </Fade>
       </Block>
 
       <Block>
-        <Fade bottom distance="32px">
+        <Fade bottom distance="100px">
           <HeroImg><Website url="www.theapparelagency.com" image={ Plans } alt="TAA Plans Page" /></HeroImg>
           <HeroImg><Website url="www.theapparelagency.com" image={ Collections } alt="TAA Collections Page" /></HeroImg>
           <HeroImg><Website url="www.theapparelagency.com" image={ Blog } alt="TAA Blog Page" /></HeroImg>
@@ -79,6 +77,13 @@ const Taa = () => {
       <div className="taa__deco">
         <ul><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul>
       </div>
+
+      <NextProject
+        project="misc"
+        title="Miscellaneous"
+        bgImg={ Misc }
+        bgImgAlt="3D Map done by Tyler Stober"
+      />
 	  </PageWrap>
 
   );

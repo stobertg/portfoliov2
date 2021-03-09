@@ -77,17 +77,17 @@ button{
 			transform: scale(0);
 		}
 
-		.icon{
-			@extend %speed-3ms;
-		}
-
 		// For the hover effects
 
 		&:hover{
 
+			// Make the button a bit smaller on hover
+
 			.icon{
 				transform: scale(0.9);
 			}
+
+			// Show the background color
 
 			&:before{
 				transform: scale(1);

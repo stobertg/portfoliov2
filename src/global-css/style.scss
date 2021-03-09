@@ -38,8 +38,67 @@ body{
 	line-height: 1;
 }
 
+// For the default sizing of the video
+
 video{
 	@extend %display-flex;
 	align-self: flex-start;
 	width: 100%;
+}
+
+// For the styling of the 404 page
+
+.page__404{
+	@extend %display-flex;
+	@extend %flex-center-all;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: calc( 100vh - 110px );
+	padding-bottom: 0 !important;
+	text-align: center;
+
+	// For the text within the 404 page
+
+	&--text{
+		position: relative;
+		padding-bottom: 50px;
+		color: $white;
+		font-size: $thirty;
+		z-index: 1;
+
+		// For the 404 text, on the top of the container
+
+		h1{
+			font-size: 80px;
+			margin-bottom: 32px;
+		}
+
+		// Change the font size on mobile breakpoints
+
+		@media( max-width: $mobile ){
+			font-size: $eighteen;
+
+			h1{
+				font-size: 32px;
+			}
+		}
+	}
+
+	// For the background of the 404 page
+	// This is the Golem Video - "Leave Now and Never Come Back"
+
+	&--bg{
+		position: fixed;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		opacity: 0.1;
+		z-index: 0;
+
+		video{
+			width: 110%;
+		}
+	}
 }

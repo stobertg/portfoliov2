@@ -39,6 +39,8 @@ p{
 		&:hover{
 			color: $white;
 
+			// Show the background, behind the text
+
 			&:after{
 				transform: translateY(0px);
 				background: $black;

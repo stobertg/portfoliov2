@@ -29,5 +29,9 @@
 
 	img{
 		@extend %display-flex;
+
+		&:not(:first-child){
+			transform: translateY( -1px );
+		}
 	}
 }

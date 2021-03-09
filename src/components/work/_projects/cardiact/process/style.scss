@@ -6,25 +6,39 @@
 
 .block__process{
 	position: relative;
-	width: 90%;
-	margin: 0 auto;
 	padding-top: 100px;
 	color: $white;
 
+	// Tighten up the top spacing on mobile breakpoints
+
+	@media( max-width: 1023px ){
+		padding-top: 50px;
+
+		// add spacing below all images on tablet breakpoints
+
+		img{
+			min-width: 100%;
+			margin-bottom: 12px;
+		}
+	}	
+
+	// For the spacing between each of the process blocks
+
+	> div:not(:last-child){
+		margin-bottom: 50px;
+	}
+
 	// Change the default line height of the description text of the process
 
-	p{ line-height: 1.5; }
+	p{
+		@extend %body-font; 
+		line-height: 1.5; 
+	}
 
 	// For the first variation of the lock-up for the process block
 	// This contains three images, in an overlapping format
 
 	.page__block{
-
-		// For the spacing between each of the process blocks
-
-		&:not(:last-child){
-			margin-bottom: 50px;
-		}
 
 		// For the container of all of the images within the process block
 
@@ -39,13 +53,18 @@
 
 		&--var-1{
 			position: relative;
-			width: 100%;
 
 			// For the first image within the container
 			// This address the spacing between the next section, with the two bottom images riding the padding decalred here
 
 			.hero__img{
 				padding-bottom: 350px;
+
+				// Remove the bottom padding on tablet breakpoints
+
+				@media( max-width: 1023px ){
+					padding-bottom: 0;
+				}
 
 				// For the sizing and alignment of the two images on the bottom of the container
 
@@ -61,11 +80,16 @@
 					img{
 						box-shadow: 0 10px 20px rgba( #000, 0.1 );
 
+						&:first-child{
+							width: 400px;
+						}
+
 						// For the sizing and background adjustments of the image on the right of the container
 
 						&:last-child{
 							transform: translateX( -80px );
-							width: 500px;
+							max-width: 500px;
+							width: 100%;
 							padding: 30px;
 							background: $white;
 						}

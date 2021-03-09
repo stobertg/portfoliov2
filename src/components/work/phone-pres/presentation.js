@@ -183,13 +183,13 @@ class PhonePresentation extends React.Component {
 										<div className={`animation__text--1 ${this.state.confirmText ? 'animation__text--hide':''}`}>
 											<div>
 												<p>
-													CardiAct displays emergency mode when a victim request help, or a dangerous heart rate is detected with a heart rate monitor. The CPR Responder(s) will be sent an alert and provide the victims location, along with other vital imformation needed to help save the vicitim's life
+													CardiAct displays emergency mode when a victim request help or a dangerous heart rate is detected with a heart rate monitor. The CPR Responder(s) will be sent an alert and provide the victim's location, along with other vital information needed to help save the victim's life.
 												</p>
 											</div>
 
 											<div>
 												<p>
-													Every responder and emergency contacts can see the locations of other responders. When a responder reaches the victim, they can confirm they are with them, allowing other responders to play a supportive role, such as getting the AED.
+													Every responder and emergency contact can see the locations of other responders. When a responder reaches the victim, they can confirm they are with them, allowing other responders to play a supportive role, such as getting the AED.
 												</p>
 											</div>
 										</div> : null
@@ -199,7 +199,7 @@ class PhonePresentation extends React.Component {
 										<div className="animation__text animation__text--descp">
 											<div>
 												<p>
-													Here, users can view current heart rate and the duration of distress. This is important information because a victim can start to experience brain damage in 4-6 minutes
+													Here, users can view the current heart rate and the duration of distress. This is important information because a victim can start to experience brain damage in 4-6 minutes.
 												</p>
 											</div>
 										</div> : null
@@ -209,7 +209,7 @@ class PhonePresentation extends React.Component {
 										<div className="animation__text animation__text--descp">
 											<div>
 												<p>
-													Responders and emergency contacts have the ability to communicate in a chat room setting, providing transparancy between all parties.
+													Responders and emergency contacts have the ability to communicate in a chat room setting, providing transparency between all parties.
 												</p>
 											</div>
 										</div> : null
@@ -236,7 +236,7 @@ class PhonePresentation extends React.Component {
 										<div className="animation__text animation__text--descp">
 											<div>
 												<p>
-													Static mode is for at-risk individuals who could possibly experience a cardiac arrest. The app is married to a heart rate monitor, that the individual wears and the app alerts CPR responders and emergency contacts. Here the user can see their current heart rate.
+													Static mode is for at-risk individuals who could experience a cardiac arrest. The app is married to a heart rate monitor, that the individual wears and the app alerts CPR responders and emergency contacts. Here the user can see their current heart rate.
 												</p>
 											</div>
 										</div> : null
@@ -246,7 +246,7 @@ class PhonePresentation extends React.Component {
 								  	<div className="animation__text animation__text--descp">
 								  		<div>
 												<p>
-													When an emergency happens, and the user is concious, they can call for help if there is an emergency, call a family member ot firend to help, or close the false alarm notification.
+													When an emergency happens, and the user is conscious, they can call for help if there is an emergency, call a family member or friend to help, or close the false alarm notification.
 												</p>
 											</div>
 										</div> : null
@@ -256,7 +256,7 @@ class PhonePresentation extends React.Component {
 										<div className="animation__text animation__text--descp">
 											<div>
 												<p>
-													Here, a user can add or edit their exisiting contacts. Contacts are friends or family who are notified in addition to CPR responders when an at-risk individual expeeriences a cardiact arrest.
+													Here, a user can add or edit their existing contacts. Contacts are friends or family who are notified in addition to CPR responders when an at-risk individual experiences a cardiac arrest.
 												</p>
 											</div>
 										</div> : null
@@ -266,7 +266,7 @@ class PhonePresentation extends React.Component {
 										<div className="animation__text animation__text--descp">
 											<div>
 												<p>
-													A user can update valuable information of responding parties by inputting their personal health information or any other valuable information.
+													A user can update the valuable information of responding parties by inputting their personal health information or any other important information.
 												</p>
 											</div>
 										</div> : null
@@ -344,6 +344,8 @@ class PhonePresentation extends React.Component {
 								</span>
 							</div>
 						</div>
+
+						<div>It's interactive! Click around</div>
 					</div>
 				</div>
 

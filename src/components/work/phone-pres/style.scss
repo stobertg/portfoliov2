@@ -22,7 +22,7 @@
 	// For the master container of the content to the right of the phone
 
 	.stage__right{
-		@extend %display-flex;
+		@extend %display-flex-wrap;
 		@extend %flex-center-vertical;
 		position: relative;
 		max-width: 500px;
@@ -36,6 +36,8 @@
 		position: absolute;
 		bottom: 0;
 		left: 0;
+		color: rgba( $white, 0.5 );
+		font-size: $fourteen;
 		z-index: 10;
 	}
 
@@ -44,13 +46,13 @@
 	// When a Mode is clicked, the button animates to the icon representing each mode
 
 	.btn__toggle{
-		@extend %display-flex;
+		@extend %display-inline-flex;
 		@extend %flex-center-vertical;
 		position: relative;
 		border-radius: 44px;
 		padding: 6px;
+		margin-bottom: 12px;
 		background: #750c0d;
-		font-size: $fourteen;
 
 		// For the circle that animates under the icons to show which on e is selected
 
@@ -154,6 +156,68 @@
 				opacity: 0.2;
 			}
 		}
+	}
+
+	// Change to alignment of the phone and text on talet breakpoints
+	// This sits the text below the phone
+
+	@media( max-width: 1023px ){
+		padding: 50px 0 0;
+		flex-wrap: wrap;
+		flex-direction: column;
+
+		// Set the text to be below the phone
+
+		.stage__right{
+			max-width: 100%;
+			width: 100%;
+			min-height: auto;
+			margin-left: 0;
+			flex-direction: column-reverse;
+
+			// For the border line on the bottom of the container
+
+			&:after{
+				content: ' ';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+				width: 80%;
+				height: 1px;
+				background: rgba( $white, 0.1 );
+			}
+
+			// Center align the text within the container
+
+			&, h1, h2{
+				text-align: center;
+			}
+		}
+
+		// Set the spacing of the phone a bit smaller on tablet breakpoints
+
+		.stage__text{
+			min-height: auto;
+			padding-bottom: 50px;
+
+			&--mode strong:last-child{
+				right: 0;
+				margin: auto;
+			}
+		}
+
+		// Change the alignment and position of the toggle button
+
+		.stage__phone--controls{
+			position: relative;
+			padding: 32px 0;
+		}
+
+		// Remove the logo on the bottom of the container
+
+		&--logo{ display: none; }
 	}
 }
 

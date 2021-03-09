@@ -21,9 +21,16 @@
 
 .work__list{
 	position: absolute;
+	width: 90%;
 	color: $white;
 	font-size: $fifty;
 	text-align: center;
+
+	// Change the font size on mobile breakpoints
+
+	@media( max-width: $mobile ){
+		font-size: $thirty;
+	}
 
 	// For the container of the project links
 

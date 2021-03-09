@@ -1,13 +1,16 @@
 
 @import "./src/global-css/variables/variables";
 
+#content{
+	@extend %speed-3ms;
+}
+
 // For the general styling of the page content
 // This is the master container of the page and all of the blocks that can be used throughout the pages
 
 .page{
 	position: relative;
 	width: 100vw;
-	padding-bottom: 100px;
 	overflow: hidden;
 
 	// For the header on the top of the page
@@ -27,13 +30,13 @@
 			// For the spacing between the image and the titke of the page
 
 			&:not(:last-child){
-				margin-bottom: 12px;
+				margin-bottom: 4px;
 			}
 
 			// Spacing between the title and the subtitle 
 
 			&:first-child{
-				margin-bottom: 24px;
+				margin-bottom: 12px;
 			}
 
 			// If there is a button on the bottom of the container
@@ -57,6 +60,13 @@
 
 			.illus__animation{
 				transform: scale( 0.3 );
+			}
+
+			// For the Knight animation on the Wotr page
+
+			.animation__horse{
+				top: auto;
+				transform: scale( 0.8 ) translateX( 20px );
 			}
 		}
 
@@ -153,14 +163,22 @@
 
 		// Set the font size of the text within the container
 
-		p{ font-size: $eighteen; }
+		p{ 
+			font-size: $eighteen;
+
+			// Change the font size on mobile breakpoints
+
+			@media( max-width: $mobile ){
+				font-size: $sixteen;
+			}
+		}
 
 		// This is seldom used but spported if text is needed to explain the content in the block
 		// This is used in places such as the process page in the CardiAct project
 
 		&--descp{ 
 			position: relative;
-			max-width: 1000px;
+			max-width: 950px;
 			padding-bottom: 32px;
 		}
 
@@ -168,12 +186,19 @@
 
 		&--title{
 			font-size: $thirty;
+			line-height: 1.3;
 
 			// Spacing between the title and the text
 			// This is conditional so if there is no text below the title, the spacing won't be observed
 
 			& + div{
 				margin-top: 24px;
+			}
+
+			// Change the fotn size on mobile breakpoints
+
+			@media( max-width: $mobile ){
+				font-size: $twenty-two;
 			}
 		}
 

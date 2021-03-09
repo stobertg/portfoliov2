@@ -34,17 +34,20 @@
 			min-width: 17px;
 			width: 17px;
 
+			// Standard sizing of the icons within the thin container
+
 			svg{
 				width: 148%;
 			}
 
-			&.icon__avatar{
-				
-				svg{
-					width: 119%;
-				}
+			// Special sizing for the avatar icon
+
+			&.icon__avatar svg{
+				width: 119%;
 			}
 		}
+
+		// For the wider icons to keep the proportions
 
 		&--wide{
 			min-width: 26px;

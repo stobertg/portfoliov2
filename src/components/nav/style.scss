@@ -58,5 +58,17 @@
 				transform: scale( 1 , 1 );
 			}
 		}
+
+		// If the link is active, we change the color, underline the text, and turn off click events
+
+		a.link__active{
+			color: $yellow;
+			pointer-events: none !important;
+
+			&:after{
+				background: $yellow;
+				transform: scale( 1 , 1 );
+			}
+		}
 	}
 }

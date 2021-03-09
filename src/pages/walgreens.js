@@ -10,10 +10,12 @@ import Block from '../components/page/page-block'
 import Website from '../components/assets/devices/web/web'
 import WagGui from '../components/work/_projects/wag/gui/gui'
 import WagIcons from '../components/work/_projects/wag/icons/icons'
+import NextProject from '../components/next-project/next-project'
 
 import WagCoupon from '../images/wag/heros/coupons.jpg'
-import WagHero from '../images/wag/heros/site.jpg'
+import Homepage from '../images/wag/heros/site.jpg'
 import IllusManWithWallet from '../components/work/_projects/wag/illustration/man-with-wallet'
+import CardiAct from '../images/cardiact/hero/hero.jpg'
 
 const Walgreens = () => {
   // eslint-disable-next-line
@@ -34,12 +36,10 @@ const Walgreens = () => {
   		illustration={ <IllusManWithWallet /> }
   		title="Walgreens Brand Standards"
   		subTitle="Design, Live Style Guide, Front End Development"
-  		buttonTitle="Visit the Style Guide"
-  		buttonLink="#!"
   	>
 
   		<Block>
-        <Fade bottom distance="200px">
+        <Fade bottom distance="200px" force="true">
           <Website url="lsg.walgreens.com" image={ WagCoupon } alt="Walgreens Live Style Guide" />
         </Fade>
       </Block>
@@ -74,17 +74,28 @@ const Walgreens = () => {
         </Fade>
       </Block>
 
-      <Block type="full" bgColor="dark-blue" spacing="large">
+      <Block type="full" spacing="large">
         <Fade bottom distance="32px">
           <WagIcons />
         </Fade>
       </Block>
 
-		  <Block spacing="large">
-        <Fade bottom distance="32px">
-          <Website url="walgreens.com" image={ WagHero } alt="Walgreens Homepage" />
+		  <Block> 
+        <Fade>
+          <Website 
+            url="walgreens.com"
+            image={ Homepage }
+            alt="Walgreens Homepage"
+          />
         </Fade>
       </Block>      
+
+      <NextProject
+        project="cardiact"
+        title="CardiAct - Techincal Response to Cardiac Arrests"
+        bgImg={ CardiAct }
+        bgImgAlt="CardiAct from Tyler Stober and Geoff Burroughs"
+      />
 	  </PageWrap>
 
   );

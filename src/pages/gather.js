@@ -10,6 +10,7 @@ import PageInfo from '../components/page-info/page-info'
 import HeroImg from '../components/hero/hero'
 import Website from '../components/assets/devices/web/web'
 import GatherIcons from '../components/work/_projects/gather/icons/icons'
+import NextProject from '../components/next-project/next-project'
 
 import GatherAnimation from '../components/work/_projects/gather/animation/animation'
 import Hero from '../images/gather/hero.jpg'
@@ -18,6 +19,7 @@ import AdminAssignment from '../images/gather/assignment-editor.jpg'
 import ProfileEdit from '../images/gather/profile-edit.jpg'
 import Assignment from '../images/gather/assignments.jpg'
 import Library from '../images/gather/library.jpg'
+import Walgreens from '../images/wag/heros/gui2.jpg'
 
 const Gather = () => {
   // eslint-disable-next-line
@@ -41,7 +43,7 @@ const Gather = () => {
     >
 
       <Block>
-        <Fade bottom distance="200px">
+        <Fade bottom distance="200px" force="true">
           <Website 
             url="lsg.walgreens.com" 
             image={ Hero } 
@@ -84,6 +86,12 @@ const Gather = () => {
         </Fade>
       </Block> 
 
+      <NextProject
+        project="walgreens"
+        title="Walgreens Live Style Guide"
+        bgImg={ Walgreens }
+        bgImgAlt="Walgreens Live Style Guide"
+      />
 	  </PageWrap>
 
   );

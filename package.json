@@ -16,6 +16,7 @@
     "react-easy-preload": "^1.0.2",
     "react-lazy-load-image-component": "^1.5.1",
     "react-parallax-tilt": "^1.4.90",
+    "react-player": "^2.9.0",
     "react-reveal": "^1.2.2",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",

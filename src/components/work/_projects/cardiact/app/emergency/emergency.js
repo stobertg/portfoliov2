@@ -122,7 +122,6 @@ class CardiActEmergency extends React.Component {
 			  		confirmOpen={this.state.confirmOpen}
 			  		openDirs={() => {
 			  			this.openDirs(); 
-			  			this.props.phoneInfoWhite();
 			  		}}
 			  		confirmMainOpen={() => this.openMainConfirm()}
 			  		showConfirmText={this.props.showConfirmText}
@@ -130,7 +129,6 @@ class CardiActEmergency extends React.Component {
 			  		backToMap={() => {
 			  			this.openDirs(); 
 			  			this.setState({ confirmOpen: false }); 
-			  			this.props.phoneInfoWhite();
 			  		}}
 			  	/> :
 
@@ -163,7 +161,6 @@ class CardiActEmergency extends React.Component {
       		className={`overlay ${this.state.isOpen ? "show__overlay" :""}`} 
       		onClick={() => {
       			this.openDirs(); 
-      			this.props.phoneInfoWhite();
       		}}>
       	</div> 
 		  	
