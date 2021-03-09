@@ -66,6 +66,10 @@
 	.btn__confirm{ 
 		animation: show-btn 30s forwards infinite; 
 		visibility: hidden; 
+
+		.btn__contain{
+			width: 95%;
+		}
 	}
 
 	// !-- Animation for the expanded directions

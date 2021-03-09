@@ -22,8 +22,14 @@
 
 .stage__text{
 	position: relative;
-	min-height: 392px;
+	min-height: 410px;
 	padding-bottom: 139px;
+
+	// Change the min height on tablet
+
+	@media( max-width: 1023px ){
+		min-height: 392px;
+	}
 
 	// For the text animations depending on what button is clicked and the animation goin on for each screen
 	// This is the text that is right below the title section

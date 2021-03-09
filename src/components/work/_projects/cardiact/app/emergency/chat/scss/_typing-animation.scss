@@ -3,13 +3,10 @@
 // This is the animating dots on the last message in the list
 
 @keyframes message-type {
-
 	0%   { opacity: 0.3; }
 	50%  { opacity: 1;   }
 	100% { opacity: 0.3; }
 }
-
-%animate-type{ animation: message-type 1s infinite forwards; }
 
 // For the container of the animated dots
 
@@ -22,12 +19,12 @@
 	// For the 3 dots in the middle
 
 	&:before, &:after, span{
-		@extend %animate-type;
 		width: 8px;
 		height: 8px;
 		background: #808080;
 		border-radius: 50%;
 		opacity: 0.3;
+		animation: message-type 1s infinite forwards;
 	}	
 
 	// For the dot on the left

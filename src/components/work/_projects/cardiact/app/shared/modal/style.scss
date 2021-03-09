@@ -29,9 +29,16 @@
 	// This contains the confirm buttons asking if you are there with or without an AED
 
 	.btn__contain{
+		width: 95%;
 		padding: 40px 15px 20px;
 		border-radius: $cardi-border-radius;
-		background: $cardi-dark-red;
+		background: #b30109;
+
+		// Remove the default drop shadow for buttons contained in this modal
+
+		.btn{
+			box-shadow: none;
+		}
 
 		// If there is a title for the container
 		// The title for this button container is "Are you with the victim?"
@@ -78,11 +85,16 @@
 	// For the close icon on the top right of the container
 
 	.btn__close{
+		@extend %display-flex;
 		position: absolute;
 		top: 5px;
-		right: 11px;
-		width: 30px;
-		height: 30px;
+		right: 12px;
+		width: 31px;
+		height: 31px;
+
+		.icon{
+			margin: 2px 2px 0  0;
+		}
 
 		// Change the color of the background that shows on hover
 

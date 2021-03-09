@@ -57,9 +57,11 @@ const Cardiact = () => {
         </Fade>
       </Block>
 
-      <Fade bottom distance="32px">
-        <Block><HeroImg><img src={ Poster } alt="CardiAct Capstone Poster" /></HeroImg></Block>
-      </Fade>
+      <Block>
+        <Fade bottom distance="32px">
+          <HeroImg><img src={ Poster } alt="CardiAct Capstone Poster" /></HeroImg>
+        </Fade>
+      </Block>
 
       <Process />   
 

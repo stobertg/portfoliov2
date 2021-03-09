@@ -34,8 +34,8 @@
 		// Change the color of the address title to be in red
 
 		div:first-child{
-			margin-bottom: 2px;
-			color: $cardi-red;
+			margin-bottom: 4px;
+			color: #b30109;
 			font-size: $sixteen;
 		}
 	}
@@ -45,7 +45,6 @@
 
 	&--distance{ 
 		margin-top: 2px;
-		color: $cardi-light-gray; 
 	}
 
 	// For the container of the start button
@@ -160,6 +159,17 @@
 		height: 100%;
 		width: 100%;
 		padding-bottom: 0px;
+
+		// Change the the default styling and pacing of the close button
+		// On the top right of the container
+
+		.btn__close{
+			right: 6px;
+
+			.icon{
+				margin: 0;
+			}
+		}
 
 		// For the button container within the master container
 

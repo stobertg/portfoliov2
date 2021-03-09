@@ -1,29 +1,12 @@
 
 @import "./src/global-css/variables/variables";
 
-.example-enter {
-  opacity: 0;
-}
-
-.example-enter.example-enter-active {
-  opacity: 1;
-  transition: opacity 150ms;
-}
-
-.example-leave {
-  opacity: 1;
-}
-
-.example-leave.example-leave-active {
-  opacity: 0;
-  transition: opacity 1ms;
-}
-
 // Shared styling for the cardiact app
 
 .cardiact{
 	position: relative;
 	height: 100%;
+	background: $white;
 
 	// For the font of the emphasized text within the CardiAct app
 
@@ -36,10 +19,11 @@
 		@extend %display-flex;
 		@extend %flex-center-all;
 		padding: 7px 10px;
-		border-radius: 10px;
+		border-radius: 20px;
 		background: $cardi-red;
 		color: $white;
 		font-size: $twelve;
+		box-shadow: 0px 2px 5px rgba( #000, 0.2 );
 	}
 
 	// For instances of images within an li container
@@ -83,6 +67,7 @@
 	// This shows up when the direction button is clicked, on the bottom of the map in the emergency flow
 
 	.overlay{
+		@extend %speed-3ms;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -100,31 +85,24 @@
 	}
 }
 
-
-
-
-
-
+// For the transition screen between the Emergency and Static modes
+// This shows up when the user clicks on the heart or avatar icon within the toggle button
+// At the bottom of the text container - to the right of the phone
 
 @keyframes scale-bg {
-
 	0%  	 { transform: scale(0); }
 	40%, 60% { transform: scale(1); }
-	100%  { transform: scale(0); }
+	100%  	 { transform: scale(0); }
 }
 
-%scale-bg{ animation: scale-bg 2300ms forwards cubic-bezier(0.770, 0.000, 0.175, 1.000); }
-
-
 @keyframes scale-heart {
-
 	0%  { transform: scale(0); }
 	40%, 60% { transform: scale(1); }
 	100%  { transform: scale(0); }
 }
 
-%scale-heart{ animation: scale-heart 2300ms forwards cubic-bezier(0.770, 0.000, 0.175, 1.000); }
-
+// For the contaienr of the transition
+// This has the white background with the heart alert icon in the center of the container
 
 .cardiact__transition{
 	@extend %display-flex;
@@ -137,23 +115,31 @@
 	pointer-events: none;
 	z-index: 9999;
 
+	// For the styling of the white backgorund
+	// This is a circle that comes in and takes ups the whole screen, and then animates back down
+
 	&:before{
-		@extend %scale-bg;
 		content: ' ';
 		position: absolute;
 		width: 1000px;
 		height: 1000px;
 		border-radius: 50%;
 		background: $white;
+		animation: scale-bg 2300ms forwards cubic-bezier(0.770, 0.000, 0.175, 1.000);
 	}
 
+	// For the container of the heart alert icon - in the center of the container
+	// The animations scales in and then scales out
+
 	.icon__victim{
-		@extend %scale-heart;
 		width: 75px;
 		height: 75px;
 		top: auto;
 		left: auto;
 		box-shadow: none;
+		animation: scale-heart 2300ms forwards cubic-bezier(0.770, 0.000, 0.175, 1.000);
+
+		// For the sizing of the icon within the container
 
 		svg{
 			width: 70%;
@@ -162,14 +148,34 @@
 	}
 }
 
+// For the trasition effect between the pages of the app
+// This is a subtle fade in and out
 
+.example{
 
+	// For the enter animation
 
+	&-enter {
+	  opacity: 0;
 
+	  // When the enter animation is active, show the page
 
+		&-active{
+			opacity: 1;
+  			transition: opacity 150ms;
+		}
+	}
 
+	// For the exit animation
 
+	&-leave {
+	  opacity: 1;
 
+		// When the enter animation is active, hide the page
 
-
-
+		&-active{
+			opacity: 0;
+	  		transition: opacity 1ms;
+		}
+	}
+}

@@ -49,7 +49,7 @@
 			// Change the font size of the default paragraph for the app
 
 			p{ 
-				font-size: $twelve; 
+				font-size: $twelve !important; 
 				line-height: 1.5;
 			}
 		}

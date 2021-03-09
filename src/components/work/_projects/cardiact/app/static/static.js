@@ -1,8 +1,6 @@
+
 import React from 'react'
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
-
-// Components needed
-
 import CardiStaticHeader from './header/header'
 import CardiStaticStatus from './status/status'
 import CardiStaticContacts from './contacts/contacts'
@@ -52,35 +50,41 @@ class CardiActStatic extends React.Component {
 
 		  <div className="cardiact cardiact__static">
 		  	<CardiStaticHeader 
-          // For the Status Screen
+          statusSelected={ this.state.showStatus }
+          showStaticStatus={ () => this.onStatusClick() }
+          showStatusText={ () => this.props.showStatusText() }
 
-          statusSelected={this.state.showStatus}
-          showStaticStatus={() => this.onStatusClick()}
-          showStatusText={() => this.props.showStatusText()}
+          contactsSelected={ this.state.showContacts }
+          showStaticContacts={ () => this.onContactsClick() }
+          showContactsText={ () => this.props.showContactsText() }
 
-          // For the Contact Screen
-
-          contactsSelected={this.state.showContacts}
-          showStaticContacts={() => this.onContactsClick()}
-          showContactsText={() => this.props.showContactsText()}
-
-          // For the Profile Screen
-
-          profileSelected={this.state.showProfile}
-          showStaticProfile={() => this.onProfileClick()}
-          showProfileText={() => this.props.showProfileText()}
+          profileSelected={ this.state.showProfile }
+          showStaticProfile={ () => this.onProfileClick() }
+          showProfileText={ () => this.props.showProfileText() }
         />
 
         <CSSTransitionGroup
           transitionName="example"
-          transitionEnterTimeout={0}
-          transitionLeaveTimeout={0}>
+          transitionEnterTimeout={ 0 }
+          transitionLeaveTimeout={ 0 }>
 
-          {this.state.showStatus ?
-            <CardiStaticStatus 
-              isHelpOpen={this.state.helpOpen}
-              helpOpen={() => this.helpOpen()}
-            /> : null
+          { this.state.showStatus 
+            ? <CardiStaticStatus 
+                isHelpOpen={ this.state.helpOpen }
+                helpOpen={ () => this.helpOpen() }
+              /> 
+            : null
+          }
+        </CSSTransitionGroup>
+
+        <CSSTransitionGroup
+          transitionName="example"
+          transitionEnterTimeout={ 0 }
+          transitionLeaveTimeout={ 0 }>
+
+          { this.state.showContacts 
+            ? <CardiStaticContacts /> 
+            : null
           }
         </CSSTransitionGroup>
 
@@ -89,18 +93,9 @@ class CardiActStatic extends React.Component {
           transitionEnterTimeout={0}
           transitionLeaveTimeout={0}>
 
-          {this.state.showContacts ?
-            <CardiStaticContacts /> : null
-          }
-        </CSSTransitionGroup>
-
-        <CSSTransitionGroup
-          transitionName="example"
-          transitionEnterTimeout={0}
-          transitionLeaveTimeout={0}>
-
-          {this.state.showProfile ?
-            <CardiStaticProfile /> : null
+          { this.state.showProfile 
+            ? <CardiStaticProfile /> 
+            : null
           }
         </CSSTransitionGroup>
 		  </div>

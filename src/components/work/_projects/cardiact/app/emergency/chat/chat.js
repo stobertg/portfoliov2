@@ -1,9 +1,11 @@
+
 import React from 'react'
+import "./style.scss"
+
 import PhoneMessage from '../../../../../../assets/devices/iphone/message/message'
 import Neighbor from '../../../../../../../images/cardiact/prototype/neighbor.jpg'
 import George from '../../../../../../../images/cardiact/prototype/george.jpg'
 import Edward from '../../../../../../../images/cardiact/prototype/son.jpg'
-import "./style.scss"
 
 const CardiChat = ( props ) => {
   const messages = [

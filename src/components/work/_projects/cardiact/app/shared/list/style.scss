@@ -36,20 +36,21 @@
 		}
 	}
 
+	// For the headshot on the left of the container
+
 	figure{
 		@extend %display-flex;
 		@extend %flex-center-vertical;
 	}
 
+	// For the text to the right of the headshot
+
 	figcaption{
 		margin-left: 10px;
 	}
 
-	strong{
-		font-size: $fourteen;
-	}
+	// For the font sizes used on the contact list within the app
 
-	em{
-		font-size: $twelve;
-	}
+	strong{ font-size: $fourteen; }
+	em{ font-size: $twelve; }
 }

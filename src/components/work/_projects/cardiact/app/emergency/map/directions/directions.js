@@ -57,6 +57,7 @@ const CardiDirections = ( props ) => {
           <div className="dir__contain">
             <ul>
               { directions.map(( direction, index ) =>
+
                 <li key={ direction.turn }>
                   <div className="dir__item">
                     <span className={`icon icon__sm icon__${ direction.icon }`}>
@@ -69,6 +70,7 @@ const CardiDirections = ( props ) => {
                     </div>
                   </div>
                 </li>
+                
               )}
             </ul>
 

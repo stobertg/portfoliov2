@@ -6,7 +6,7 @@ const CardiButton = ( props ) => {
 
     <div className="btn btn__red" onClick={ props.onClick }>
       { props.iconAed 
-        ? <span className="icon icon__sm icon__aed">
+        ? <span className="icon icon__sm icon__aed icon__aed--no">
             <strong>AED</strong>
           </span> 
 
@@ -14,7 +14,7 @@ const CardiButton = ( props ) => {
       }
 
       { props.iconNoAed 
-        ? <span className="icon icon__sm icon__aed icon__aed--no">
+        ? <span className="icon icon__sm icon__aed">
             <strong>AED</strong>
           </span> 
         : null

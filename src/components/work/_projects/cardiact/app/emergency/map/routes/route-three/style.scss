@@ -4,8 +4,8 @@
 .route__three{
 	transform: translate3d(66px, 0px, 0px);
     position: absolute;
-    width: 130px;
-    height: 146px;
+    width: 134px;
+    height: 151px;
 	z-index: 9;
 
 	// Styling of the routes within the container
@@ -33,12 +33,15 @@
 		}
 	}
 
-	@keyframes route-two {
+	// For the animation of the second route
 
+	@keyframes route-two {
 		0%, 50% { transform: translateY(-50px); }
 		80%, 98% { transform: translateY(30px) scale(1); opacity: 1; }
 		99%, 100% { transform: translateY(30px) scale(0.4); opacity: 0; }
 	}
+
+	// For the starting position and animation of the responder
 
 	.route__responder{
 		top: 0;

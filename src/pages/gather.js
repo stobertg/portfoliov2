@@ -58,13 +58,14 @@ const Gather = () => {
             title="Creating a E-Learning Platform"
             descp={
               <div>
-                <p>At Walgreens, my role is the creation, design, and front end development of the Live Style Guide (LSG), which governs the design and front end integrity of components that live throughout Walgreens.com. Other responsibilities include Front End Devlopement of Walgreens Homepage, header, and content tier pages. Other design responsibilties include icon development and experimental projects.</p>
-                <p>As the lead on the LSG team since 2017, my efforts has been to bridge the design, dev, and accessability teams, which were previously siloed parts of the organization that have since been brought a bit closer under the common goal of the LSG.</p>
+                <p>Gather is both a mobile platform for shared learning and a curriculum for people who want to build on the talents of their neighbors and the assets of their communities to make real and lasting change. Participants in Gather learn and work together through an innovative curriculum that comes pre-loaded on a tablet device with all the connectivity materials videos practices and tools necessary to provide a mobile classroom and toolkit for community leadership.</p>
+                <p>My role is the sole designer and front end developer of the Gather platform, working with a back end dev to implement Gather as a fully functional application.</p>
               </div>
             }
             project={[
-              { project: 'Goldin Institute' },
-              { project: '2017 - Present' }
+              { project: 'Goldin Institute: 2017 - Present' },
+              { project: 'Founder - Travis Rejman' },
+              { project: 'Back End Dev - Faraj Khasib' },
             ]}
             skills={[
               { skill: 'UI/UX Design' },

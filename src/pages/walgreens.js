@@ -47,16 +47,19 @@ const Walgreens = () => {
       <Block>
         <Fade bottom distance="150px">
           <PageInfo
-            title="Bridging Design and Front End"
+            title="Design and Front End"
             descp={
               <div>
-                <p>At Walgreens, my role is the creation, design, and front end development of the Live Style Guide (LSG), which governs the design and front end integrity of components that live throughout Walgreens.com. Other responsibilities include Front End Devlopement of Walgreens Homepage, header, and content tier pages. Other design responsibilties include icon development and experimental projects.</p>
-                <p>As the lead on the LSG team since 2017, my efforts has been to bridge the design, dev, and accessability teams, which were previously siloed parts of the organization that have since been brought a bit closer under the common goal of the LSG.</p>
+                <p>At Walgreens, my current role is the designer and developer for the Walgreens Live Style Guide, promoting the design and front-end integrity of foundational components that support Walgreens.com. In addition, front-end developer of the Walgreens.com homepage and designer of Walgreen's functional icons.</p>
+                <p>As the lead on the LSG team since 2017, my efforts have been to bridge the design, dev, and accessibility teams, which were previously siloed parts of the organization.</p>
+                <p>As Walgreens transitions to React JS and new branding, my team has led the efforts to design GUI components, standardize and create a Live Style Guide, as well as accessible front-end components to preserve design integrity and maintenance.</p>
               </div>
             }
             project={[
               { project: 'Full Time - Walgreens' },
-              { project: '2017 - Present' }
+              { project: '2017 - Present' },
+              { project: 'Stefan Clark - ACD' },
+              { project: 'Mike Pruim, Ryne Estwig, Akemi Hong' }
             ]}
             skills={[
               { skill: 'LSG Leadership' },

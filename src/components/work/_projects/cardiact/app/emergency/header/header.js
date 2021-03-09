@@ -1,8 +1,9 @@
+
 import React, { useState } from 'react'
 import symbolDefs from '../../../../../../../images/cardiact/icons/symbol-defs.svg'
 import CardiHeader from  '../../shared/header/header'
 
-const CardiEmergencyHeader = ( props  ) => {
+const CardiEmergencyHeader = ( props ) => {
   const [ selected, setSelected ] = useState( false );
   const selectTab = () => setSelected( !selected );
 

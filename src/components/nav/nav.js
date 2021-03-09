@@ -1,7 +1,7 @@
 
 import React from "react";
 import { PreloadingSwitch, topbar } from "react-easy-preload";
-import { Redirect, BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import ScrollToTop from './scrollToTop'
 import Preloader from '../preloader/preloader'
 import Logo from '../assets/logo/logo'
@@ -47,7 +47,6 @@ const Nav = ( props ) => {
         <Route preload path="/misc"><Misc /></Route>
         <Route preload path="/gather"><Gather /></Route>
         <Route preload path="/wotr"><Wotr /></Route>
-
         <Route path="*"><NotFoundPage /></Route>
       </PreloadingSwitch>
     </Router>

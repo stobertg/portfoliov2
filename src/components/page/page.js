@@ -7,7 +7,7 @@ import './style.scss'
 const PageWrap = ( props ) => {
 	return(
 
-		<div>
+		<div className="page__content">
 			<div id="content" className={`page${ props.className ? ' page__' + props.className : '' }`}>
 				{ props.title 
 

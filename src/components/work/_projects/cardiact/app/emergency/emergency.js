@@ -78,82 +78,75 @@ class CardiActEmergency extends React.Component {
 
 		  <div className="cardiact">
 		  	<CardiEmergencyHeader 
+		  		showMap={ () => this.onMapClick() }
+		  		mapSelected={ this.state.showMap }
+		  		showMapText={ () => this.props.showMapText() }
 
-		  		// For the Map Screen
+		  		showStatus={ () => this.onStatusClick() }
+		  		statusSelected={ this.state.showStatus }
+		  		showStatusText={ () => this.props.showStatusText() }
 
-		  		showMap={() => this.onMapClick()}
-		  		mapSelected={this.state.showMap}
-		  		showMapText={() => this.props.showMapText()}
-
-		  		// For the Status Screen
-
-		  		showStatus={() => this.onStatusClick()}
-		  		statusSelected={this.state.showStatus}
-		  		showStatusText={() => this.props.showStatusText()}
-
-		  		// For the Chat Screen
-
-		  		showChat={() => this.onChatClick()}
-		  		chatSelected={this.state.showChat}
-		  		showChatText={() => this.props.showChatText()}
+		  		showChat={ () => this.onChatClick()}
+		  		chatSelected={ this.state.showChat }
+		  		showChatText={ () => this.props.showChatText() }
 		  	/>
 
 		  	<CSSTransitionGroup
           transitionName="example"
-          transitionEnterTimeout={0}
-          transitionLeaveTimeout={0}>
+          transitionEnterTimeout={ 0 }
+          transitionLeaveTimeout={ 0 }>
 
-			  	{this.state.showMap ?
-	          <CardiMap 
-				  		confirmMainOpen={this.state.confirmMainOpen}
-				  		closeConfirm={() => {
-				  			this.setState({ confirmMainOpen: false }); 
-				  			this.props.removeConfirmText()
-				  		}}
-				  	/> :
+			  	{ this.state.showMap 
+            ? <CardiMap 
+  				  		confirmMainOpen={this.state.confirmMainOpen}
+  				  		closeConfirm={() => {
+  				  			this.setState({ confirmMainOpen: false }); 
+  				  			this.props.removeConfirmText()
+  				  		}}
+  				  	/> 
 
-				  	null
+            : null
         	}
         </CSSTransitionGroup>
 
-      	{this.state.showDirections ?
-      		<CardiDirections 
-			  		isOpen={this.state.isOpen}
-			  		confirmOpen={this.state.confirmOpen}
-			  		openDirs={() => {
-			  			this.openDirs(); 
-			  		}}
-			  		confirmMainOpen={() => this.openMainConfirm()}
-			  		showConfirmText={this.props.showConfirmText}
-			  		openConfirm={() => this.openConfirm()}
-			  		backToMap={() => {
-			  			this.openDirs(); 
-			  			this.setState({ confirmOpen: false }); 
-			  		}}
-			  	/> :
+      	{ this.state.showDirections 
+          ? <CardiDirections 
+  			  		isOpen={ this.state.isOpen }
+  			  		confirmOpen={ this.state.confirmOpen }
+  			  		openDirs={ () => {
+  			  			this.openDirs(); 
+  			  		}}
+  			  		confirmMainOpen={ () => this.openMainConfirm() }
+  			  		showConfirmText={ this.props.showConfirmText }
+  			  		openConfirm={ () => this.openConfirm() }
+  			  		backToMap={ () => {
+  			  			this.openDirs(); 
+  			  			this.setState({ confirmOpen: false }); 
+  			  		}}
+  			  	/> 
 
-			  	null
+          : null
       	}
 
       	<CSSTransitionGroup
           transitionName="example"
-          transitionEnterTimeout={0}
-          transitionLeaveTimeout={0}>
+          transitionEnterTimeout={ 0 }
+          transitionLeaveTimeout={ 0 }>
 
-        	{this.state.showStatus ?
-        		<CardiStatus /> :
-        		null
+        	{ this.state.showStatus 
+            ? <CardiStatus /> 
+            : null
         	}
         </CSSTransitionGroup>
 
       	<CSSTransitionGroup
           transitionName="example"
-          transitionEnterTimeout={0}
-          transitionLeaveTimeout={0}>
+          transitionEnterTimeout={ 0 }
+          transitionLeaveTimeout={ 0 }>
 
-			  	{this.state.showChat ?
-	          <CardiChat /> :
-	          null
+			  	{ this.state.showChat 
+            ? <CardiChat /> 
+            : null
         	}
       	</CSSTransitionGroup>
 

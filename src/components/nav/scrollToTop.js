@@ -11,7 +11,7 @@ function ScrollToTop({ history }) {
     return () => {
       unlisten();
     }
-  }, []);
+  });
 
   return (null);
 }

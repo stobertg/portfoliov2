@@ -54,3 +54,50 @@
 		}
 	}
 }
+
+// For the X (close / dismiss) icon
+
+.icon__x{
+	@extend %speed-3ms;
+
+	// For the styling of the lines to create the X
+
+	div{
+		position: relative;
+
+		&:before, &:after{
+			content: ' ';
+			position: absolute;
+			left: 50%;
+			background: $white;
+		}
+
+		// For the \ slant
+
+		&:before{ transform: rotate(45deg); }
+
+		// For the / slant
+
+		&:after{ transform: rotate(-45deg); }
+	}
+
+	// For the small close icon
+
+	&-sm{
+
+		// Create the container smaller
+
+		div{
+			width: 13px;
+			height: 13px;
+
+			// Make the slants smaller within the div
+
+			&:before, &:after{
+				width: 2px;
+				height: 12px;
+				border-radius: 2px;
+			}
+		}
+	}
+}

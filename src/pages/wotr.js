@@ -41,17 +41,17 @@ const Wotr = () => {
   		buttonLink="#!"
   	>
 
-      <Fade bottom distance="150px">
-        <Block>
+      <Block>
+        <Fade bottom distance="150px">
           <HeroImg>
             <ReactPlayer
-              url="https://www.youtube.com/watch?v=SxX5DU8CkFI&ab_channel=tylergss"
+              url="https://www.youtube.com/embed/SxX5DU8CkFI"
               width="100%"
               height="500px"
             />
           </HeroImg>
-        </Block>
-      </Fade>
+        </Fade>
+      </Block>
 
       <Fade bottom distance="150px">
         <Block>
