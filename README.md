@@ -5,9 +5,9 @@ Thanks for visiting my Portfolio repo for www.tylerstober.com
 <br/>
 Email stobertg@gmail.com for new projects and inquiries.
 <br/><br/>
-This is for viewing / observational purposes only ( i.e. Potential Clients / Employers )
+This is for viewing / observational purposes only.
 <br/>
-Visit https://codepen.io/stobertg for front end contributions available for free use.
+Visit https://codepen.io/stobertg, or the repos mentioned below for front end contributions available for free use.
 <br/><br/>
 Special thanks to Keanan Koppenhaver - forever greatful for the coding mentorship
 https://keanankoppenhaver.com/
@@ -23,6 +23,8 @@ CardiAct:
 Geoff Burroughs - https://www.linkedin.com/in/burrougw/
 <br/><br/>
 Walgreens: 
+<br/>
+Stefan Clack - http://www.stefanclark.com/
 <br/>
 Ryne Estwing - http://ryneestwing.com/ 
 <br/>
@@ -40,3 +42,7 @@ react-easy-preload: https://www.npmjs.com/package/react-easy-preload?activeTab=r
 react-reveal: https://www.react-reveal.com/examples/common/custom/
 <br/>
 react-count-up: https://www.npmjs.com/package/react-countup
+<br/>
+react-transition-group: https://github.com/reactjs/react-transition-group
+<br/>
+react-player: https://www.npmjs.com/package/react-player
