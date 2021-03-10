@@ -22,6 +22,7 @@
 		transform-origin: top left;
 		height: 100%;
 		animation: remove-route-right 30s linear forwards infinite; 
+		-webkit-animation: remove-route-right 30s linear forwards infinite; 
 	}
 
 	// For the route on the top - middle part of the route
@@ -34,6 +35,7 @@
 	.route__top{
 		transform-origin: top left;
 		animation: remove-route-top 30s linear forwards infinite;
+		-webkit-animation: remove-route-top 30s linear forwards infinite;
 	}
 
 	// For the route on the left - where the animation ends
@@ -47,6 +49,7 @@
 		transform-origin: bottom left;
 		height: 30px;
 		animation: remove-route-left 30s linear forwards infinite;
+		-webkit-animation: remove-route-left 30s linear forwards infinite;
 	}
 }
 

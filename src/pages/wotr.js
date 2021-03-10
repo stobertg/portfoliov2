@@ -37,8 +37,6 @@ const Wotr = () => {
       illustration={ <AnimationHorse /> }
   		title="Wars of the Roses"
   		subTitle="Medieval Passion Project - Current WIP"
-  		buttonTitle="Visit the Site"
-  		buttonLink="#!"
   	>
 
       <Block>
@@ -61,7 +59,7 @@ const Wotr = () => {
               <div>
                 <p>The Wars of the Roses was a Civil War in England, taking place on-and-off during the 1400s. As a result of the war, the Plantagenets were wiped out, and the reign of the Tudors began.</p>
                 <p>History has always been a huge interest of mine, particularly Medieval. It's always been an aspiration to begin meshing design and history. Given my design skillset, my hope is to be able to contribute to Medieval history through visuals, design, and 3D models.</p>
-                <p>For now, this is currently a work in progress, where I find time here and there to work on it. You can view the site by the link above and hopefully, you'll see updates on a consistent basis. Thanks for checking it out.</p>
+                <p>For now, this is currently a work in progress, where I find time here and there to work on it. You can view the site by the link coming soon.</p>
               </div>
             }
             project={[
@@ -69,10 +67,8 @@ const Wotr = () => {
               { project: '2020 - Present' }
             ]}
             skills={[
-              { skill: 'LSG Leadership' },
               { skill: 'UI/UX Design' },
               { skill: 'Front End Development' },
-              { skill: 'Accessibility' }
             ]}
           />
         </Block>

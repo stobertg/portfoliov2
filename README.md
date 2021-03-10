@@ -24,7 +24,7 @@ Geoff Burroughs - https://www.linkedin.com/in/burrougw/
 <br/><br/>
 Walgreens: 
 <br/>
-Stefan Clack - http://www.stefanclark.com/
+Stefan Clark - http://www.stefanclark.com/
 <br/>
 Ryne Estwing - http://ryneestwing.com/ 
 <br/>

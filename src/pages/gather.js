@@ -45,7 +45,7 @@ const Gather = () => {
       <Block>
         <Fade bottom distance="200px" force="true">
           <Website 
-            url="lsg.walgreens.com" 
+            url="gather.goldininstitute.org" 
             image={ Hero } 
             alt="Walgreens Live Style Guide"
           />
@@ -59,7 +59,7 @@ const Gather = () => {
             descp={
               <div>
                 <p>Gather is both a mobile platform for shared learning and a curriculum for people who want to build on the talents of their neighbors and the assets of their communities to make real and lasting change. Participants in Gather learn and work together through an innovative curriculum that comes pre-loaded on a tablet device with all the connectivity materials videos practices and tools necessary to provide a mobile classroom and toolkit for community leadership.</p>
-                <p>My role is the sole designer and front end developer of the Gather platform, working with a back end dev to implement Gather as a fully functional application.</p>
+                <p>My role is the sole designer and front-end developer of the Gather platform, working with a back-end dev to implement Gather as a fully functional application.</p>
               </div>
             }
             project={[
@@ -78,11 +78,11 @@ const Gather = () => {
 
       <Block>
         <Fade bottom distance="32px">
-          <HeroImg><Website image={ AdminAssignment } url="lsg.walgreens.com" alt="Walgreens Live Style Guide" /></HeroImg>
-          <HeroImg><Website image={ Students        } url="lsg.walgreens.com" alt="Walgreens Live Style Guide" /></HeroImg>
-          <HeroImg><Website image={ ProfileEdit     } url="lsg.walgreens.com" alt="Walgreens Live Style Guide" /></HeroImg>
-          <HeroImg><Website image={ Assignment      } url="lsg.walgreens.com" alt="Walgreens Live Style Guide" /></HeroImg>
-          <HeroImg><Website image={ Library         } url="lsg.walgreens.com" alt="Walgreens Live Style Guide" /></HeroImg>
+          <HeroImg><Website image={ AdminAssignment } url="gather.goldininstitute.org" alt="Walgreens Live Style Guide" /></HeroImg>
+          <HeroImg><Website image={ Students        } url="gather.goldininstitute.org" alt="Walgreens Live Style Guide" /></HeroImg>
+          <HeroImg><Website image={ ProfileEdit     } url="gather.goldininstitute.org" alt="Walgreens Live Style Guide" /></HeroImg>
+          <HeroImg><Website image={ Assignment      } url="gather.goldininstitute.org" alt="Walgreens Live Style Guide" /></HeroImg>
+          <HeroImg><Website image={ Library         } url="gather.goldininstitute.org" alt="Walgreens Live Style Guide" /></HeroImg>
           <HeroImg><GatherIcons /></HeroImg>
         </Fade>
       </Block> 

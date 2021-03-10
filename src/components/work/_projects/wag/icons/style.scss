@@ -27,5 +27,11 @@
 			width: 68%;
 			height: 68%;
 		}
+
+		// Changes to the sizing on mobile breakpoints
+
+		@media( max-width: $mobile ){
+			width: 25% !important;
+		}
 	}
 }
